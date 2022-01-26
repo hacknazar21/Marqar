@@ -1,5 +1,4 @@
-![hippo](https://c.tenor.com/pvFJwncehzIAAAAS/hello-there-private-from-penguins-of-madagascar.gif)
-
+<img src="https://c.tenor.com/pvFJwncehzIAAAAS/hello-there-private-from-penguins-of-madagascar.gif"/>
 Документация: 
 
 //------------------------------------------------------------------------------
