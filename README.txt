@@ -1,4 +1,4 @@
-.. image:: /gitBeaty/hi.png?raw=true
+.. image:: /gitBeaty/hi.gif?raw=true
 
 =======
 Документация: 
