@@ -1,12 +1,11 @@
-![ScreenShot](gitBeaty/hi.gif)
+![ScreenShot](https://media.giphy.com/media/l0MYDEPLWRWbJoRuU/giphy.gif)
 
-Документация: 
+# Документация
 
-//------------------------------------------------------------------------------
+## Команды терминала
 
-Команды терминала
+### Установка
 
-Установка:
 npm i
 или
 npm i --legacy-peer-deps
