@@ -1,4 +1,4 @@
-//------------------------------------------------------------------------------
+![alt text](https://media.giphy.com/media/l0MYDEPLWRWbJoRuU/giphy.gif)
 
 Документация: 
 
