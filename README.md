@@ -1,4 +1,4 @@
-![ScreenShot](/gitBeaty/hi.gif)
+![ScreenShot](gitBeaty/hi.gif)
 
 Документация: 
 
