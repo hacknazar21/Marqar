@@ -1,4 +1,4 @@
-![ScreenShot](gitBeaty/hi.gif)
+![ScreenShot](https://media.giphy.com/media/l0MYDEPLWRWbJoRuU/giphy.gif)
 
 Документация: 
 
