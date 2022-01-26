@@ -1,5 +1,4 @@
-![ScreenShot](gitBeaty/hi.png)
-
+.. image:: /gitBeaty/hi.png?raw=true
 
 =======
 Документация: 
