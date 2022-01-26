@@ -1,4 +1,4 @@
-![alt text](https://media.giphy.com/media/l0MYDEPLWRWbJoRuU/giphy.gif)
+![alt text](https://c.tenor.com/pvFJwncehzIAAAAS/hello-there-private-from-penguins-of-madagascar.gif)
 
 Документация: 
 
