@@ -1,6 +1,5 @@
 ![ScreenShot](/gitBeaty/hi.gif)
 
-
 =======
 Документация: 
 
