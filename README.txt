@@ -1,4 +1,4 @@
-![ScreenShot](/gitBeaty/hi.png)
+![ScreenShot](gitBeaty/hi.png)
 
 
 =======
