@@ -1,0 +1,87 @@
+// Ширина / Высота
+$offerMinHeight: 75vh;
+$offerMaxContentWidth: rem(500);
+// Ширина / Высота
+
+// Изображения / Ссылки
+$offerImgURL: "https://kartinkin.net/uploads/posts/2021-01/1611233701_52-p-fon-soveshchanie-54.jpg";
+// Изображения / Ссылки
+
+// Цвета
+$offerMainColor: #fff;
+$offerNameColor: gold;
+// Цвета
+
+// Отступы
+$offerMarginTopContent: rem(90);
+$offerMarginBetweenContent: rem(20);
+$offerMarginTopBtn: rem(120);
+// Отступы
+
+// Размер шрифта
+$offerNameFz: rem(30);
+$offerTitleFz: rem(40);
+$offerTextFz: rem(20);
+// Размер шрифта
+
+.page {
+    &__offer {
+        position: relative;
+        margin: $headerMinHeight 0px 0px 0px;
+        min-height: $offerMinHeight;
+        background: url($offerImgURL) 100% 100% no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+        }
+        color: $offerMainColor;
+    }
+}
+.offer {
+    &__container {
+        text-align: center;
+        position: relative;
+    }
+    &__box {
+        position: absolute;
+        max-width: $offerMaxContentWidth;
+        z-index: 2;
+        left: 50%;
+        margin-left: calc(-1 * $offerMaxContentWidth/2);
+        margin-top: $offerMarginTopContent;
+    }
+    &__name {
+        color: $offerNameColor;
+        font-size: $offerNameFz;
+    }
+
+    &__title {
+        font-size: $offerTitleFz;
+        margin: $offerMarginBetweenContent 0;
+    }
+
+    &__text {
+        font-size: $offerTextFz;
+    }
+
+    &__scroll-down-btn {
+        &::before {
+            content: "";
+            margin: $offerMarginTopBtn 0px 0px 0px;
+            background: url("https://cdn-icons.flaticon.com/png/512/2267/premium/2267904.png?token=exp=1643402628~hmac=2615185ae6f4e17c61e847863b790d19")
+                100% 100% no-repeat;
+            background-size: contain;
+            width: rem(50);
+            height: rem(50);
+            display: inline-block;
+            transform: rotate(180deg);
+        }
+    }
+}

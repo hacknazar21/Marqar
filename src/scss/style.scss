@@ -26,7 +26,7 @@ $minWidth: 320;
 // Ширина полотна (макета)
 $maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1170;
+$maxWidthContainer: 1000;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 30;
@@ -130,6 +130,8 @@ body {
 // Подключение стилей отдельных блоков
 @import "header";
 @import "footer";
+@import "cases";
+@import "offer";
 
 // Подключение стилей отдельных страниц
 @import "home";

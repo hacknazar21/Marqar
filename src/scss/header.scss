@@ -1,4 +1,146 @@
+//Header
+$headerBackgroundColor: rgb(12, 16, 70);
+$headerMainColor: #fff;
+$headerMinHeight: rem(60);
+//Header
+
+//Logo
+$logoWidth: rem(160);
+$logoHeight: rem(40);
+$logoURL: "https://zetflix.to/templates/zetflix/images/logo.png";
+//Logo
+
+//Button
+$btnBorderColor: gold;
+$btnBorderThickness: rem(1);
+$btnBorderRadius: rem(8);
+$btnMarginBetweenLine: rem(10);
+$btnPaddingX: rem(10);
+$btnPaddingY: rem(5);
+//Button
+
+//Menu
+$marginMenuArrow: rem(8);
+$menuPaddingLinks: rem(8);
+//Menu
+
+//Submenu
+$subMenuArrowURL: "https://cdn-icons.flaticon.com/png/512/2267/premium/2267904.png?token=exp=1643402628~hmac=2615185ae6f4e17c61e847863b790d19";
+$subMenuArrowWidth: rem(10);
+$subMenuArrowHeight: rem(10);
+$subMenuArrowInitialAngle: 180deg;
+$subMenuArrowEndAngle: 0deg;
+$subMenuGapLink: rem(8);
+$marginTopSubmenu: rem(10);
+$submenuPadding: rem(15);
+//Submenu
+
 //====================================================================================================
+.header {
+	background-color: $headerBackgroundColor;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: $headerMainColor;
+		min-height: $headerMinHeight;
+	}
+
+	&__logo {
+		display: inline-block;
+		width: $logoWidth;
+		height: $logoHeight;
+		background: url($logoURL) 100% 100% no-repeat;
+		background-size: cover;
+	}
+
+	&__menu {
+		flex: 1 1 auto;
+		position: relative;
+	}
+
+	&__account {
+		display: flex;
+		& > span {
+			&::after {
+				content: "|";
+				margin: 0 $btnMarginBetweenLine;
+				color: $btnBorderColor;
+			}
+		}
+		border: $btnBorderThickness solid $btnBorderColor;
+		border-radius: $btnBorderRadius;
+		padding: $btnPaddingY $btnPaddingX;
+	}
+}
+
+.menu {
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		padding: $menuPaddingLinks;
+	}
+
+	&__item {
+	}
+	&_arrow {
+		&::after {
+			content: "";
+			background: url($subMenuArrowURL) 100% 100% no-repeat;
+			background-size: contain;
+			width: $subMenuArrowWidth;
+			height: $subMenuArrowHeight;
+			transform: rotate($subMenuArrowInitialAngle);
+			transition: transform 0.3s ease 0s;
+			display: inline-block;
+			margin-left: $marginMenuArrow;
+		}
+	}
+	&__link {
+		&._active + .menu__submenu {
+			display: flex;
+			flex-direction: column;
+			gap: $subMenuGapLink;
+		}
+		&._active.menu_arrow {
+			&::after {
+				transform: rotate($subMenuArrowEndAngle);
+			}
+		}
+	}
+	&__submenu {
+		position: absolute;
+		z-index: 1001;
+		background-color: rgba($color: $headerBackgroundColor, $alpha: 0.9);
+		margin-top: $marginTopSubmenu;
+		padding: $submenuPadding;
+		display: none;
+	}
+}
+.submenu {
+	&__item {
+	}
+
+	&__link {
+	}
+}
+.account-box {
+	&__enter {
+	}
+
+	&__reg {
+	}
+}
 
 //====================================================================================================
 
@@ -6,7 +148,7 @@
 /*
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
 		width: rem(30);
@@ -22,7 +164,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
@@ -50,5 +192,4 @@
 			}
 		}
 	}
-}
-*/
+}*/
