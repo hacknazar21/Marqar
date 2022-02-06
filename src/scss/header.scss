@@ -1,17 +1,17 @@
 //Header
-$headerBackgroundColor: rgb(12, 16, 70);
-$headerMainColor: #fff;
+$headerBackgroundColor: #fff;
+$headerMainColor: #000;
 $headerMinHeight: rem(60);
 //Header
 
 //Logo
-$logoWidth: rem(160);
-$logoHeight: rem(40);
-$logoURL: "https://zetflix.to/templates/zetflix/images/logo.png";
+$logoWidth: rem(20);
+$logoHeight: rem(23);
+$logoURL: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMjAgMjMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+c28gbG9nbzwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9InN0YWNrLW92ZXJmbG93LXZlcnNpb24iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMC4wMDAwMDAsIC0xMC4wMDAwMDApIj4gICAgICAgICAgICA8ZyBpZD0idG9wYmFyIj4gICAgICAgICAgICAgICAgPGcgaWQ9InNvLWxvZ28iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwLjAwMDAwMCwgMTAuMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iU2hhcGUiIGZpbGw9IiNCQ0JCQkIiIHBvaW50cz0iMTcgMjEgMTcgMTUgMTkgMTUgMTkgMjMgMCAyMyAwIDE1IDIgMTUgMiAyMSI+PC9wb2x5Z29uPiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTQuMzgwMDIwMDgsMTQuMzQzMTM3MyBMMTQuNzcyMDg4NCwxNi40NTQyNDg0IEwxNS4yMTgzNzM1LDE0LjQwNTIyODggTDQuODI2MzA1MjIsMTIuMjk0MTE3NiBMNC4zODAwMjAwOCwxNC4zNDMxMzczIEw0LjM4MDAyMDA4LDE0LjM0MzEzNzMgWiBNNS43MTg4NzU1LDkuNSBMMTUuMzQ1ODgzNSwxMy44NDY0MDUyIEwxNi4yMzg0NTM4LDExLjk4MzY2MDEgTDYuNjExNDQ1NzgsNy41NzUxNjM0IEw1LjcxODg3NTUsOS41IEw1LjcxODg3NTUsOS41IFogTTguMzk2NTg2MzUsNC45MDUyMjg3NiBMMTYuNTU3MjI4OSwxMS41NDkwMTk2IEwxNy44OTYwODQzLDkuOTM0NjQwNTIgTDkuNzM1NDQxNzcsMy4yOTA4NDk2NyBMOC4zOTY1ODYzNSw0LjkwNTIyODc2IEw4LjM5NjU4NjM1LDQuOTA1MjI4NzYgWiBNMTMuNjg4MjUzLDAgTDExLjk2Njg2NzUsMS4yNDE4MzAwNyBMMTguMjc4NjE0NSw5LjU2MjA5MTUgTDIwLDguMzIwMjYxNDQgTDEzLjY4ODI1MywwIEwxMy42ODgyNTMsMCBaIE00LjEyNSwxOSBMMTQuNzcyMDg4NCwxOSBMMTQuNzcyMDg4NCwxNi45NTA5ODA0IEw0LjEyNSwxNi45NTA5ODA0IEw0LjEyNSwxOSBMNC4xMjUsMTkgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjRjQ4MDI0Ij48L3BhdGg+ICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=";
 //Logo
 
 //Button
-$btnBorderColor: gold;
+$btnBorderColor: rgb(33, 10, 167);
 $btnBorderThickness: rem(1);
 $btnBorderRadius: rem(8);
 $btnMarginBetweenLine: rem(10);
@@ -25,14 +25,16 @@ $menuPaddingLinks: rem(8);
 //Menu
 
 //Submenu
-$subMenuArrowURL: "https://cdn-icons.flaticon.com/png/512/2267/premium/2267904.png?token=exp=1643402628~hmac=2615185ae6f4e17c61e847863b790d19";
+$subMenuArrowURL: "/img/arrow.svg";
 $subMenuArrowWidth: rem(10);
 $subMenuArrowHeight: rem(10);
-$subMenuArrowInitialAngle: 180deg;
-$subMenuArrowEndAngle: 0deg;
-$subMenuGapLink: rem(8);
-$marginTopSubmenu: rem(10);
+$subMenuArrowInitialAngle: 0deg;
+$subMenuArrowEndAngle: -180deg;
+$subMenuGapLink: rem(20);
+$marginTopSubmenu: rem(20);
 $submenuPadding: rem(15);
+$subListHoverBackgrond: #213432;
+$subListHoverColor: #fff;
 //Submenu
 
 //====================================================================================================
@@ -40,30 +42,35 @@ $submenuPadding: rem(15);
 	background-color: $headerBackgroundColor;
 	position: fixed;
 	width: 100%;
-	z-index: 1000;
+	z-index: 100;
+	border-bottom: 1px solid #000;
 	&__container {
 		display: flex;
-		justify-content: space-between;
+		position: relative;
 		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 20, 15);
 		color: $headerMainColor;
-		min-height: $headerMinHeight;
+		padding: rem(10) rem(20);
 	}
 
 	&__logo {
 		display: inline-block;
-		width: $logoWidth;
+		min-width: $logoWidth;
 		height: $logoHeight;
 		background: url($logoURL) 100% 100% no-repeat;
-		background-size: cover;
+		background-size: contain;
 	}
 
 	&__menu {
-		flex: 1 1 auto;
-		position: relative;
+		font-size: rem(16);
+		@media (max-width: $tablet) {
+			font-size: rem(20);
+		}
 	}
 
 	&__account {
-		display: flex;
+		text-align: center;
 		& > span {
 			&::after {
 				content: "|";
@@ -86,12 +93,32 @@ $submenuPadding: rem(15);
 
 	&__list {
 		display: flex;
-		justify-content: space-around;
+		@include adaptiveValue("gap", 50, 0);
 		flex-wrap: wrap;
 		padding: $menuPaddingLinks;
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			gap: rem(10);
+			position: absolute;
+			top: -100%;
+			right: 0;
+			opacity: 0;
+			visibility: collapse;
+			transition: top 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+			border: 1px solid #000;
+
+			background-color: #fff;
+			color: #000;
+			.menu-open & {
+				opacity: 1;
+				visibility: visible;
+				top: 0;
+			}
+		}
 	}
 
 	&__item {
+		display: inline-flex;
 	}
 	&_arrow {
 		&::after {
@@ -100,35 +127,67 @@ $submenuPadding: rem(15);
 			background-size: contain;
 			width: $subMenuArrowWidth;
 			height: $subMenuArrowHeight;
-			transform: rotate($subMenuArrowInitialAngle);
+			transform: rotate($subMenuArrowInitialAngle) translateY(-1px);
 			transition: transform 0.3s ease 0s;
 			display: inline-block;
 			margin-left: $marginMenuArrow;
 		}
 	}
 	&__link {
+		@media (max-width: $tablet) {
+			padding: rem(10) rem(15);
+			padding-left: 0;
+		}
+		@media (max-width: $tablet) {
+			display: block;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 		&._active + .menu__submenu {
-			display: flex;
-			flex-direction: column;
-			gap: $subMenuGapLink;
+			opacity: 1;
+			transform: translateY(0);
+			visibility: visible;
 		}
 		&._active.menu_arrow {
 			&::after {
-				transform: rotate($subMenuArrowEndAngle);
+				transform: rotate($subMenuArrowEndAngle) translateY(-2px);
 			}
 		}
 	}
 	&__submenu {
 		position: absolute;
-		z-index: 1001;
-		background-color: rgba($color: $headerBackgroundColor, $alpha: 0.9);
+		background-color: rgba($color: $headerBackgroundColor, $alpha: 1);
 		margin-top: $marginTopSubmenu;
-		padding: $submenuPadding;
-		display: none;
+		display: flex;
+		transition: transform 0.5s ease 0s, opacity 0.2s ease 0s, visibility 0.4s ease 0s;
+		flex-direction: column;
+		justify-content: space-around;
+		opacity: 0;
+		transform: translateY(-20px);
+		visibility: collapse;
+		border: 1px solid #000;
+		@media (max-width: $tablet) {
+			margin-top: calc($marginTopSubmenu + rem(20));
+		}
 	}
 }
 .submenu {
 	&__item {
+		transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+
+		padding: rem(10) rem(15);
+		&:not(:last-child) {
+			border-bottom: 1px solid rgb(83, 83, 83);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $subListHoverBackgrond;
+				color: $subListHoverColor;
+			}
+		}
 	}
 
 	&__link {
@@ -145,7 +204,6 @@ $submenuPadding: rem(15);
 //====================================================================================================
 
 //Burger
-/*
 .icon-menu {
 	display: none;
 	@media (max-width: $tablet) {
@@ -164,7 +222,7 @@ $submenuPadding: rem(15);
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #fff;
+			background-color: #000;
 		}
 		&::before {
 			top: 0;
@@ -192,4 +250,4 @@ $submenuPadding: rem(15);
 			}
 		}
 	}
-}*/
+}

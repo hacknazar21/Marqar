@@ -13,13 +13,15 @@ $heightCard: rem(250);
 // Ширина / Высота
 
 // Радиус
-$cardBorderRadius: rem(10);
+$cardBorderRadius: rem(8);
 // Радиус
 
 // Цвета
-$cardBackground: rgb(12, 16, 70);
+$imgCardBackground: rgba(37, 14, 165, 0.582);
 $titleCardColor: #fff;
 $textCardColor: rgba(255, 255, 255, 0.5);
+$hoverCardBackground: rgb(13, 16, 34);
+
 // Цвета
 
 // Размер шрифта
@@ -41,7 +43,11 @@ $hoverTitleSize: rem(15);
         font-size: $mainTitleSize;
     }
     &__box {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(500), 1fr));
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         flex-wrap: wrap;
         gap: $gapBetween;
         color: $titleCardColor;
@@ -49,13 +55,13 @@ $hoverTitleSize: rem(15);
     }
     &__card {
         padding: 0px 0px $heightCard 0px;
-        background-color: $cardBackground;
 
         flex: 0 0 calc(50% - $gapBetween/2);
         border-radius: $cardBorderRadius;
         overflow: hidden;
         background-size: cover;
         position: relative;
+
         @media (any-hover: hover) {
             &:hover {
                 cursor: pointer;
@@ -63,10 +69,17 @@ $hoverTitleSize: rem(15);
             &:hover .case-card__hover-box {
                 top: 0;
                 left: 0;
-                padding: $paddingHover;
             }
             &:hover .face-case-card {
-                display: none;
+            }
+        }
+        @media (any-hover: none) {
+            & .taped-card + .case-card__hover-box {
+                top: 0;
+                left: 0;
+                padding: $paddingHover;
+            }
+            & .taped-card {
             }
         }
     }
@@ -74,6 +87,7 @@ $hoverTitleSize: rem(15);
 .case-card {
     &__title {
         font-size: $hoverTitleSize;
+        align-self: flex-start;
     }
 
     &__text {
@@ -83,16 +97,19 @@ $hoverTitleSize: rem(15);
     }
     &__hover-box {
         position: absolute;
-        top: 200px;
+        z-index: 5;
+        background-color: $hoverCardBackground;
+        top: 500px;
+        padding: $paddingHover;
         left: 0;
-        transition: top 0.3s ease 0s;
+        transition: top 0.3s ease 0s, background-color 0.3s ease 0.3s;
         display: flex;
         flex-direction: column;
         height: 100%;
     }
     &__more {
-        text-align: right;
-        display: block;
+        align-self: end;
+        display: inline-flex;
         color: gold;
         padding: $paddingTopMore 0px 0px 0px;
     }
@@ -108,7 +125,7 @@ $hoverTitleSize: rem(15);
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba($color: #000000, $alpha: 0.3);
+        background-color: $imgCardBackground;
     }
     &__title {
         z-index: 3;

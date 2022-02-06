@@ -4,18 +4,19 @@ $offerMaxContentWidth: rem(500);
 // Ширина / Высота
 
 // Изображения / Ссылки
-$offerImgURL: "https://kartinkin.net/uploads/posts/2021-01/1611233701_52-p-fon-soveshchanie-54.jpg";
+$offerImgURL: "https://w-dog.ru/wallpapers/12/14/438960210251641/figury-kvadraty-prozrachnost-grani-pryamougolniki.jpg";
 // Изображения / Ссылки
 
 // Цвета
 $offerMainColor: #fff;
 $offerNameColor: gold;
+$imgOfferBackground: rgba(37, 14, 165, 0.582);
 // Цвета
 
 // Отступы
-$offerMarginTopContent: rem(90);
+$offerMarginTopContent: rem(200);
 $offerMarginBetweenContent: rem(20);
-$offerMarginTopBtn: rem(120);
+$offerMarginTopBtn: rem(0);
 // Отступы
 
 // Размер шрифта
@@ -27,11 +28,12 @@ $offerTextFz: rem(20);
 .page {
     &__offer {
         position: relative;
-        margin: $headerMinHeight 0px 0px 0px;
-        min-height: $offerMinHeight;
+        display: flex;
+        align-items: center;
         background: url($offerImgURL) 100% 100% no-repeat;
         background-size: cover;
         background-position: center;
+        margin-top: $offerMarginTopContent;
         width: 100%;
         &::before {
             content: "";
@@ -39,7 +41,7 @@ $offerTextFz: rem(20);
             width: 100%;
             z-index: 1;
             height: 100%;
-            background-color: rgba($color: #000000, $alpha: 0.5);
+            background-color: $imgOfferBackground;
         }
         color: $offerMainColor;
     }
@@ -48,14 +50,20 @@ $offerTextFz: rem(20);
     &__container {
         text-align: center;
         position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 rem(10);
+        min-height: calc(100vh - rem(53));
     }
     &__box {
-        position: absolute;
+        position: relative;
         max-width: $offerMaxContentWidth;
+        margin-top: auto;
+        margin-bottom: auto;
+
         z-index: 2;
-        left: 50%;
-        margin-left: calc(-1 * $offerMaxContentWidth/2);
-        margin-top: $offerMarginTopContent;
     }
     &__name {
         color: $offerNameColor;
@@ -70,18 +78,91 @@ $offerTextFz: rem(20);
     &__text {
         font-size: $offerTextFz;
     }
-
     &__scroll-down-btn {
-        &::before {
+        position: absolute;
+        right: rem(10);
+        top: -15%;
+        background: $btnBorderColor;
+        border-radius: 50%;
+
+        &::after {
             content: "";
-            margin: $offerMarginTopBtn 0px 0px 0px;
-            background: url("https://cdn-icons.flaticon.com/png/512/2267/premium/2267904.png?token=exp=1643402628~hmac=2615185ae6f4e17c61e847863b790d19")
-                100% 100% no-repeat;
+
+            position: absolute;
+            background: url("/img/arrow.svg") 100% 100% no-repeat;
+            background-position: center;
             background-size: contain;
             width: rem(50);
             height: rem(50);
-            display: inline-block;
-            transform: rotate(180deg);
+            top: calc(50% - rem(25));
+            left: calc(50% - rem(25));
         }
+    }
+}
+.circle {
+    position: relative;
+    z-index: 2;
+    width: rem(150);
+    height: rem(150);
+    overflow: hidden;
+    animation: rotateWords 10s infinite linear;
+    font-size: rem(15);
+
+    /*transition: transform 0.3s linear 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            transform: rotate(193deg);
+        }
+    }*/
+
+    span {
+        position: absolute;
+        transform: translateX(35px);
+        left: 50%;
+        top: 50%;
+        transform-origin: 0 0;
+    }
+}
+@-webkit-keyframes rotateWords {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotateWords {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes rotateWords {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotateWords {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotateLetters {
+    from {
+        padding-left: 0px;
+    }
+    10% {
+        padding-left: 25px;
+    }
+    to {
+        padding-left: 0px;
     }
 }
