@@ -1,5 +1,6 @@
 // Ширина / Высота
-$offerMinHeight: 75vh;
+$offerImgMinHeight: 75vh;
+$offerNumsMinHeight: rem(150);
 $offerMaxContentWidth: rem(500);
 // Ширина / Высота
 
@@ -8,8 +9,9 @@ $offerImgURL: "https://w-dog.ru/wallpapers/12/14/438960210251641/figury-kvadraty
 // Изображения / Ссылки
 
 // Цвета
+$offerNumsStickColor: #fff;
+$offerNumsBackground: rgb(14, 7, 20);
 $offerMainColor: #fff;
-$offerNameColor: gold;
 $imgOfferBackground: rgba(37, 14, 165, 0.582);
 // Цвета
 
@@ -23,29 +25,10 @@ $offerMarginTopBtn: rem(0);
 $offerNameFz: rem(30);
 $offerTitleFz: rem(40);
 $offerTextFz: rem(20);
+$offerNumberFontSize: rem(50);
+$offerTextFontSize: rem(20);
 // Размер шрифта
 
-.page {
-    &__offer {
-        position: relative;
-        display: flex;
-        align-items: center;
-        background: url($offerImgURL) 100% 100% no-repeat;
-        background-size: cover;
-        background-position: center;
-        margin-top: $offerMarginTopContent;
-        width: 100%;
-        &::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            z-index: 1;
-            height: 100%;
-            background-color: $imgOfferBackground;
-        }
-        color: $offerMainColor;
-    }
-}
 .offer {
     &__container {
         text-align: center;
@@ -55,33 +38,35 @@ $offerTextFz: rem(20);
         flex-direction: column;
         justify-content: space-between;
         padding: 0 rem(10);
-        min-height: calc(100vh - rem(53));
+        min-height: calc(70vh - rem(53));
     }
     &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: calc(70vh - rem(53));
         position: relative;
-        max-width: $offerMaxContentWidth;
-        margin-top: auto;
-        margin-bottom: auto;
-
         z-index: 2;
     }
-    &__name {
-        color: $offerNameColor;
-        font-size: $offerNameFz;
+
+    &__numbers-box {
+        margin-bottom: rem(-75);
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        justify-content: space-between;
+        background-color: $offerNumsBackground;
+        border-radius: rem(12);
+
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        }
     }
 
-    &__title {
-        font-size: $offerTitleFz;
-        margin: $offerMarginBetweenContent 0;
-    }
-
-    &__text {
-        font-size: $offerTextFz;
-    }
     &__scroll-down-btn {
         position: absolute;
         right: rem(10);
-        top: -15%;
+        top: -8%;
         background: $btnBorderColor;
         border-radius: 50%;
 
@@ -99,11 +84,45 @@ $offerTextFz: rem(20);
         }
     }
 }
+.numbers-box-offer {
+    &__number-box {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        min-height: $offerNumsMinHeight;
+        @media (max-width: $mobile) {
+            min-height: 0;
+            padding: rem(20) rem(5);
+        }
+        &:not(:last-child) {
+            &::after {
+                content: "";
+                position: absolute;
+                height: calc($offerNumsMinHeight / 2);
+                width: rem(1);
+                background-color: $offerNumsStickColor;
+                right: 0;
+            }
+        }
+    }
+}
+.number-box-offer {
+    &__number {
+        @include adaptiveValue("font-size", 50, 20);
+        line-height: math.div(60, 50);
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 25, 14);
+    }
+}
+
 .circle {
     position: relative;
     z-index: 2;
-    width: rem(150);
-    height: rem(150);
+    width: rem(120);
+    height: rem(120);
     overflow: hidden;
     animation: rotateWords 10s infinite linear;
     font-size: rem(15);

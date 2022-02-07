@@ -31,9 +31,6 @@ $hoverTitleSize: rem(15);
 // Размер шрифта
 
 .page {
-    &__cases {
-        margin-top: calc($headerMinHeight + $mainMarginTopCases);
-    }
 }
 .cases {
     &__container {

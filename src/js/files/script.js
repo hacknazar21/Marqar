@@ -7,7 +7,7 @@ function circleText() {
     const angleToRadian = (angle) => {
         return angle * (Math.PI / 180);
     }
-    const radius = 60;
+    const radius = 55;
     const diameter = radius * 2;
 
     const circle = document.querySelector('.circle');
@@ -30,7 +30,7 @@ function circleText() {
             const translate = `translate(${xPos}px, ${yPos}px)`;
             const rotate = `rotate(${(index * deltaAngle)}deg)`;
 
-            charElement.style.animation = 'rotateLetters 3s infinite ease';
+            //charElement.style.animation = 'rotateLetters 3s infinite ease';
             charElement.style.transform = `${translate} ${rotate}`;
 
 
@@ -57,6 +57,10 @@ document.addEventListener('click', (event) => {
         event.preventDefault();
         event.target.classList.toggle("_active");
     }
+    else if (document.querySelector('.menu_arrow') != null) {
+        document.querySelector('._active').classList.remove("_active");
+    }
+
 })
 
 function cutLongText() {
