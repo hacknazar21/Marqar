@@ -1,0 +1,104 @@
+.about {
+    position: relative;
+    background-color: #0b2137;
+    &::before {
+        content: "";
+        position: absolute;
+        top: rem(0);
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        background: url("@img/about/bg.jpg") 100% 100% no-repeat;
+        mix-blend-mode: overlay;
+        background-size: cover;
+        background-position: top;
+        opacity: 0.5;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+        padding-top: rem(30);
+        padding-bottom: rem(43);
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rem(30);
+        color: rgb(218, 196, 113);
+        line-height: 130%;
+        text-align: center;
+        margin-bottom: rem(30);
+    }
+
+    &__item {
+        display: flex;
+        gap: rem(71);
+        &:not(:last-child) {
+            margin-bottom: rem(77);
+        }
+        &.odd {
+            flex-direction: row-reverse;
+        }
+    }
+}
+.item-about {
+    &__text-box {
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: 130%;
+
+        color: #ffffff;
+    }
+
+    &__text {
+        font-family: Gilroy;
+        font-weight: normal;
+        font-size: rem(18);
+        line-height: 130%;
+        /* or 23px */
+
+        text-indent: rem(20);
+        margin-top: rem(15);
+        margin-bottom: rem(20);
+        /* BackText */
+        & > p:not(:last-child) {
+            margin-bottom: rem(15);
+        }
+        color: #a0aec9;
+    }
+
+    &__more {
+        font-family: Gilroy;
+        font-weight: normal;
+        font-size: rem(14);
+        background: $goldColor;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #dac471;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: rem(9);
+        &::after {
+            @extend %ic;
+            content: "\e908";
+            font-size: rem(20);
+        }
+    }
+
+    &__img-ibg {
+        padding-bottom: rem(285);
+        width: percent(450, 285);
+        max-width: rem(450);
+        & img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    }
+}

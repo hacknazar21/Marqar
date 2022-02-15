@@ -1,0 +1,93 @@
+.feedback {
+    position: relative;
+    z-index: 1;
+    background: $goldColor;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+
+    &::before {
+        content: "";
+        background: url("@img/feedback/01.png") 100% 100% no-repeat;
+        width: rem(288);
+        height: 100%;
+        position: absolute;
+        left: rem(-114);
+    }
+    &::after {
+        content: "";
+        background: url("@img/feedback/02.png") 100% 100% no-repeat;
+        width: rem(168);
+        height: 100%;
+        position: absolute;
+        right: 0;
+    }
+    &__box {
+        margin: 0 auto;
+        padding: rem(37) rem(15);
+    }
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: rem(28);
+        line-height: 130%;
+    }
+
+    &__text {
+        font-family: Gilroy;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 130%;
+        margin-top: rem(10);
+        max-width: rem(452);
+    }
+
+    &__form {
+        display: flex;
+        gap: rem(20);
+        margin-top: rem(20);
+    }
+}
+.form-feedback {
+    &__input {
+        font-size: rem(18);
+        line-height: math.div(40, 18);
+
+        padding: rem(10) 0;
+        padding-left: rem(16);
+        &::placeholder {
+            color: #8e9bdb;
+        }
+        border-radius: 5px;
+        flex: 1 1 auto;
+        width: rem(315);
+    }
+
+    &__submit {
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: math.div(40, 20);
+        background: #122a5f;
+        border-radius: 5px;
+        padding: rem(10) rem(16);
+        display: flex;
+        align-items: center;
+        gap: rem(9);
+        &::after {
+            @extend %ic;
+            content: "\e907";
+            font-size: rem(26);
+            transition: transform 0.3s ease 0s, opacity 0.3s ease 0s, color 0.3s ease 0s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    color: #dac471;
+                    transform: translateX(10px);
+                }
+            }
+        }
+    }
+}
+.input {
+}

@@ -1,3 +1,82 @@
 //====================================================================================================
+.footer {
+    background: $darkBlueColor;
+    position: relative;
+    z-index: 1;
+    &__container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: rem(63);
+        padding-top: rem(40);
+        padding-bottom: rem(42);
+    }
+
+    &__logo {
+        display: flex;
+        gap: rem(8);
+        &::before {
+            content: "";
+            width: rem(46);
+            height: rem(32);
+            background: url("@img/logo.png") 100% 100% no-repeat;
+            background-position: center;
+        }
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: rem(25);
+        line-height: rem(32);
+    }
+
+    &__menu {
+    }
+}
+.menu-footer {
+    &__text {
+        font-family: Gilroy;
+        font-weight: 250;
+        font-size: rem(18);
+        line-height: 130%;
+
+        color: #d5e2f3;
+        margin-bottom: rem(21);
+    }
+
+    &__menu-box {
+        display: flex;
+        gap: rem(55);
+    }
+
+    &__list {
+    }
+
+    &__item-title {
+        font-family: Gotham;
+        font-weight: bold;
+        font-size: rem(22);
+        line-height: 130%;
+        /* identical to box height, or 29px */
+
+        color: #ffffff;
+    }
+
+    &__item {
+        font-family: Gilroy;
+        font-size: rem(18);
+        line-height: 130%;
+        /* or 23px */
+
+        color: #ffffff;
+        margin-top: rem(30);
+        display: flex;
+        gap: rem(15);
+        &::before {
+            font-size: rem(24);
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+}
 
 //====================================================================================================

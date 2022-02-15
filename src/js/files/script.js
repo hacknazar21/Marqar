@@ -3,49 +3,9 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
-function circleText() {
-    const angleToRadian = (angle) => {
-        return angle * (Math.PI / 180);
-    }
-    const radius = 55;
-    const diameter = radius * 2;
-
-    const circle = document.querySelector('.circle');
-
-    const textCircle = circle.innerHTML;
-    console.log(textCircle);
-    const characterCircle = textCircle.split('');
-
-
-    let angle = -90;
-    const deltaAngle = (320 / characterCircle.length);
-    circle.innerText = null;
-    characterCircle.forEach((char, index) => {
-        if (char != ' ') {
-            const charElement = document.createElement('span');
-            charElement.innerText = char;
-            const xPos = radius * Math.cos(angleToRadian(angle));
-            const yPos = radius * Math.sin(angleToRadian(angle));
-
-            const translate = `translate(${xPos}px, ${yPos}px)`;
-            const rotate = `rotate(${(index * deltaAngle)}deg)`;
-
-            //charElement.style.animation = 'rotateLetters 3s infinite ease';
-            charElement.style.transform = `${translate} ${rotate}`;
-
-
-            circle.appendChild(charElement);
-        }
-        angle += deltaAngle;
-
-    });
-
-
-}
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
-    circleText();
+    reverseElements();
     cutLongText();
 });
 
@@ -54,6 +14,31 @@ document.addEventListener('click', (event) => {
     (document.querySelector('.taped-card') != null) ? document.querySelector('.taped-card').classList.remove('taped-card') : null;
     if (event.target.classList.contains('face-case-card')) {
         event.target.classList.add('taped-card')
+    }
+    else if (event.target.closest('[data-tabs]')) {
+        event.preventDefault();
+
+        const tabsBoxes = document.querySelectorAll('[data-tabsbox]');
+        for (let tabsBox of tabsBoxes) {
+            if (tabsBox.contains(event.target)) {
+                const tabId = event.target.dataset.tabs ? event.target.dataset.tabs : null;
+                const tab = tabsBox.querySelector(`[data-tab = "${tabId}"]`);
+                if (tab) {
+                    const activeBtn = tabsBox.querySelector('.active-btn');
+                    const activeTab = tabsBox.querySelector('.active-tab');
+
+                    if (activeBtn && activeBtn != event.target) {
+                        activeBtn.classList.remove('active-btn');
+                        activeTab.classList.remove('active-tab');
+                    }
+                    event.target.classList.add('active-btn');
+                    tab.classList.add('active-tab');
+
+                }
+                else console.log("No Found :(");
+            }
+        }
+
     }
     else if (event.target.classList.contains('menu_arrow')) {
         event.preventDefault();
@@ -68,12 +53,22 @@ document.addEventListener('click', (event) => {
 function cutLongText() {
     var elem, size, text;
     elem = document.getElementsByClassName('case-card__text');
-    size = 450; // Количество отображаемых символов
+    size = 350; // Количество отображаемых символов
     for (let element of elem) {
         text = element.innerHTML;
         if (text.length > size) {
             text = text.slice(0, size);
         }
         element.innerHTML = text + '...';
+    }
+}
+function reverseElements() {
+    const el = document.querySelectorAll('.about__item');
+    if (el.length != 0) {
+        for (let elIndex in el) {
+            if ((parseInt(elIndex) + 1) % 2 == 0) {
+                el[elIndex].classList.add('odd');
+            }
+        }
     }
 }

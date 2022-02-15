@@ -1,15 +1,15 @@
 // Отступы
-$gapBetween: rem(20);
+$gapBetween: rem(30);
 $mainMarginTopCases: rem(20);
 $mainBoxMargin: rem(20);
 $marginTopCardText: rem(10);
 $marginFace: rem(20);
-$paddingHover: rem(20);
+$paddingHover: rem(50);
 $paddingTopMore: rem(10);
 // Отступы
 
 // Ширина / Высота
-$heightCard: rem(250);
+$heightCard: rem(299);
 // Ширина / Высота
 
 // Радиус
@@ -17,11 +17,10 @@ $cardBorderRadius: rem(8);
 // Радиус
 
 // Цвета
-$imgCardBackground: rgba(37, 14, 165, 0.582);
+$imgCardBackground: linear-gradient(243.13deg, rgba(29, 52, 167, 0.2) 0%, rgba(67, 94, 233, 0.7) 66.82%);
 $titleCardColor: #fff;
 $textCardColor: rgba(255, 255, 255, 0.5);
-$hoverCardBackground: rgb(13, 16, 34);
-$casesTitleColor: #000;
+$hoverCardBackground: #0b1f37;
 // Цвета
 
 // Размер шрифта
@@ -35,8 +34,10 @@ $hoverTitleSize: rem(15);
     }
 
     &__title {
-        font-size: $mainTitleSize;
-        color: $casesTitleColor;
+        font-weight: 600;
+        font-size: rem(30);
+        line-height: 130%;
+        color: #0b2137;
     }
     &__box {
         display: grid;
@@ -81,21 +82,28 @@ $hoverTitleSize: rem(15);
 }
 .case-card {
     &__title {
-        font-size: $hoverTitleSize;
         align-self: flex-start;
+        font-style: normal;
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: 130%;
     }
 
     &__text {
         flex: 1 1 auto;
         margin: $marginTopCardText 0px 0px 0px;
-        color: $textCardColor;
+        font-family: Gilroy;
+        font-weight: normal;
+        font-size: rem(18);
+        line-height: 130%;
+        color: #a0aec9;
     }
     &__hover-box {
         position: absolute;
         z-index: 5;
         background-color: $hoverCardBackground;
         top: 500px;
-        padding: $paddingHover;
+        padding: $paddingHover rem(30);
         left: 0;
         transition: top 0.5s ease 0s, background-color 0.5s ease 0s;
         display: flex;
@@ -120,7 +128,7 @@ $hoverTitleSize: rem(15);
         height: 100%;
         top: 0;
         left: 0;
-        background-color: $imgCardBackground;
+        background: $imgCardBackground;
     }
     &__title {
         z-index: 3;
@@ -129,8 +137,10 @@ $hoverTitleSize: rem(15);
         font-weight: bold;
         background-color: $hoverCardBackground;
         margin: $marginFace;
-        padding: rem(5) rem(15);
-        font-size: $cardTitleSize;
+        padding: rem(10) rem(20);
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: 130%;
         border-radius: rem(5);
     }
     &__img {

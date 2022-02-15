@@ -1,10 +1,8 @@
 @import "cases";
 @import "offer";
 @import "info-block";
-
-.page_margin_blocks {
-    @include adaptiveValue("margin-top", 60, 45);
-}
+@import "about";
+@import "feedback";
 
 .page {
     & > section:first-child {
@@ -12,7 +10,6 @@
     }
 
     &__cases {
-        @extend .page_margin_blocks;
     }
     &__offer {
         position: relative;
@@ -24,6 +21,11 @@
     &__info-block {
         margin-top: rem(49);
         margin-bottom: rem(75);
+    }
+    &__about {
+        margin-bottom: rem(50);
+    }
+    &__feedback {
     }
 }
 

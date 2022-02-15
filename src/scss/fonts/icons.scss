@@ -14,3 +14,30 @@
 		display: block;
 	}
 }
+._icon-Mail:before {
+	content: "\e902";
+}
+._icon-Map:before {
+	content: "\e903";
+}
+._icon-bigArrow:before {
+	content: "\e900";
+}
+._icon-briefcase:after {
+	content: "\e901";
+}
+._icon-message:after {
+	content: "\e904";
+}
+._icon-percent:after {
+	content: "\e905";
+}
+._icon-Phone:before {
+	content: "\e906";
+}
+._icon-send:before {
+	content: "\e907";
+}
+._icon-smallArrow:before {
+	content: "\e908";
+}
