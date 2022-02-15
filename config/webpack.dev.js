@@ -90,7 +90,7 @@ const config = {
 								},
 							},
 						},
-					}, {
+					}, "postcss-loader", {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true,

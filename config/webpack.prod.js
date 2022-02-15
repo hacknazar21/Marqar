@@ -4,8 +4,8 @@ import FileIncludeWebpackPlugin from 'file-include-webpack-plugin-replace';
 import CopyPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TerserPlugin from "terser-webpack-plugin";
-
 import * as path from 'path';
+
 
 const srcFolder = "src";
 const builFolder = "dist";
@@ -111,9 +111,11 @@ const config = {
 			template: `${srcFolder}/${pugPage}`,
 			filename: `../${pugPage.replace(/\.pug/, '.html')}`
 		})),
+
 		new MiniCssExtractPlugin({
 			filename: '../css/style.css',
 		}),
+
 		new CopyPlugin({
 			patterns: [
 				{

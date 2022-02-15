@@ -50,10 +50,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('click', (event) => {
-    console.log(event.target);
-    event.target.classList.contains('case-card__hover-box') ? document.querySelector('.taped-card').classList.remove('taped-card') : null;
-    event.target.classList.contains('face-case-card') ? event.target.classList.add('taped-card') : null;
-    if (event.target.classList.contains('menu_arrow')) {
+
+    (document.querySelector('.taped-card') != null) ? document.querySelector('.taped-card').classList.remove('taped-card') : null;
+    if (event.target.classList.contains('face-case-card')) {
+        event.target.classList.add('taped-card')
+    }
+    else if (event.target.classList.contains('menu_arrow')) {
         event.preventDefault();
         event.target.classList.toggle("_active");
     }

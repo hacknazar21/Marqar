@@ -1,187 +1,135 @@
 // Ширина / Высота
-$offerImgMinHeight: 75vh;
-$offerNumsMinHeight: rem(150);
+$offerNumsMinHeight: rem(130);
 $offerMaxContentWidth: rem(500);
+$offerContentheight: calc(rem(594) + $offerNumsMinHeight/2);
 // Ширина / Высота
 
 // Изображения / Ссылки
-$offerImgURL: "https://w-dog.ru/wallpapers/12/14/438960210251641/figury-kvadraty-prozrachnost-grani-pryamougolniki.jpg";
+
 // Изображения / Ссылки
 
 // Цвета
 $offerNumsStickColor: #fff;
-$offerNumsBackground: rgb(14, 7, 20);
+$offerNumsBackground: $goldColor;
 $offerMainColor: #fff;
-$imgOfferBackground: rgba(37, 14, 165, 0.582);
+$imgOfferBackground: linear-gradient(243.13deg, rgba(67, 163, 233, 0) 0%, rgba(67, 104, 233, 0.8) 66.82%);
 // Цвета
 
 // Отступы
 $offerMarginTopContent: rem(200);
+$offerMarginTopImg: rem(20);
 $offerMarginBetweenContent: rem(20);
 $offerMarginTopBtn: rem(0);
 // Отступы
 
-// Размер шрифта
-$offerNameFz: rem(30);
-$offerTitleFz: rem(40);
-$offerTextFz: rem(20);
-$offerNumberFontSize: rem(50);
-$offerTextFontSize: rem(20);
-// Размер шрифта
-
 .offer {
     &__container {
-        text-align: center;
         position: relative;
         display: flex;
-        width: 100%;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 0 rem(10);
-        min-height: calc(70vh - rem(53));
+        width: 100%;
+        height: $offerContentheight;
     }
     &__box {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        height: calc(70vh - rem(53));
+        text-align: left;
         position: relative;
         z-index: 2;
-    }
-
-    &__numbers-box {
-        margin-bottom: rem(-75);
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        justify-content: space-between;
-        background-color: $offerNumsBackground;
-        border-radius: rem(12);
-
-        @media (max-width: $mobile) {
-            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        max-width: 50%;
+        margin-top: rem(182);
+        @media (max-width: $tablet) {
+            max-width: 100%;
         }
     }
 
-    &__scroll-down-btn {
+    &__background-img {
         position: absolute;
-        right: rem(10);
-        top: -8%;
-        background: $btnBorderColor;
-        border-radius: 50%;
+        z-index: 0;
+        padding: 0 100%;
+        top: 0;
+        left: 0;
 
-        &::after {
+        // top: $offerMarginTopImg;
+        padding-bottom: calc($offerContentheight - $offerNumsMinHeight / 2);
+
+        &::before {
             content: "";
-
             position: absolute;
-            background: url("/img/arrow.svg") 100% 100% no-repeat;
-            background-position: center;
-            background-size: contain;
-            width: rem(50);
-            height: rem(50);
-            top: calc(50% - rem(25));
-            left: calc(50% - rem(25));
+            width: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: $imgOfferBackground;
         }
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        @include adaptiveValue("font-size", 70, 30);
+        line-height: 120%;
+        margin-bottom: rem(21);
+    }
+
+    &__text {
+        font-family: Gilroy;
+        font-weight: 500;
+        @include adaptiveValue("font-size", 22, 16);
+
+        line-height: 150%;
+        /* or 33px */
+
+        color: #b5cdf2;
     }
 }
-.numbers-box-offer {
+
+.info-company {
+    @media (max-width: $mobile) {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    }
+    width: 100%;
+    display: grid;
+    margin-top: auto;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: space-between;
+    box-shadow: 0px 5px 10px rgba(119, 90, 15, 0.15);
+    border-radius: 10px;
+    background: $offerNumsBackground;
+    text-align: center;
     &__number-box {
         display: flex;
         position: relative;
         flex-direction: column;
         justify-content: center;
         min-height: $offerNumsMinHeight;
+        padding: rem(20) rem(-15);
+        letter-spacing: 0.02em;
+
         @media (max-width: $mobile) {
-            min-height: 0;
-            padding: rem(20) rem(5);
+            padding: rem(20) rem(15);
         }
         &:not(:last-child) {
             &::after {
                 content: "";
                 position: absolute;
-                height: calc($offerNumsMinHeight / 2);
+                @include adaptiveValue("height", 75, 80);
                 width: rem(1);
                 background-color: $offerNumsStickColor;
                 right: 0;
             }
         }
     }
-}
-.number-box-offer {
+
     &__number {
-        @include adaptiveValue("font-size", 50, 20);
-        line-height: math.div(60, 50);
+        @include adaptiveValue("font-size", 50, 18);
+        font-family: Gotham;
+        font-weight: 500;
+        line-height: 130%;
     }
 
     &__title {
         @include adaptiveValue("font-size", 25, 14);
-    }
-}
-
-.circle {
-    position: relative;
-    z-index: 2;
-    width: rem(120);
-    height: rem(120);
-    overflow: hidden;
-    animation: rotateWords 10s infinite linear;
-    font-size: rem(15);
-
-    /*transition: transform 0.3s linear 0s;
-    @media (any-hover: hover) {
-        &:hover {
-            transform: rotate(193deg);
-        }
-    }*/
-
-    span {
-        position: absolute;
-        transform: translateX(35px);
-        left: 50%;
-        top: 50%;
-        transform-origin: 0 0;
-    }
-}
-@-webkit-keyframes rotateWords {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-@-moz-keyframes rotateWords {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-@-o-keyframes rotateWords {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotateWords {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotateLetters {
-    from {
-        padding-left: 0px;
-    }
-    10% {
-        padding-left: 25px;
-    }
-    to {
-        padding-left: 0px;
     }
 }

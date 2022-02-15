@@ -1,33 +1,29 @@
 @import "cases";
 @import "offer";
-@import "offer-header";
+@import "info-block";
+
+.page_margin_blocks {
+    @include adaptiveValue("margin-top", 60, 45);
+}
 
 .page {
-    &__offer-header {
-        margin-top: rem(52);
+    & > section:first-child {
+        margin-top: $headerMinHeight;
     }
+
     &__cases {
-        margin-top: calc($headerMinHeight);
+        @extend .page_margin_blocks;
     }
     &__offer {
         position: relative;
         display: flex;
         align-items: center;
-        background: url($offerImgURL) 100% 100% no-repeat;
-        background-size: cover;
-        background-position: center;
-        margin-bottom: rem(100);
-
         width: 100%;
-        &::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            z-index: 1;
-            height: 100%;
-            background-color: $imgOfferBackground;
-        }
         color: $offerMainColor;
+    }
+    &__info-block {
+        margin-top: rem(49);
+        margin-bottom: rem(75);
     }
 }
 

@@ -1,27 +1,26 @@
 //Header
-$headerBackgroundColor: #fff;
-$headerMainColor: #000;
-$headerMinHeight: rem(60);
+$headerBackgroundColor: $darkBlueColor;
+$headerMainColor: inherit;
+$headerMinHeight: rem(80);
 //Header
 
 //Logo
-$logoWidth: rem(20);
-$logoHeight: rem(23);
-$logoURL: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMjAgMjMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+c28gbG9nbzwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9InN0YWNrLW92ZXJmbG93LXZlcnNpb24iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMC4wMDAwMDAsIC0xMC4wMDAwMDApIj4gICAgICAgICAgICA8ZyBpZD0idG9wYmFyIj4gICAgICAgICAgICAgICAgPGcgaWQ9InNvLWxvZ28iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwLjAwMDAwMCwgMTAuMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iU2hhcGUiIGZpbGw9IiNCQ0JCQkIiIHBvaW50cz0iMTcgMjEgMTcgMTUgMTkgMTUgMTkgMjMgMCAyMyAwIDE1IDIgMTUgMiAyMSI+PC9wb2x5Z29uPiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTQuMzgwMDIwMDgsMTQuMzQzMTM3MyBMMTQuNzcyMDg4NCwxNi40NTQyNDg0IEwxNS4yMTgzNzM1LDE0LjQwNTIyODggTDQuODI2MzA1MjIsMTIuMjk0MTE3NiBMNC4zODAwMjAwOCwxNC4zNDMxMzczIEw0LjM4MDAyMDA4LDE0LjM0MzEzNzMgWiBNNS43MTg4NzU1LDkuNSBMMTUuMzQ1ODgzNSwxMy44NDY0MDUyIEwxNi4yMzg0NTM4LDExLjk4MzY2MDEgTDYuNjExNDQ1NzgsNy41NzUxNjM0IEw1LjcxODg3NTUsOS41IEw1LjcxODg3NTUsOS41IFogTTguMzk2NTg2MzUsNC45MDUyMjg3NiBMMTYuNTU3MjI4OSwxMS41NDkwMTk2IEwxNy44OTYwODQzLDkuOTM0NjQwNTIgTDkuNzM1NDQxNzcsMy4yOTA4NDk2NyBMOC4zOTY1ODYzNSw0LjkwNTIyODc2IEw4LjM5NjU4NjM1LDQuOTA1MjI4NzYgWiBNMTMuNjg4MjUzLDAgTDExLjk2Njg2NzUsMS4yNDE4MzAwNyBMMTguMjc4NjE0NSw5LjU2MjA5MTUgTDIwLDguMzIwMjYxNDQgTDEzLjY4ODI1MywwIEwxMy42ODgyNTMsMCBaIE00LjEyNSwxOSBMMTQuNzcyMDg4NCwxOSBMMTQuNzcyMDg4NCwxNi45NTA5ODA0IEw0LjEyNSwxNi45NTA5ODA0IEw0LjEyNSwxOSBMNC4xMjUsMTkgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjRjQ4MDI0Ij48L3BhdGg+ICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=";
+$logoFontSize: rem(30);
 //Logo
 
 //Button
-$btnBorderColor: rgb(33, 10, 167);
+$btnBorderColor: #dac471;
 $btnBorderThickness: rem(1);
 $btnBorderRadius: rem(8);
 $btnMarginBetweenLine: rem(10);
-$btnPaddingX: rem(10);
-$btnPaddingY: rem(5);
+$btnPaddingX: rem(15);
+$btnPaddingY: rem(10);
 //Button
 
 //Menu
 $marginMenuArrow: rem(8);
 $menuPaddingLinks: rem(8);
+$menuLinkFontSize: rem(20);
 //Menu
 
 //Submenu
@@ -40,10 +39,10 @@ $subListHoverColor: #fff;
 //====================================================================================================
 .header {
 	background-color: $headerBackgroundColor;
+	box-shadow: 0px 2px 2px rgba(105, 105, 105, 0.15);
 	position: fixed;
 	width: 100%;
 	z-index: 100;
-	border-bottom: 1px solid #000;
 	&__container {
 		display: flex;
 		position: relative;
@@ -51,26 +50,32 @@ $subListHoverColor: #fff;
 		justify-content: space-between;
 		@include adaptiveValue("gap", 20, 15);
 		color: $headerMainColor;
-		padding: rem(10) rem(20);
-	}
+		min-height: $headerMinHeight;
 
+		font-family: Gilroy;
+		line-height: math.div(19, 16);
+		font-weight: 500;
+		@include adaptiveValue("font-size", 16, 12);
+	}
 	&__logo {
-		display: inline-block;
-		min-width: $logoWidth;
-		height: $logoHeight;
-		background: url($logoURL) 100% 100% no-repeat;
-		background-size: contain;
+		font-family: Montserrat;
+		font-weight: 600;
+		font-size: rem(30);
+		line-height: 120%;
+
+		background: $goldColor;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: #dac471;
 	}
 
 	&__menu {
-		font-size: rem(16);
-		@media (max-width: $tablet) {
-			font-size: rem(20);
-		}
 	}
 
 	&__account {
 		text-align: center;
+		color: $btnBorderColor;
+
 		& > span {
 			&::after {
 				content: "|";
@@ -78,7 +83,7 @@ $subListHoverColor: #fff;
 				color: $btnBorderColor;
 			}
 		}
-		border: $btnBorderThickness solid $btnBorderColor;
+		border: 2px solid $btnBorderColor;
 		border-radius: $btnBorderRadius;
 		padding: $btnPaddingY $btnPaddingX;
 	}
@@ -141,11 +146,7 @@ $subListHoverColor: #fff;
 		@media (max-width: $tablet) {
 			display: block;
 		}
-		@media (any-hover: hover) {
-			&:hover {
-				text-decoration: underline;
-			}
-		}
+
 		&._active + .menu__submenu {
 			opacity: 1;
 			transform: translateY(0);
@@ -166,7 +167,7 @@ $subListHoverColor: #fff;
 		flex-direction: column;
 		justify-content: space-around;
 		opacity: 0;
-		transform: translateY(-20px);
+		transform: translateY(20px);
 		visibility: collapse;
 		border: 1px solid #000;
 		@media (max-width: $tablet) {
@@ -191,13 +192,6 @@ $subListHoverColor: #fff;
 	}
 
 	&__link {
-	}
-}
-.account-box {
-	&__enter {
-	}
-
-	&__reg {
 	}
 }
 

@@ -3,7 +3,7 @@ $gapBetween: rem(20);
 $mainMarginTopCases: rem(20);
 $mainBoxMargin: rem(20);
 $marginTopCardText: rem(10);
-$paddingFace: rem(20);
+$marginFace: rem(20);
 $paddingHover: rem(20);
 $paddingTopMore: rem(10);
 // Отступы
@@ -21,7 +21,7 @@ $imgCardBackground: rgba(37, 14, 165, 0.582);
 $titleCardColor: #fff;
 $textCardColor: rgba(255, 255, 255, 0.5);
 $hoverCardBackground: rgb(13, 16, 34);
-
+$casesTitleColor: #000;
 // Цвета
 
 // Размер шрифта
@@ -30,14 +30,13 @@ $cardTitleSize: rem(20);
 $hoverTitleSize: rem(15);
 // Размер шрифта
 
-.page {
-}
 .cases {
     &__container {
     }
 
     &__title {
         font-size: $mainTitleSize;
+        color: $casesTitleColor;
     }
     &__box {
         display: grid;
@@ -53,7 +52,6 @@ $hoverTitleSize: rem(15);
     &__card {
         padding: 0px 0px $heightCard 0px;
 
-        flex: 0 0 calc(50% - $gapBetween/2);
         border-radius: $cardBorderRadius;
         overflow: hidden;
         background-size: cover;
@@ -99,7 +97,7 @@ $hoverTitleSize: rem(15);
         top: 500px;
         padding: $paddingHover;
         left: 0;
-        transition: top 0.3s ease 0s, background-color 0.3s ease 0.3s;
+        transition: top 0.5s ease 0s, background-color 0.5s ease 0s;
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -128,9 +126,12 @@ $hoverTitleSize: rem(15);
         z-index: 3;
         position: absolute;
         bottom: 0;
-        padding: $paddingFace;
         font-weight: bold;
+        background-color: $hoverCardBackground;
+        margin: $marginFace;
+        padding: rem(5) rem(15);
         font-size: $cardTitleSize;
+        border-radius: rem(5);
     }
     &__img {
         width: 100%;

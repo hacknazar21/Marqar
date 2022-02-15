@@ -1,0 +1,136 @@
+.info-block {
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rem(30);
+        line-height: math.div(37, 30);
+
+        color: #0b2137;
+        margin-bottom: rem(30);
+    }
+
+    &__tabs-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__tab {
+        display: grid;
+        grid-template-columns: rem(386) 1fr;
+    }
+}
+.tabs-buttons {
+    &__button {
+        flex: 0 0 rem(386);
+        box-shadow: 0px 4px 6px rgba(136, 116, 46, 0.2);
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: rem(22);
+        line-height: math.div(40, 22);
+        padding: rem(30) rem(28);
+        background: rgba(202, 213, 228, 0.5);
+        color: #a0aec9;
+        &.active {
+            background: linear-gradient(269.35deg, #dac471 0%, #daa520 100%);
+            color: #ffffff;
+        }
+    }
+}
+.tab-info-block {
+    &__cart {
+        padding: rem(15);
+        background: #ffffff;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        margin-top: rem(30);
+    }
+}
+.active-tab {
+}
+.info-block-cart {
+    &__img-ibg {
+        padding-bottom: percent(200, 386);
+        & > img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    &__title {
+        font-family: Gilroy;
+        font-weight: 500;
+        font-size: rem(20);
+        line-height: 130%;
+        margin-bottom: rem(10);
+        margin-top: rem(20);
+        color: #36332d;
+    }
+
+    &__text {
+        font-family: Gilroy;
+        font-weight: normal;
+        font-size: rem(16);
+        line-height: 130%;
+
+        color: #a0aec9;
+    }
+
+    &__more {
+        display: block;
+        text-align: center;
+        padding: rem(14.5) 0;
+        margin-top: rem(44.5);
+        width: 100%;
+        font-family: Gotham;
+        font-weight: bold;
+        font-size: rem(16);
+        line-height: 130%;
+        background: #0b2137;
+        border-radius: 10px;
+        color: #fdffea;
+    }
+}
+
+//========================================================================================================================================================
+.tab-info-block {
+    &__text-box {
+        font-family: Gilroy;
+        font-weight: normal;
+        font-size: rem(18);
+        line-height: 130%;
+        color: #52606d;
+        margin-top: rem(50);
+        padding-left: rem(30);
+    }
+
+    &__title {
+        font-family: Gilroy;
+        font-weight: 500;
+        font-size: rem(22);
+        line-height: 130%;
+        /* or 29px */
+
+        /* Blue c1 */
+
+        color: #0b2137;
+
+        & span {
+        }
+    }
+
+    &__text {
+        margin-top: rem(30);
+    }
+
+    &__list {
+        margin: rem(15) 0;
+    }
+
+    &__list-item {
+    }
+}

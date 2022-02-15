@@ -17,7 +17,9 @@
 		"tmp": "gulp -f gulpfile.tmp.js"
 	},
 	"devDependencies": {
+		"autoprefixer": "^10.4.2",
 		"copy-webpack-plugin": "latest",
+		"cross-env": "^7.0.3",
 		"css-loader": "latest",
 		"del": "latest",
 		"file-include-webpack-plugin-replace": "latest",
@@ -31,6 +33,7 @@
 		"gulp-newer": "latest",
 		"gulp-notify": "latest",
 		"gulp-plumber": "latest",
+		"gulp-postcss": "^9.0.1",
 		"gulp-prettier": "latest",
 		"gulp-rename": "latest",
 		"gulp-svg-sprite": "latest",
@@ -48,6 +51,9 @@
 		"load-plugins": "latest",
 		"mini-css-extract-plugin": "2.4.7",
 		"nouislider": "latest",
+		"postcss": "^8.4.6",
+		"postcss-loader": "^6.2.1",
+		"postcss-preset-env": "^7.3.3",
 		"pug": "latest",
 		"pug-loader": "latest",
 		"sass": "latest",
@@ -69,5 +75,10 @@
 	},
 	"dependencies": {
 		"simplebar": "latest"
-	}
+	},
+	"browserslist": [
+		"last 1 version",
+		"> 1%",
+		"IE 10"
+	]
 }
