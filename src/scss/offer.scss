@@ -29,11 +29,11 @@ $offerMarginTopBtn: rem(0);
         flex-direction: column;
         width: 100%;
         height: $offerContentheight;
-        @media (max-width: $mobile) {
-            padding: 0;
-        }
+        justify-content: space-between;
+
         @media (max-width: $tablet) {
-            height: calc($offerContentheight - rem(150));
+            padding: 0;
+            height: calc(rem(517));
         }
     }
     &__box {
@@ -41,13 +41,13 @@ $offerMarginTopBtn: rem(0);
         position: relative;
         z-index: 2;
         max-width: 50%;
-        margin-top: rem(182);
-        @include adaptiveValue("margin-top", 182, 50);
+        margin: auto 0;
+
         @media (max-width: $tablet) {
+            @include adaptiveValue("padding", 35, 15);
+            padding-top: 0;
+            padding-bottom: 0;
             max-width: 100%;
-        }
-        @media (max-width: $mobile) {
-            padding: rem(15);
         }
     }
 
@@ -58,11 +58,9 @@ $offerMarginTopBtn: rem(0);
         top: 0;
         left: 0;
 
-        // top: $offerMarginTopImg;
         padding-bottom: calc($offerContentheight - $offerNumsMinHeight / 2);
         @media (max-width: $tablet) {
-            $offerContentheight: calc($offerContentheight - rem(150));
-            padding-bottom: calc($offerContentheight - $offerNumsMinHeight / 2);
+            padding-bottom: rem(437);
         }
 
         img {
@@ -74,13 +72,13 @@ $offerMarginTopBtn: rem(0);
         font-weight: bold;
         @include adaptiveValue("font-size", 70, 40);
         line-height: 120%;
-        margin-bottom: rem(21);
+        @include adaptiveValue("margin-bottom", 21, 11);
     }
 
     &__text {
         font-family: Gilroy;
         font-weight: 500;
-        @include adaptiveValue("font-size", 22, 20);
+        @include adaptiveValue("font-size", 22, 16);
 
         line-height: 150%;
         /* or 33px */
@@ -90,13 +88,13 @@ $offerMarginTopBtn: rem(0);
 }
 
 .info-company {
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        border-radius: 0px 0px 5px 5px;
     }
     width: 100%;
     display: grid;
 
-    margin-top: auto;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     justify-content: space-between;
     box-shadow: 0px 5px 10px rgba(119, 90, 15, 0.15);
@@ -128,14 +126,16 @@ $offerMarginTopBtn: rem(0);
     }
 
     &__number {
-        @include adaptiveValue("font-size", 50, 18);
+        @include adaptiveValue("font-size", 50, 22);
         font-family: Gotham;
         font-weight: 500;
         line-height: 130%;
     }
 
     &__title {
-        @include adaptiveValue("font-size", 25, 14);
+        @include adaptiveValue("font-size", 25, 12);
+        letter-spacing: 0.02em;
+        line-height: 130%;
         word-wrap: break-word;
     }
 }

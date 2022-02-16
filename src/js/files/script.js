@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('click', (event) => {
+    console.log(event.target);
 
     (document.querySelector('.taped-card') != null) ? document.querySelector('.taped-card').classList.remove('taped-card') : null;
     if (event.target.classList.contains('face-case-card')) {
@@ -40,13 +41,7 @@ document.addEventListener('click', (event) => {
         }
 
     }
-    else if (event.target.classList.contains('menu_arrow')) {
-        event.preventDefault();
-        event.target.classList.toggle("_active");
-    }
-    else if (document.querySelector('.menu_arrow') != null) {
-        document.querySelector('._active').classList.remove("_active");
-    }
+
 
 })
 

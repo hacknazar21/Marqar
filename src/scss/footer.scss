@@ -1,5 +1,8 @@
 //====================================================================================================
 .footer {
+    @media (max-width: $tablet) {
+        display: none;
+    }
     background: $darkBlueColor;
     position: relative;
     z-index: 1;

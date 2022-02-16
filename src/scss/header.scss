@@ -55,13 +55,12 @@ $subListHoverColor: #fff;
 		font-family: Gilroy;
 		line-height: math.div(19, 16);
 		font-weight: 500;
-		@include adaptiveValue("font-size", 16, 20);
+		@include adaptiveValue("font-size", 16, 18);
 	}
 	&__logo {
 		font-family: Montserrat;
 		font-weight: 600;
 		font-size: rem(30);
-
 		line-height: 120%;
 
 		background: $goldColor;
@@ -87,6 +86,9 @@ $subListHoverColor: #fff;
 		border: 2px solid $btnBorderColor;
 		border-radius: $btnBorderRadius;
 		padding: $btnPaddingY $btnPaddingX;
+		@media (max-width: $tablet) {
+			display: none;
+		}
 	}
 }
 
@@ -102,15 +104,21 @@ $subListHoverColor: #fff;
 		@media (max-width: $tablet) {
 			flex-direction: column;
 			gap: rem(10);
+			flex-wrap: nowrap;
+			overflow-y: auto;
 			position: absolute;
+
 			top: -100%;
 			right: 0;
 			opacity: 0;
+			padding-top: rem(50);
+			margin-top: $headerMinHeight;
 			visibility: collapse;
 			transition: top 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0.3s ease 0s;
 			box-shadow: 0px 2px 2px rgba(105, 105, 105, 0.15);
-
 			background-color: $darkBlueColor;
+			width: 100vw;
+			height: calc(100vh - $headerMinHeight);
 			color: #fff;
 			.menu-open & {
 				opacity: 1;
@@ -122,14 +130,46 @@ $subListHoverColor: #fff;
 
 	&__item {
 		display: inline-flex;
+		justify-content: center;
 	}
 	&__link {
 		@media (max-width: $tablet) {
 			padding: rem(10) rem(15);
 			padding-left: 0;
+			padding-right: 0;
 		}
 		@media (max-width: $tablet) {
 			display: block;
+		}
+	}
+}
+.header {
+	&__menu-footer {
+	}
+}
+.menu-footer-header {
+	&__item {
+		& > li {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+		& .menu-footer__item-box {
+			& span {
+				display: none;
+			}
+		}
+		& .menu-footer__item::before {
+			background: $goldColor;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: #dac471;
+		}
+		.menu-footer-header-item-tel {
+		}
+		.menu-footer-header-item-map {
+		}
+		.menu-footer-header-item-mail {
 		}
 	}
 }
@@ -145,7 +185,6 @@ $subListHoverColor: #fff;
 		width: rem(30);
 		height: rem(18);
 		cursor: pointer;
-		z-index: 5;
 		span,
 		&::before,
 		&::after {

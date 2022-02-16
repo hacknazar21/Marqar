@@ -2,9 +2,12 @@
     <div data-tabsbox class="info-block__container">
         <h2 class="info-block__title">Перекрестное изучение языков</h2>
         <div class="info-block__tabs-buttons tabs-buttons">
-            <a data-tabs="1" href="" class="tabs-buttons__button active-btn _icon-message">Стратегия</a>
-            <a data-tabs="2" href="" class="tabs-buttons__button _icon-briefcase">Информация</a>
-            <a data-tabs="3" href="" class="tabs-buttons__button _icon-percent">Разное</a>
+            <a data-tabs="1" data-da=".swiper-slide-strategy, 992" href=""
+                class="tabs-buttons__button active-btn _icon-message">Стратегия</a>
+            <a data-tabs="2" data-da=".swiper-slide-info, 992" href=""
+                class="tabs-buttons__button _icon-briefcase">Информация</a>
+            <a data-tabs="3" data-da=".swiper-slide-another, 992" href=""
+                class="tabs-buttons__button _icon-percent">Разное</a>
         </div>
         <div class="info-block__tab tab-info-block ">
             <article class="tab-info-block__cart info-block-cart">
@@ -16,70 +19,100 @@
                     sint. </div>
                 <a href="" class="info-block-cart__more">Подробнее</a>
             </article>
-            <div data-tab="1" class="tab-info-block__text-box active-tab">
-                <h3 class="tab-info-block__title">
-                    Amet minim mollit non <span>deserunt</span> ullamco est sit aliqua dolor do amet sint. Velit officia
-                    consequat
-                    duis
-                    enim velit mollit.
-                </h3>
+            <!-- Оболочка слайдера -->
+            <div class="info-block__slider swiper-info-block">
+                <!-- Двигающееся часть слайдера -->
+                <div class="info-block__wrapper swiper-wrapper">
+                    <!-- Слайд -->
+                    <div class="info-block__slide swiper-slide">
+                        <div class="swiper-slide__header swiper-slide-strategy"></div>
+                        <div data-tab="1" class="tab-info-block__text-box active-tab">
+                            <h3 class="tab-info-block__title">
+                                Amet minim mollit non <span>deserunt</span> ullamco est sit aliqua dolor do amet sint.
+                                Velit officia
+                                consequat
+                                duis
+                                enim velit mollit.
+                            </h3>
 
-                <p class="tab-info-block__text">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-                    duis
-                    enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                <ul class="tab-info-block__list">
-                    <li class="tab-info-block__list-item">1. Первый пункт</li>
-                    <li class="tab-info-block__list-item">2. Второй пункт</li>
-                    <li class="tab-info-block__list-item">3. Третий важный пункт</li>
-                </ul>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-                duis
-                enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                </p>
-            </div>
-            <div data-tab="2" class="tab-info-block__text-box">
-                <h3 class="tab-info-block__title">
-                    Amet minim mollit non <span>deserunt</span> ullamco est sit aliqua dolor do amet sint. Velit officia
-                    consequat.
-                </h3>
+                            <p class="tab-info-block__text">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                                consequat
+                                duis
+                                enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                            <ul class="tab-info-block__list">
+                                <li class="tab-info-block__list-item">1. Первый пункт</li>
+                                <li class="tab-info-block__list-item">2. Второй пункт</li>
+                                <li class="tab-info-block__list-item">3. Третий важный пункт</li>
+                            </ul>
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                            consequat
+                            duis
+                            enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-block__slide swiper-slide">
+                        <div class="swiper-slide__header swiper-slide-info"></div>
+                        <div data-tab="2" class="tab-info-block__text-box">
+                            <h3 class="tab-info-block__title">
+                                Amet minim mollit non <span>deserunt</span> ullamco est sit aliqua dolor do amet sint.
+                                Velit officia
+                                consequat.
+                            </h3>
 
-                <p class="tab-info-block__text">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-                    enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                <ul class="tab-info-block__list">
-                    <li class="tab-info-block__list-item">1. Первый пункт</li>
-                    <li class="tab-info-block__list-item">2. Второй пункт</li>
-                    <li class="tab-info-block__list-item">3. Третий важный пункт</li>
-                </ul>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-                duis
-                enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                </p>
-            </div>
-            <div data-tab="3" class="tab-info-block__text-box">
-                <h3 class="tab-info-block__title">
-                    Amet minim mollit non <span>deserunt</span> ullamco est sit aliqua dolor do amet sint. Velit officia
-                    consequat
-                    duis
-                    enim velit mollit.
-                </h3>
+                            <p class="tab-info-block__text">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                                consequat
+                                enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                            <ul class="tab-info-block__list">
+                                <li class="tab-info-block__list-item">1. Первый пункт</li>
+                                <li class="tab-info-block__list-item">2. Второй пункт</li>
+                                <li class="tab-info-block__list-item">3. Третий важный пункт</li>
+                            </ul>
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                            consequat
+                            duis
+                            enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-block__slide swiper-slide">
+                        <div class="swiper-slide__header swiper-slide-another"></div>
+                        <div data-tab="3" class="tab-info-block__text-box">
+                            <h3 class="tab-info-block__title">
+                                Amet minim mollit non <span>deserunt</span> ullamco est sit aliqua dolor do amet sint.
+                                Velit officia
+                                consequat
+                                duis
+                                enim velit mollit.
+                            </h3>
 
-                <p class="tab-info-block__text">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-                    duis
-                    enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                <ul class="tab-info-block__list">
-                    <li class="tab-info-block__list-item">1. Первый пункт</li>
-                    <li class="tab-info-block__list-item">2. Второй пункт</li>
-                    <li class="tab-info-block__list-item">3. Третий пункт</li>
-                    <li class="tab-info-block__list-item">4. Четвертый важный пункт</li>
-                </ul>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-                duis
-                enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                </p>
+                            <p class="tab-info-block__text">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                                consequat
+                                duis
+                                enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                            <ul class="tab-info-block__list">
+                                <li class="tab-info-block__list-item">1. Первый пункт</li>
+                                <li class="tab-info-block__list-item">2. Второй пункт</li>
+                                <li class="tab-info-block__list-item">3. Третий пункт</li>
+                                <li class="tab-info-block__list-item">4. Четвертый важный пункт</li>
+                            </ul>
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                            consequat
+                            duis
+                            enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Если нужна пагинация -->
+                <div class="swiper-pagination"></div>
             </div>
+
+
+
         </div>
 
     </div>
