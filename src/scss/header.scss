@@ -48,19 +48,20 @@ $subListHoverColor: #fff;
 		position: relative;
 		align-items: center;
 		justify-content: space-between;
-		@include adaptiveValue("gap", 20, 15);
+		@include adaptiveValue("gap", 20, 10);
 		color: $headerMainColor;
 		min-height: $headerMinHeight;
 
 		font-family: Gilroy;
 		line-height: math.div(19, 16);
 		font-weight: 500;
-		@include adaptiveValue("font-size", 16, 12);
+		@include adaptiveValue("font-size", 16, 20);
 	}
 	&__logo {
 		font-family: Montserrat;
 		font-weight: 600;
 		font-size: rem(30);
+
 		line-height: 120%;
 
 		background: $goldColor;
@@ -95,7 +96,7 @@ $subListHoverColor: #fff;
 
 	&__list {
 		display: flex;
-		@include adaptiveValue("gap", 30, 0);
+		@include adaptiveValue("gap", 30, 5, 1920, 930);
 		flex-wrap: wrap;
 		padding: $menuPaddingLinks;
 		@media (max-width: $tablet) {

@@ -73,7 +73,6 @@ $hoverTitleSize: rem(15);
             & .taped-card + .case-card__hover-box {
                 top: 0;
                 left: 0;
-                padding: $paddingHover;
             }
             & .taped-card {
             }
@@ -104,6 +103,11 @@ $hoverTitleSize: rem(15);
         background-color: $hoverCardBackground;
         top: 500px;
         padding: $paddingHover rem(30);
+
+        @media (max-width: $tablet) {
+            padding: $paddingHover rem(15);
+        }
+
         left: 0;
         transition: top 0.5s ease 0s, background-color 0.5s ease 0s;
         display: flex;
@@ -113,8 +117,15 @@ $hoverTitleSize: rem(15);
     &__more {
         align-self: end;
         display: inline-flex;
-        color: gold;
-        padding: $paddingTopMore 0px 0px 0px;
+        &::after {
+            @extend %ic;
+            content: "\e900";
+            background: $goldColor;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #dac471;
+            padding-right: rem(5);
+        }
     }
     &__face {
     }

@@ -34,9 +34,9 @@
 
     &__item {
         display: flex;
-        @include adaptiveValue("gap", 71, 30);
+        @include adaptiveValue("gap", 71, 20);
         &:not(:last-child) {
-            margin-bottom: rem(77);
+            @include adaptiveValue("margin-bottom", 77, 40);
         }
         &.odd {
             flex-direction: row-reverse;
@@ -66,14 +66,12 @@
         font-family: Gilroy;
         flex: 1 1 auto;
         font-weight: normal;
-        font-size: rem(18);
+        @include adaptiveValue("font-size", 18, 16);
         line-height: 130%;
-        /* or 23px */
 
         text-indent: rem(20);
         margin-top: rem(15);
         margin-bottom: rem(20);
-        /* BackText */
         & > p:not(:last-child) {
             margin-bottom: rem(15);
         }

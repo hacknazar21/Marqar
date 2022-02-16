@@ -567,10 +567,13 @@
     function cutLongText() {
         var elem, size, text;
         elem = document.getElementsByClassName("case-card__text");
-        size = 350;
+        size = 220;
         for (let element of elem) {
             text = element.innerHTML;
-            if (text.length > size) text = text.slice(0, size);
+            if (text.length > size) while (true) if (" " == text.slice(0, size)[size - 1] && "." != text.slice(0, size)[size - 2]) {
+                text = text.slice(0, size);
+                break;
+            } else size++;
             element.innerHTML = text + "...";
         }
     }

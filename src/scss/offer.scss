@@ -33,7 +33,7 @@ $offerMarginTopBtn: rem(0);
             padding: 0;
         }
         @media (max-width: $tablet) {
-            height: calc($offerContentheight - rem(200));
+            height: calc($offerContentheight - rem(150));
         }
     }
     &__box {
@@ -61,7 +61,7 @@ $offerMarginTopBtn: rem(0);
         // top: $offerMarginTopImg;
         padding-bottom: calc($offerContentheight - $offerNumsMinHeight / 2);
         @media (max-width: $tablet) {
-            $offerContentheight: calc($offerContentheight - rem(200));
+            $offerContentheight: calc($offerContentheight - rem(150));
             padding-bottom: calc($offerContentheight - $offerNumsMinHeight / 2);
         }
         &::before {
@@ -81,7 +81,7 @@ $offerMarginTopBtn: rem(0);
 
     &__title {
         font-weight: bold;
-        @include adaptiveValue("font-size", 70, 30);
+        @include adaptiveValue("font-size", 70, 40);
         line-height: 120%;
         margin-bottom: rem(21);
     }
@@ -89,7 +89,7 @@ $offerMarginTopBtn: rem(0);
     &__text {
         font-family: Gilroy;
         font-weight: 500;
-        @include adaptiveValue("font-size", 22, 16);
+        @include adaptiveValue("font-size", 22, 20);
 
         line-height: 150%;
         /* or 33px */
