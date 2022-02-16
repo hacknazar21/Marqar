@@ -33,20 +33,21 @@ export const css = () => {
 		.pipe(
 			app.plugins.if(
 				app.isBuild,
-				cleanCss()
-			)
-		)
-		.pipe(
-			app.plugins.if(
-				app.isBuild,
 				autoprefixer({
 					grid: true,
-					overrideBrowserslist: ["last 3 versions"],
+					flexbox: true,
+					overrideBrowserslist: ["last 5 versions"],
 					cascade: true
 				})
 			)
 		)
 		.pipe(app.gulp.dest(app.path.build.css))
+		.pipe(
+			app.plugins.if(
+				app.isBuild,
+				cleanCss()
+			)
+		)
 		.pipe(app.plugins.rename({ suffix: ".min" }))
 		.pipe(app.gulp.dest(app.path.build.css));
 }

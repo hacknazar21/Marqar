@@ -90,15 +90,12 @@ $subListHoverColor: #fff;
 }
 
 .menu {
-	&__icon {
-	}
-
 	&__body {
 	}
 
 	&__list {
 		display: flex;
-		@include adaptiveValue("gap", 50, 0);
+		@include adaptiveValue("gap", 30, 0);
 		flex-wrap: wrap;
 		padding: $menuPaddingLinks;
 		@media (max-width: $tablet) {
@@ -110,10 +107,10 @@ $subListHoverColor: #fff;
 			opacity: 0;
 			visibility: collapse;
 			transition: top 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0.3s ease 0s;
-			border: 1px solid #000;
+			box-shadow: 0px 2px 2px rgba(105, 105, 105, 0.15);
 
-			background-color: #fff;
-			color: #000;
+			background-color: $darkBlueColor;
+			color: #fff;
 			.menu-open & {
 				opacity: 1;
 				visibility: visible;
@@ -125,19 +122,6 @@ $subListHoverColor: #fff;
 	&__item {
 		display: inline-flex;
 	}
-	&_arrow {
-		&::after {
-			content: "";
-			background: url($subMenuArrowURL) 100% 100% no-repeat;
-			background-size: contain;
-			width: $subMenuArrowWidth;
-			height: $subMenuArrowHeight;
-			transform: rotate($subMenuArrowInitialAngle) translateY(-1px);
-			transition: transform 0.3s ease 0s;
-			display: inline-block;
-			margin-left: $marginMenuArrow;
-		}
-	}
 	&__link {
 		@media (max-width: $tablet) {
 			padding: rem(10) rem(15);
@@ -146,52 +130,6 @@ $subListHoverColor: #fff;
 		@media (max-width: $tablet) {
 			display: block;
 		}
-
-		&._active + .menu__submenu {
-			opacity: 1;
-			transform: translateY(0);
-			visibility: visible;
-		}
-		&._active.menu_arrow {
-			&::after {
-				transform: rotate($subMenuArrowEndAngle) translateY(-2px);
-			}
-		}
-	}
-	&__submenu {
-		position: absolute;
-		background-color: rgba($color: $headerBackgroundColor, $alpha: 1);
-		margin-top: $marginTopSubmenu;
-		display: flex;
-		transition: transform 0.5s ease 0s, opacity 0.2s ease 0s, visibility 0.4s ease 0s;
-		flex-direction: column;
-		justify-content: space-around;
-		opacity: 0;
-		transform: translateY(20px);
-		visibility: collapse;
-		border: 1px solid #000;
-		@media (max-width: $tablet) {
-			margin-top: calc($marginTopSubmenu + rem(20));
-		}
-	}
-}
-.submenu {
-	&__item {
-		transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
-
-		padding: rem(10) rem(15);
-		&:not(:last-child) {
-			border-bottom: 1px solid rgb(83, 83, 83);
-		}
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: $subListHoverBackgrond;
-				color: $subListHoverColor;
-			}
-		}
-	}
-
-	&__link {
 	}
 }
 
@@ -216,7 +154,7 @@ $subListHoverColor: #fff;
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
