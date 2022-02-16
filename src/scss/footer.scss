@@ -6,7 +6,10 @@
     &__container {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: rem(63);
+        @include adaptiveValue("gap", 63, 20);
+        @media (max-width: $tablet) {
+            grid-template-columns: 1fr;
+        }
         padding-top: rem(40);
         padding-bottom: rem(42);
     }
@@ -28,6 +31,12 @@
     }
 
     &__menu {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: $mobile) {
+            flex-direction: column-reverse;
+            @include adaptiveValue("gap", 63, 20);
+        }
     }
 }
 .menu-footer {
@@ -43,7 +52,11 @@
 
     &__body {
         display: flex;
-        gap: rem(55);
+        @include adaptiveValue("gap", 55, 0);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: rem(15);
+        }
     }
 
     &__list {

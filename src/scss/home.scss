@@ -10,6 +10,7 @@
     }
 
     &__cases {
+        @include adaptiveValue("margin-bottom", 40, 30);
     }
     &__offer {
         position: relative;
@@ -19,11 +20,11 @@
         color: $offerMainColor;
     }
     &__info-block {
-        margin-top: rem(49);
-        margin-bottom: rem(75);
+        @include adaptiveValue("margin-top", 49, 30);
+        @include adaptiveValue("margin-bottom", 75, 30);
     }
     &__about {
-        margin-bottom: rem(50);
+        @include adaptiveValue("margin-bottom", 50, 30);
     }
     &__feedback {
     }

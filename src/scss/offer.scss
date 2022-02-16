@@ -29,6 +29,12 @@ $offerMarginTopBtn: rem(0);
         flex-direction: column;
         width: 100%;
         height: $offerContentheight;
+        @media (max-width: $mobile) {
+            padding: 0;
+        }
+        @media (max-width: $tablet) {
+            height: calc($offerContentheight - rem(200));
+        }
     }
     &__box {
         text-align: left;
@@ -36,8 +42,12 @@ $offerMarginTopBtn: rem(0);
         z-index: 2;
         max-width: 50%;
         margin-top: rem(182);
+        @include adaptiveValue("margin-top", 182, 50);
         @media (max-width: $tablet) {
             max-width: 100%;
+        }
+        @media (max-width: $mobile) {
+            padding: rem(15);
         }
     }
 
@@ -50,7 +60,10 @@ $offerMarginTopBtn: rem(0);
 
         // top: $offerMarginTopImg;
         padding-bottom: calc($offerContentheight - $offerNumsMinHeight / 2);
-
+        @media (max-width: $tablet) {
+            $offerContentheight: calc($offerContentheight - rem(200));
+            padding-bottom: calc($offerContentheight - $offerNumsMinHeight / 2);
+        }
         &::before {
             content: "";
             position: absolute;
@@ -87,10 +100,11 @@ $offerMarginTopBtn: rem(0);
 
 .info-company {
     @media (max-width: $mobile) {
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     }
     width: 100%;
     display: grid;
+
     margin-top: auto;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     justify-content: space-between;
@@ -131,5 +145,6 @@ $offerMarginTopBtn: rem(0);
 
     &__title {
         @include adaptiveValue("font-size", 25, 14);
+        word-wrap: break-word;
     }
 }

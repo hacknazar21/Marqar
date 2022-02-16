@@ -38,6 +38,7 @@ $hoverTitleSize: rem(15);
         font-size: rem(30);
         line-height: 130%;
         color: #0b2137;
+        margin-bottom: rem(20);
     }
     &__box {
         display: grid;
@@ -48,7 +49,6 @@ $hoverTitleSize: rem(15);
         flex-wrap: wrap;
         gap: $gapBetween;
         color: $titleCardColor;
-        margin: $mainBoxMargin 0;
     }
     &__card {
         padding: 0px 0px $heightCard 0px;
