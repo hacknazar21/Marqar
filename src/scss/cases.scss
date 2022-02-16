@@ -131,16 +131,6 @@ $hoverTitleSize: rem(15);
     }
 }
 .face-case-card {
-    &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        z-index: 2;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: $imgCardBackground;
-    }
     &__title {
         z-index: 3;
         position: absolute;

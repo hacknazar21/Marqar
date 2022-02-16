@@ -677,16 +677,6 @@ h6 {
   color: #dac471;
   padding-right: 0.3125rem;
 }
-.face-case-card::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(243.13deg, rgba(29, 52, 167, 0.2) 0%, rgba(67, 94, 233, 0.7) 66.82%);
-}
 .face-case-card__title {
   z-index: 3;
   position: absolute;
@@ -779,16 +769,6 @@ h6 {
   .offer__background-img {
     padding-bottom: calc(37.125rem + 8.125rem / 2 - 9.375rem - 8.125rem / 2);
   }
-}
-.offer__background-img::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(243.13deg, rgba(67, 163, 233, 0) 0%, rgba(67, 104, 233, 0.8) 66.82%);
 }
 .offer__background-img img {
   max-width: 100%;
@@ -999,12 +979,11 @@ h6 {
 .tabs-buttons__button {
   flex: 0 0 31.6912972085%;
   min-width: 12.5rem;
-  box-shadow: 0px 4px 6px rgba(136, 116, 46, 0.2);
   border-radius: 12px;
   font-weight: bold;
   font-size: 1.375rem;
   line-height: 1.8181818182;
-  padding: 1.875rem 1.75rem;
+  padding: 1.125rem 1.75rem;
   background: rgba(202, 213, 228, 0.5);
   color: #a0aec9;
   display: flex;
@@ -1023,6 +1002,7 @@ h6 {
 }
 .tabs-buttons__button.active-btn {
   background: linear-gradient(269.35deg, #dac471 0%, #daa520 100%);
+  box-shadow: 0px 4px 6px rgba(136, 116, 46, 0.2);
   color: #ffffff;
 }
 .tabs-buttons__button.active-btn::after {
@@ -1140,8 +1120,6 @@ h6 {
   font-family: Gilroy;
   font-weight: 500;
   line-height: 130%;
-  /* or 29px */
-  /* Blue c1 */
   color: #0b2137;
 }
 @media (min-width: 78em) {
@@ -1174,7 +1152,6 @@ h6 {
 }
 .about {
   position: relative;
-  background-color: #0b2137;
 }
 .about::before {
   content: "";
@@ -1184,11 +1161,9 @@ h6 {
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: url("../img/about/bg.jpg") 100% 100% no-repeat;
-  mix-blend-mode: overlay;
+  background: url("../img/about/bg.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: top;
-  opacity: 0.5;
 }
 .about__container {
   position: relative;

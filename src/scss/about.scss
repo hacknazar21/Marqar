@@ -1,6 +1,5 @@
 .about {
     position: relative;
-    background-color: #0b2137;
     &::before {
         content: "";
         position: absolute;
@@ -9,11 +8,9 @@
         height: 100%;
         width: 100%;
         z-index: 0;
-        background: url("@img/about/bg.jpg") 100% 100% no-repeat;
-        mix-blend-mode: overlay;
+        background: url("@img/about/bg.png") 100% 100% no-repeat;
         background-size: cover;
         background-position: top;
-        opacity: 0.5;
     }
 
     &__container {

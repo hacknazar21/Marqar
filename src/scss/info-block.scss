@@ -37,12 +37,11 @@
     &__button {
         flex: 0 0 percent(386, 1218);
         min-width: rem(200);
-        box-shadow: 0px 4px 6px rgba(136, 116, 46, 0.2);
         border-radius: 12px;
         font-weight: bold;
         font-size: rem(22);
         line-height: math.div(40, 22);
-        padding: rem(30) rem(28);
+        padding: rem(18) rem(28);
         background: rgba(202, 213, 228, 0.5);
         color: #a0aec9;
         display: flex;
@@ -60,6 +59,7 @@
         }
         &.active-btn {
             background: linear-gradient(269.35deg, #dac471 0%, #daa520 100%);
+            box-shadow: 0px 4px 6px rgba(136, 116, 46, 0.2);
             color: #ffffff;
             &::after {
                 background-color: rgba(255, 255, 255, 0.5);
@@ -165,9 +165,6 @@
         @include adaptiveValue("font-size", 22, 18);
 
         line-height: 130%;
-        /* or 29px */
-
-        /* Blue c1 */
 
         color: #0b2137;
 
