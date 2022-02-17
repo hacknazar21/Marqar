@@ -82,7 +82,8 @@ function initSliders() {
 
 			breakpoints: {
 				992: {
-					enabled: false
+					enabled: false,
+					spaceBetween: 0,
 				},
 
 			},
