@@ -220,16 +220,13 @@ h6 {
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: url("../img/bg.png") 100% 100% no-repeat;
-  background-size: contain;
-  background-position: top;
+  background: url("../img/bg.png") no-repeat top/contain;
   mix-blend-mode: normal;
   opacity: 0.05;
 }
 @media (max-width: 61.99875em) {
   .wrapper::before {
-    background-size: cover;
-    background-position: left;
+    background: url("../img/bg.png") no-repeat left/cover;
   }
 }
 
@@ -1311,13 +1308,7 @@ h6 {
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: url("../img/about/bg.png") 100% 100% no-repeat;
-  background-size: cover;
-  background-position: top;
-}
-.webp .about::before {
-  background-size: cover !important;
-  background-position: top !important;
+  background: url("../img/about/bg.png") no-repeat top/cover;
 }
 .about__container {
   position: relative;
