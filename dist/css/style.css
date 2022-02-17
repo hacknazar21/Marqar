@@ -220,11 +220,17 @@ h6 {
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: url("../img/info-block/bg.png") 100% 100% no-repeat;
-  background-size: cover;
-  background-position: left;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
+  background: url("../img/bg.png") 100% 100% no-repeat;
+  background-size: contain;
+  background-position: top;
+  mix-blend-mode: normal;
+  opacity: 0.05;
+}
+@media (max-width: 61.99875em) {
+  .wrapper::before {
+    background-size: cover;
+    background-position: left;
+  }
 }
 
 /*
@@ -1045,8 +1051,9 @@ h6 {
 }
 @media (max-width: 61.99875em) {
   .info-block__slider {
-    border: 1px solid #daa520;
     padding-bottom: 0.625rem;
+    background: #ffffff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   }
 }
 .info-block__wrapper {
@@ -1307,6 +1314,10 @@ h6 {
   background: url("../img/about/bg.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: top;
+}
+.webp .about::before {
+  background-size: cover !important;
+  background-position: top !important;
 }
 .about__container {
   position: relative;

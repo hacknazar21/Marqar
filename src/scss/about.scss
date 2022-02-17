@@ -12,7 +12,12 @@
         background-size: cover;
         background-position: top;
     }
-
+    .webp & {
+        &::before {
+            background-size: cover !important;
+            background-position: top !important;
+        }
+    }
     &__container {
         position: relative;
         z-index: 1;
