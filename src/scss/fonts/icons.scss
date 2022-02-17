@@ -14,22 +14,35 @@
 		display: block;
 	}
 }
+._icon-search:before {
+	content: "\e90d";
+	color: #fff;
+}
+._icon-doc:before {
+	content: "\e909";
+}
+._icon-program:before {
+	content: "\e90a";
+}
+._icon-puzzle:before {
+	content: "\e90b";
+}
+._icon-bigArrow:before {
+	content: "\e900";
+}
+._icon-briefcase:before {
+	content: "\e901";
+}
 ._icon-Mail:before {
 	content: "\e902";
 }
 ._icon-Map:before {
 	content: "\e903";
 }
-._icon-bigArrow:before {
-	content: "\e900";
-}
-._icon-briefcase:after {
-	content: "\e901";
-}
-._icon-message:after {
+._icon-message:before {
 	content: "\e904";
 }
-._icon-percent:after {
+._icon-percent:before {
 	content: "\e905";
 }
 ._icon-Phone:before {
@@ -40,4 +53,7 @@
 }
 ._icon-smallArrow:before {
 	content: "\e908";
+}
+._icon-arrow-about:before {
+	content: "\e90c";
 }

@@ -92,7 +92,7 @@ body {
 		height: 100%;
 		width: 100%;
 		z-index: 0;
-		background: url("@img/bg.png") no-repeat top / contain;
+		background: url("@img/bg.png") no-repeat top / 120%;
 		mix-blend-mode: normal;
 		@media (max-width: $tablet) {
 			background: url("@img/bg.png") no-repeat left / cover;
@@ -160,3 +160,5 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "page-header";
+@import "pages/about/content";
