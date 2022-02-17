@@ -1056,13 +1056,11 @@ h6 {
 .info-block__wrapper {
   margin-bottom: 1.25rem;
 }
-.info-block__slide {
-  max-width: fit-content;
-}
 .info-block .swiper-pagination {
   display: none;
   justify-content: center;
   gap: 0.4375rem;
+  margin-top: 0.9375rem;
 }
 @media (max-width: 61.99875em) {
   .info-block .swiper-pagination {
@@ -1214,6 +1212,8 @@ h6 {
   margin-top: 3.125rem;
   padding-left: 1.875rem;
   display: none;
+  overflow-y: scroll;
+  height: 22.5rem;
 }
 @media (min-width: 78em) {
   .tab-info-block__text-box {
@@ -1247,6 +1247,9 @@ h6 {
     padding: 0 0.625rem;
     display: block;
   }
+}
+.tab-info-block__text-box::-webkit-scrollbar {
+  width: 0;
 }
 .tab-info-block__cart {
   padding: 0.9375rem;
@@ -1384,6 +1387,7 @@ h6 {
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 130%;
+  text-indent: 1.25rem;
   color: #ffffff;
 }
 .item-about__text {
