@@ -1,0 +1,14 @@
+.products-info {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(rem(386), auto));
+    align-items: start;
+
+    @media (max-width: $mobile) {
+        grid-template-columns: repeat(auto-fill, minmax(rem(300), auto));
+    }
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    gap: rem(30);
+}

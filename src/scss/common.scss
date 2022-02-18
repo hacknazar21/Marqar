@@ -1,1 +1,95 @@
 // Заголовки, общие БЄМ блоки и проче...
+.product-cart {
+    padding: rem(15);
+    background: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    &__img-ibg {
+        padding-bottom: percent(200, 356);
+        position: relative;
+        @media (max-width: $tablet) {
+            padding-bottom: percent(200, 356);
+        }
+        & > img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    &__title {
+        font-family: Gilroy;
+        font-weight: 500;
+        font-size: rem(20);
+        line-height: 130%;
+        margin-bottom: rem(10);
+        margin-top: rem(20);
+        color: #36332d;
+    }
+
+    &__text {
+        font-family: Gilroy;
+        font-weight: normal;
+        font-size: rem(16);
+        line-height: 130%;
+
+        color: #a0aec9;
+    }
+
+    &__more {
+        display: block;
+        text-align: center;
+        padding: rem(14.5) 0;
+        margin-top: rem(30);
+        &._margin {
+            margin-top: rem(21.5);
+        }
+        width: 100%;
+        font-family: Gotham;
+        font-weight: bold;
+        font-size: rem(16);
+        line-height: 130%;
+        background: #0b2137;
+        border-radius: 10px;
+        color: #fdffea;
+    }
+
+    &__some-info {
+        font-family: Gilroy;
+        font-weight: 500;
+        font-size: rem(16);
+        line-height: 130%;
+
+        color: #0b2137;
+
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: rem(11.5);
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+
+        &::before {
+            font-size: rem(24);
+        }
+    }
+
+    &__type {
+        font-family: Gilroy;
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: 130%;
+
+        color: #ffffff;
+
+        position: absolute;
+        background: linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%);
+        border-radius: 5px;
+        padding: rem(6) rem(20);
+        right: rem(10);
+        top: rem(10);
+    }
+}

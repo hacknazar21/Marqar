@@ -30,7 +30,7 @@
 ._icon-bigArrow:before {
 	content: "\e900";
 }
-._icon-briefcase:before {
+._icon-briefcase:after {
 	content: "\e901";
 }
 ._icon-Mail:before {
@@ -39,10 +39,10 @@
 ._icon-Map:before {
 	content: "\e903";
 }
-._icon-message:before {
+._icon-message:after {
 	content: "\e904";
 }
-._icon-percent:before {
+._icon-percent:after {
 	content: "\e905";
 }
 ._icon-Phone:before {
@@ -56,4 +56,10 @@
 }
 ._icon-arrow-about:before {
 	content: "\e90c";
+}
+._icon-book:before {
+	content: "\e90e";
+}
+._icon-calendar:before {
+	content: "\e90f";
 }
