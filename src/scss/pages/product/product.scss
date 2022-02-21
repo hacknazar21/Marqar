@@ -1,0 +1,83 @@
+.product-info {
+    &__product {
+        @media (min-width: $tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: rem(15);
+        }
+        @media (max-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+            gap: rem(10);
+        }
+        padding: 0;
+        box-shadow: none;
+    }
+    & .product-cart__title {
+        margin: 0;
+        margin-bottom: rem(20);
+    }
+    & .product-cart__text-block {
+        margin: 0;
+    }
+}
+.product-text-block {
+    &__list {
+        margin-top: rem(20);
+        @include adaptiveValue("padding", 20, 15, 1920, 390);
+        padding: rem(15);
+        background: linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%) border-box;
+        border: 1px solid transparent;
+        border-radius: 5px;
+
+        @media (max-width: $tablet) {
+            text-align: center;
+        }
+    }
+    &_margin {
+        margin: 0;
+        margin-bottom: rem(8);
+    }
+    &_ident {
+        text-indent: rem(20);
+    }
+    &__text-box {
+    }
+    &__text {
+        margin-top: rem(20);
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rem(22);
+        line-height: 130%;
+        color: #0b2137;
+        margin-top: rem(40);
+    }
+}
+.product-list {
+    &__item {
+        &:not(:first-child) {
+            .product-list__title {
+                margin-top: rem(30);
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rem(14);
+        line-height: 130%;
+        color: #ffffff;
+        padding: rem(6) rem(20);
+        background: linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%);
+        border-radius: rem(5);
+
+        display: inline-block;
+    }
+
+    &__text {
+        margin-top: rem(10);
+    }
+}

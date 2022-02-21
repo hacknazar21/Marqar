@@ -3991,6 +3991,7 @@
     document.addEventListener("DOMContentLoaded", (event => {
         reverseElements();
         cutLongText();
+        paintTable();
     }));
     document.addEventListener("click", (event => {
         console.log(event.target);
@@ -4030,6 +4031,29 @@
     function reverseElements() {
         const el = document.querySelectorAll(".about__item");
         if (0 != el.length) for (let elIndex in el) if ((parseInt(elIndex) + 1) % 2 == 0) el[elIndex].classList.add("odd");
+    }
+    function paintTable() {
+        const el = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"]');
+        const elCell = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"] [class*="__table-item"]');
+        let mass2 = new Array;
+        let mass3 = new Array;
+        let sum1 = 0, sum2 = 0;
+        for (const key in el) {
+            if ((parseInt(key) + 1) % 2 == 0) el[key].classList.add("_odd");
+            for (const keyCell in el[key].children) if ((parseInt(keyCell) + 1) % 2 == 0) mass2.push(parseFloat(el[key].children[keyCell].innerHTML.replace(",", ".").replace(" ", ""))); else if ((parseInt(keyCell) + 1) % 3 == 0) mass3.push(parseFloat(el[key].children[keyCell].innerHTML.replace(",", ".").replace(" ", "")));
+        }
+        mass2.forEach((number => {
+            if (!isNaN(number)) {
+                console.log(number);
+                sum1 += number;
+            }
+        }));
+        mass3.forEach((number => {
+            if (!isNaN(number)) sum2 += number;
+        }));
+        console.log(mass3);
+        elCell[elCell.length - 2].innerHTML = sum1.toFixed(2);
+        elCell[elCell.length - 1].innerHTML = sum2.toFixed(2);
     }
     window["FLS"] = true;
     isWebp();

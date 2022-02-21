@@ -7,6 +7,8 @@ import { flsModules } from "./modules.js";
 document.addEventListener('DOMContentLoaded', (event) => {
     reverseElements();
     cutLongText();
+
+    paintTable();
 });
 
 document.addEventListener('click', (event) => {
@@ -74,4 +76,47 @@ function reverseElements() {
             }
         }
     }
+}
+function paintTable() {
+    const el = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"]');
+    const elCell = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"] [class*="__table-item"]');
+
+    let mass2 = new Array();
+    let mass3 = new Array();
+
+    let sum1 = 0, sum2 = 0;
+
+    for (const key in el) {
+        if ((parseInt(key) + 1) % 2 == 0) {
+            el[key].classList.add('_odd');
+        }
+
+        for (const keyCell in el[key].children) {
+            if ((parseInt(keyCell) + 1) % 2 == 0) {
+                mass2.push(parseFloat(el[key].children[keyCell].innerHTML.replace(",", ".").replace(" ", "")));
+            }
+            else if ((parseInt(keyCell) + 1) % 3 == 0) {
+                mass3.push(parseFloat(el[key].children[keyCell].innerHTML.replace(",", ".").replace(" ", "")));
+            }
+        }
+    }
+
+    mass2.forEach(number => {
+        if (!isNaN(number)) {
+            console.log(number);
+            sum1 = sum1 + number;
+        }
+    });
+    mass3.forEach(number => {
+        if (!isNaN(number)) {
+            sum2 = sum2 + number;
+        }
+    });
+    console.log(mass3);
+
+
+    elCell[elCell.length - 2].innerHTML = sum1.toFixed(2);
+    elCell[elCell.length - 1].innerHTML = sum2.toFixed(2);
+
+
 }

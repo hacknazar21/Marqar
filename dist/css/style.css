@@ -412,6 +412,164 @@ h6 {
   top: 0.625rem;
 }
 
+.price-product__title {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 130%;
+  background: -o-linear-gradient(180.65deg, #daa520 0%, #dac471 42.71%, #dac471 61.98%, #daa520 100%);
+  background: linear-gradient(269.35deg, #daa520 0%, #dac471 42.71%, #dac471 61.98%, #daa520 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #dac471;
+}
+
+.price-product__text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: #52606d;
+}
+
+.main-content h2 {
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 130%;
+  color: #0b2137;
+  margin-bottom: 1.25rem;
+}
+
+.main-content [class*=__text-block] {
+  font-family: Gilroy;
+}
+
+.main-content [class*=__text] {
+  font-size: 1.125rem;
+  line-height: 130%;
+  color: #52606d;
+}
+
+.main-content [class*=__text-block]:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.main-content [class*=__text-block]:not(:last-child) [class*=__title] {
+  margin-bottom: 1.25rem;
+}
+
+.main-content [class*=__text-block] [class*=__paragraph-block] p {
+  margin-bottom: 0.625rem;
+}
+
+.main-content [class*=__text-block] [class*=__paragraph-block] p a {
+  color: #415ad8;
+  text-decoration: underline;
+}
+
+.main-content [class*=__text-block] [class*=__paragraph-block] span {
+  display: block;
+  text-indent: 3.125rem;
+  margin-bottom: 0.625rem;
+}
+
+.main-content [class*=__text-block] [class*=_warning] {
+  color: #ffffff;
+  background-color: #e92222;
+  padding: 0.625rem;
+  border-radius: 5px;
+}
+
+.main-content [class*=__table-box] {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 130%;
+  border-radius: 0.3125rem;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.main-content [class*=__table-box] [class*=__table-header] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0b2137;
+}
+
+.main-content [class*=__table-box] [class*=__table-header] [class*=__table-item] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 12.5rem;
+  color: #fff;
+}
+
+.main-content [class*=__table-box] [class*=__table-header] [class*=__table-item]:not(:last-child) {
+  border-right: 1px solid #dce4ef;
+}
+
+.main-content [class*=__table-box] [class*=__table-data] [class*=__table-row] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: right;
+  color: #0b2137;
+}
+
+.main-content [class*=__table-box] [class*=__table-data] [class*=__table-row]._odd {
+  background-color: rgba(220, 228, 239, 0.3);
+}
+
+.main-content [class*=__table-box] [class*=__table-data] [class*=__table-row] [class*=__table-item] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 12.5rem;
+}
+
+.main-content [class*=__table-box] [class*=__table-data] [class*=__table-row] [class*=__table-item]:not(:last-child) {
+  border-right: 1px solid #dce4ef;
+  padding-right: 3.125rem;
+}
+
+.main-content [class*=__table-box] [class*=__table-data] [class*=__table-row]:not(:last-child) {
+  border-bottom: 1px solid #dce4ef;
+}
+
+.main-content [class*=__table-box] [class*=__table-data] [class*=__table-row]:last-child {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 130%;
+  color: #0b2137;
+}
+
 .header {
   background-color: #0b2137;
   -webkit-box-shadow: 0px 2px 2px rgba(105, 105, 105, 0.15);
@@ -1474,29 +1632,6 @@ h6 {
   padding-left: 1.375rem;
 }
 
-.about-info__text-block {
-  font-family: Gilroy;
-  margin-bottom: 2.5rem;
-}
-
-.about-info__title {
-  font-weight: 600;
-  font-size: 1.375rem;
-  line-height: 130%;
-  color: #0b2137;
-  margin-bottom: 1.25rem;
-}
-
-.about-info__text {
-  font-size: 1.125rem;
-  line-height: 130%;
-  color: #52606d;
-}
-
-.about-info__text p:not(:last-child) {
-  margin-bottom: 1.25rem;
-}
-
 .products-info {
   display: -ms-grid;
   display: grid;
@@ -1510,6 +1645,71 @@ h6 {
           box-shadow: none;
   padding: 0;
   gap: 1.875rem;
+}
+
+.product-info__product {
+  padding: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.product-info .product-cart__title {
+  margin: 0;
+  margin-bottom: 1.25rem;
+}
+
+.product-info .product-cart__text-block {
+  margin: 0;
+}
+
+.product-text-block__list {
+  margin-top: 1.25rem;
+  padding: 0.9375rem;
+  background: -o-linear-gradient(#fff, #fff) padding-box, -o-linear-gradient(178.96deg, #daa520 -17.69%, #dac471 98.22%) border-box;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%) border-box;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.product-text-block_margin {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.product-text-block_ident {
+  text-indent: 1.25rem;
+}
+
+.product-text-block__text {
+  margin-top: 1.25rem;
+}
+
+.product-text-block__title {
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 130%;
+  color: #0b2137;
+  margin-top: 2.5rem;
+}
+
+.product-list__item:not(:first-child) .product-list__title {
+  margin-top: 1.875rem;
+}
+
+.product-list__title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 130%;
+  color: #ffffff;
+  padding: 0.375rem 1.25rem;
+  background: -o-linear-gradient(178.96deg, #daa520 -17.69%, #dac471 98.22%);
+  background: linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%);
+  border-radius: 0.3125rem;
+  display: inline-block;
+}
+
+.product-list__text {
+  margin-top: 0.625rem;
 }
 
 .swiper {
@@ -1570,6 +1770,14 @@ h6 {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+  }
+
+  .product-info__product {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9375rem;
   }
 }
 
@@ -1668,8 +1876,16 @@ h6 {
 }
 
 @media (min-width: 120em) {
+  .main-content [class*=__table-box] {
+    font-size: 1rem;
+  }
+
   .menu__list {
     gap: 1.875rem;
+  }
+
+  .product-text-block__list {
+    padding: 1.25rem;
   }
 }
 
@@ -2018,6 +2234,21 @@ h6 {
   .main-content__find-box {
     display: none;
   }
+
+  .product-info__product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .product-text-block__list {
+    text-align: center;
+  }
 }
 
 @media (max-width: 61.99875em) and (max-width: 20em) {
@@ -2066,6 +2297,32 @@ h6 {
   .footer__menu {
     gap: 1.25rem;
   }
+}
+
+@media (min-width: 24.375em) and (max-width: 120em) {
+@supports (font-size: clamp( 0.875rem , 0.8431372549rem  +  0.1307189542vw , 1rem )) {
+    .main-content [class*=__table-box] {
+      font-size: clamp( 0.875rem , 0.8431372549rem  +  0.1307189542vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.8431372549rem  +  0.1307189542vw , 1rem )) {
+    .main-content [class*=__table-box] {
+      font-size: calc(0.875rem + 0.125 * (100vw - 24.375rem) / 95.625);
+    }
+}
+
+@supports (padding: clamp( 0.9375rem , 0.8578431373rem  +  0.3267973856vw , 1.25rem )) {
+    .product-text-block__list {
+      padding: clamp( 0.9375rem , 0.8578431373rem  +  0.3267973856vw , 1.25rem );
+    }
+}
+
+@supports not (padding: clamp( 0.9375rem , 0.8578431373rem  +  0.3267973856vw , 1.25rem )) {
+    .product-text-block__list {
+      padding: calc(0.9375rem + 0.3125 * (100vw - 24.375rem) / 95.625);
+    }
+}
 }
 
 @media (min-width: 20em) and (max-width: 78em) {
