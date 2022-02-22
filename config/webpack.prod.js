@@ -24,6 +24,7 @@ if (!pugPages.length) {
 		},
 		replace: [
 			{ regex: '../img', to: 'img' },
+			{ regex: '@url', to: '/Marqar/dist' },
 			{ regex: '@img', to: 'img', },
 			{ regex: 'NEW_PROJECT_NAME', to: rootFolder }
 		],
@@ -132,7 +133,8 @@ const config = {
 		alias: {
 			"@scss": `${paths.src}/scss`,
 			"@js": `${paths.src}/js`,
-			"@img": `${paths.src}/img`
+			"@img": `${paths.src}/img`,
+			"@url": '/Marqar/dist'
 		},
 	},
 }

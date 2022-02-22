@@ -14,7 +14,7 @@
 @import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "Proxima Nova";
+$fontFamily: "Gilroy";
 $fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
@@ -164,4 +164,7 @@ body {
 @import "main-content";
 @import "pages/about/content";
 @import "pages/products/content";
+@import "pages/plan/plan";
 @import "pages/product/product";
+@import "pages/documents/documents";
+@import "pages/contacts/contacts";

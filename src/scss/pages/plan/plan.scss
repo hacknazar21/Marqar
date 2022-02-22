@@ -2,7 +2,10 @@
     &__info {
     }
 }
-.about-info {
+.plan-info {
+    &_warning {
+    }
+
     &__text-block {
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 40, 16);
@@ -19,5 +22,20 @@
                 @include adaptiveValue("margin-bottom", 20, 8);
             }
         }
+    }
+
+    &__table-box {
+    }
+
+    &__table-header {
+    }
+
+    &__table-item {
+    }
+
+    &__table-data {
+    }
+
+    &__table-row {
     }
 }
