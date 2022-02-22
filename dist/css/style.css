@@ -816,6 +816,7 @@ h6 {
   -webkit-text-fill-color: transparent;
   color: #dac471;
   padding-right: 0.3125rem;
+  font-size: 8.125rem;
 }
 
 .face-case-card::before {
