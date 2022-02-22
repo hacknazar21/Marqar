@@ -1627,8 +1627,16 @@ h6 {
           box-shadow: none;
 }
 
-.product-info .product-cart__title {
+.product-info h2.product-cart__title {
   margin: 0;
+  margin-bottom: 1.25rem;
+}
+
+.product-info .product-cart__title {
+  margin-bottom: 0.75rem;
+}
+
+.product-info .product-cart__text {
   margin-bottom: 1.25rem;
 }
 
@@ -1654,8 +1662,12 @@ h6 {
   text-indent: 1.25rem;
 }
 
-.product-text-block__text {
+.product-text-block__paragraph-block {
   margin-top: 1.25rem;
+}
+
+.product-text-block__paragraph-block p:not(:last-child) {
+  margin-bottom: 0.625rem;
 }
 
 .product-text-block__title {
@@ -1682,8 +1694,12 @@ h6 {
   display: inline-block;
 }
 
-.product-list__text {
+.product-list__paragraph-block {
   margin-top: 0.625rem;
+}
+
+.product-list__paragraph-block p:not(:last-child) {
+  margin-bottom: 0.625rem;
 }
 
 .documents-info {

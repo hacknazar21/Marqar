@@ -13,8 +13,14 @@
         padding: 0;
         box-shadow: none;
     }
-    & .product-cart__title {
+    & h2.product-cart__title {
         margin: 0;
+        margin-bottom: rem(20);
+    }
+    & .product-cart__title {
+        margin-bottom: rem(12);
+    }
+    & .product-cart__text {
         margin-bottom: rem(20);
     }
     & .product-cart__text-block {
@@ -44,8 +50,13 @@
     }
     &__text-box {
     }
-    &__text {
+    &__paragraph-block {
         margin-top: rem(20);
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
     }
 
     &__title {
@@ -77,7 +88,12 @@
         display: inline-block;
     }
 
-    &__text {
+    &__paragraph-block {
         margin-top: rem(10);
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
     }
 }
