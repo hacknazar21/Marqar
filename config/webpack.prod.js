@@ -134,7 +134,6 @@ const config = {
 			"@scss": `${paths.src}/scss`,
 			"@js": `${paths.src}/js`,
 			"@img": `${paths.src}/img`,
-			"@url": '/Marqar/dist'
 		},
 	},
 }
