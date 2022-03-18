@@ -181,7 +181,7 @@ body {
 body {
   color: #fff;
   line-height: 1;
-  font-family: "Gilroy";
+  font-family: "ProximaNova";
   font-size: 0.875rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -193,7 +193,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Gilroy";
+  font-family: "ProximaNova";
   font-size: inherit;
 }
 
@@ -264,10 +264,8 @@ h6 {
   min-width: 0;
 }
 
-.no-webp .wrapper::before{
-  background: url("../img/bg.png") no-repeat top/120%; }
-
 .wrapper::before {
+  pointer-events: none;
   content: "";
   position: absolute;
   top: 0rem;
@@ -275,6 +273,7 @@ h6 {
   height: 100%;
   width: 100%;
   z-index: 0;
+  background: url("../img/bg.png") no-repeat top/120%;
   mix-blend-mode: normal;
   opacity: 0.05;
 }
@@ -667,13 +666,11 @@ h6 {
   line-height: 2rem;
 }
 
-.no-webp .footer__logo::before{
-  background: url("../img/logo.png") 100% 100% no-repeat; }
-
 .footer__logo::before {
   content: "";
   width: 2.875rem;
   height: 2rem;
+  background: url("../img/logo.png") 100% 100% no-repeat;
   background-position: center;
 }
 
@@ -1113,9 +1110,6 @@ h6 {
   position: relative;
 }
 
-.no-webp .about::before{
-  background: url("../img/about/bg.png") no-repeat top/cover; }
-
 .about::before {
   content: "";
   position: absolute;
@@ -1124,6 +1118,7 @@ h6 {
   height: 100%;
   width: 100%;
   z-index: 0;
+  background: url("../img/about/bg.png") no-repeat top/cover;
 }
 
 .about__container {
@@ -1230,22 +1225,18 @@ h6 {
   display: flex;
 }
 
-.no-webp .feedback::before{
-  background: url("../img/feedback/01.png") 100% 100% no-repeat; }
-
 .feedback::before {
   content: "";
+  background: url("../img/feedback/01.png") 100% 100% no-repeat;
   width: 18rem;
   height: 100%;
   position: absolute;
   left: -7.125rem;
 }
 
-.no-webp .feedback::after{
-  background: url("../img/feedback/02.png") 100% 100% no-repeat; }
-
 .feedback::after {
   content: "";
+  background: url("../img/feedback/02.png") 100% 100% no-repeat;
   width: 10.5rem;
   height: 100%;
   position: absolute;
@@ -1356,12 +1347,10 @@ h6 {
   color: #fff;
 }
 
-.no-webp .page__page-header{
-  background: url("../img/offer/bg.png") no-repeat top/cover; }
-
 .page__page-header {
   position: relative;
   z-index: 1;
+  background: url("../img/offer/bg.png") no-repeat top/cover;
   min-height: 15rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1816,6 +1805,135 @@ h6 {
           flex: 1 1 auto;
 }
 
+.profile__container {
+  padding-top: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  /*  margin-left: rem(308); */
+  margin-bottom: 19.6875rem;
+}
+
+.profile__content-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.profile__content-footer {
+  margin-top: 0.625rem;
+}
+
+.inner-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  gap: 0.625rem;
+}
+
+.inner-item {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 0.3125rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.inner-item__title {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 130%;
+  margin-bottom: 0.75rem;
+  color: #0b2137;
+}
+
+.inner-item__money-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.inner-item__valute {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2.125;
+  color: #a7a7a7;
+}
+
+.inner-item__value {
+  font-weight: 600;
+  font-size: 1.625rem;
+  line-height: 130%;
+  color: #464646;
+}
+
+.inner-item__money-changes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.inner-item__changes-value {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 130%;
+  color: #a7a7a7;
+}
+
+.inner-item__canvas {
+  width: 100%;
+  height: auto;
+}
+
+.inner-item__block:last-child {
+  text-align: right;
+}
+
+.inner-graph {
+  min-height: 100%;
+}
+
+.inner-graph__item {
+  height: 100%;
+}
+
+.inner-footer {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.625rem;
+}
+
+.inner-footer__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -1882,6 +2000,10 @@ h6 {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 0.9375rem;
+  }
+
+  .inner-item__canvas {
+    max-width: 16rem;
   }
 }
 
@@ -2160,8 +2282,9 @@ h6 {
 }
 
 @media (max-width: 61.99875em) {
-  .no-webp .wrapper::before{
-    background: url("../img/bg.png") no-repeat left/cover; }
+  .wrapper::before {
+    background: url("../img/bg.png") no-repeat left/cover;
+  }
 
   .product-cart__img-ibg {
     padding-bottom: 56.1797752809%;
@@ -2482,6 +2605,11 @@ h6 {
 
   .documents-card__img {
     display: none;
+  }
+
+  .inner-graph {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -3031,20 +3159,4 @@ h6 {
     top: 0;
     left: 0;
   }
-}
-
-.webp .wrapper::before{ background: url(../img/bg.webp) no-repeat top/120%; }
-
-.webp .footer__logo::before{ background: url(../img/logo.webp) 100% 100% no-repeat; }
-
-.webp .about::before{ background: url(../img/about/bg.webp) no-repeat top/cover; }
-
-.webp .feedback::before{ background: url(../img/feedback/01.webp) 100% 100% no-repeat; }
-
-.webp .feedback::after{ background: url(../img/feedback/02.webp) 100% 100% no-repeat; }
-
-.webp .page__page-header{ background: url(../img/offer/bg.webp) no-repeat top/cover; }
-
-@media (max-width: 61.99875em){
-  .webp .wrapper::before{ background: url(../img/bg.webp) no-repeat left/cover; }
 }

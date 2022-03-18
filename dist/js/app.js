@@ -249,6 +249,9 @@
             }
         }
     }
+    function getRandomBetween(min, max) {
+        return min + Math.floor(Math.random() * (max - min + 1));
+    }
     let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
         const targetBlockElement = document.querySelector(targetBlock);
         if (targetBlockElement) {
@@ -3988,6 +3991,93 @@
     };
     const da = new DynamicAdapt("max");
     da.init();
+    class Canvas {
+        constructor(param = {}) {
+            this.view = document.getElementById(param.canvasID);
+            this.context = this.view.getContext("2d");
+            this.view.width = param.w;
+            this.view.height = param.h;
+        }
+    }
+    const canvasGrid = new Canvas({
+        canvasID: "canvasGraph",
+        w: 256 * 2,
+        h: 91 * 2
+    });
+    function chart(data) {
+        canvasGrid.context.clearRect(0, 0, canvasGrid.view.width, canvasGrid.view.height);
+        const ROWS_COUNT = 4;
+        const step = canvasGrid.view.height / ROWS_COUNT;
+        canvasGrid.context.beginPath();
+        canvasGrid.context.lineWidth = 1;
+        canvasGrid.context.setLineDash([ 5, 3 ]);
+        canvasGrid.context.strokeStyle = "#A7A7A7";
+        canvasGrid.context.lineDashOffset = 4;
+        for (let i = 1; i <= ROWS_COUNT; i++) {
+            const y = step * i;
+            canvasGrid.context.moveTo(0, y);
+            canvasGrid.context.lineTo(canvasGrid.view.width, y);
+        }
+        canvasGrid.context.stroke();
+        canvasGrid.context.closePath();
+        const [minY, maxY] = computeBoudaries(data);
+        const yRatio = (maxY - minY) / (canvasGrid.view.height - 60);
+        const xRatio = canvasGrid.view.width / data.length;
+        canvasGrid.context.beginPath();
+        canvasGrid.context.setLineDash([]);
+        canvasGrid.context.lineWidth = 4;
+        const coords = data.map(((y, i) => [ Math.floor(i * xRatio), Math.floor(canvasGrid.view.height - 20 - (y[1] - minY) / yRatio) ]));
+        let region = new Path2D;
+        region.lineTo(0, canvasGrid.view.height);
+        for (const [x, y] of coords) {
+            canvasGrid.context.lineTo(x, y);
+            region.lineTo(x, y);
+        }
+        region.lineTo(canvasGrid.view.width - xRatio, canvasGrid.view.height);
+        region.closePath();
+        canvasGrid.context.strokeStyle = "#DAA520";
+        canvasGrid.context.fillStyle = "rgba(218, 196, 113, 0.2)";
+        canvasGrid.context.fill(region, "evenodd");
+        canvasGrid.context.stroke();
+        canvasGrid.context.closePath();
+    }
+    function computeBoudaries(data) {
+        let max, min;
+        for (const [, y] of data) {
+            if ("number" !== typeof min) min = y;
+            if ("number" !== typeof max) max = y;
+            if (min > y) min = y;
+            if (max < y) max = y;
+        }
+        return [ min, max ];
+    }
+    const script_data = [];
+    for (let x = 0; x < 50; x++) {
+        script_data.push(new Array);
+        for (let y = 0; y < 50; y++) ;
+    }
+    function dataSet() {
+        for (let x = 0; x < 50; x++) for (let y = 0; y < 50; y++) script_data[x][y] = getRandomBetween(10, 100);
+        chart(script_data);
+    }
+    start_animate(300);
+    function start_animate(duration) {
+        var requestID;
+        var startTime = null;
+        var animate = function(time) {
+            time = (new Date).getTime();
+            if (null === startTime) startTime = time;
+            var progress = time - startTime;
+            startTime++;
+            if (progress > duration) {
+                dataSet();
+                requestID = requestAnimationFrame(animate);
+                startTime = null;
+            } else cancelAnimationFrame(requestID);
+            requestID = requestAnimationFrame(animate);
+        };
+        animate();
+    }
     document.addEventListener("DOMContentLoaded", (event => {
         reverseElements();
         cutLongText();

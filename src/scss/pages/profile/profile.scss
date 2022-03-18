@@ -1,0 +1,121 @@
+.page {
+    &__profile {
+    }
+}
+.profile {
+    &__container {
+        padding-top: rem(20);
+        display: flex;
+        gap: rem(10);
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+        /*  margin-left: rem(308); */
+        margin-bottom: rem(315);
+    }
+
+    &__content-header {
+        display: flex;
+        gap: rem(10);
+        flex-wrap: wrap;
+    }
+
+    &__inner {
+    }
+
+    &__content-footer {
+        margin-top: rem(10);
+    }
+}
+.inner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    flex: 1 1 auto;
+    gap: rem(10);
+    &__item {
+    }
+}
+.inner-item {
+    background: #ffffff;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: rem(5);
+    padding: rem(12) rem(20);
+    &__title {
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 130%;
+        margin-bottom: rem(12);
+        color: #0b2137;
+    }
+
+    &__money-bar {
+        display: flex;
+        gap: rem(10);
+    }
+
+    &__valute {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: math.div(34, 16);
+        color: #a7a7a7;
+    }
+
+    &__value {
+        font-weight: 600;
+        font-size: rem(26);
+        line-height: 130%;
+
+        color: #464646;
+    }
+
+    &__money-changes {
+        display: flex;
+        gap: rem(10);
+    }
+
+    &__changes-value {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 130%;
+        color: #a7a7a7;
+    }
+
+    &__canvas {
+        @media (min-width: $tablet) {
+            max-width: rem(256);
+        }
+        width: 100%;
+        height: auto;
+    }
+
+    &__block {
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+.inner-graph {
+    min-height: 100%;
+
+    @media (max-width: $mobile) {
+        width: 100%;
+        height: 100%;
+    }
+    &__item {
+        height: 100%;
+    }
+}
+.inner-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: rem(10);
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+}

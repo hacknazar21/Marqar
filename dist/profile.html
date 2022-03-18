@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Продукты</title>
+	<title>Личный кабинет</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -47,105 +47,107 @@
 			</div>
 		</header>
 		<main class="page">
-			<section class="page__page-header page-header">
-				<div class="page-header__container">
-					<h1 class="page-header__title">Продукты</h1>
-					<div data-da=".pages-mobile__box, 768" class="page-header__pages">
-						<a href="/Marqar/dist/" class="page-header__main">Главная</a>
-						<span>/</span>
-						<div class="page-header__current">Продукты</div>
+
+			<section class="page__profile profile">
+				<div class="profile__container">
+					<!-- <aside class="profile__aside aside-profile">
+
+</aside> -->
+					<div class="profile__content">
+						<div class="profile__content-header">
+							<div class="profile__inner inner-grid">
+								<div class="inner-grid__item inner-item">
+									<h3 class="inner-item__title">Мои начисления:</h3>
+									<div class="inner-item__money-bar">
+										<div class="inner-item__valute">₸</div>
+										<div class="inner-item__value">2,700.00</div>
+									</div>
+									<div class="inner-item__money-changes">
+										<div class="inner-item__changes-value _graph-plus">+7,000 сегодня</div>
+									</div>
+								</div>
+								<div class="inner-grid__item inner-item">
+									<h3 class="inner-item__title">I-BANK:</h3>
+									<div class="inner-item__money-bar">
+										<div class="inner-item__valute">₸</div>
+										<div class="inner-item__value">12,150.00</div>
+									</div>
+									<div class="inner-item__money-changes">
+										<div class="inner-item__changes-value _graph-minus">-7,000 сегодня</div>
+									</div>
+								</div>
+								<div class="inner-grid__item inner-item">
+									<h3 class="inner-item__title">Гранты:</h3>
+									<div class="inner-item__money-bar">
+										<div class="inner-item__valute">₸</div>
+										<div class="inner-item__value">10,000.00</div>
+									</div>
+									<div class="inner-item__money-changes">
+										<div class="inner-item__changes-value _graph-plus">+7,000 сегодня</div>
+									</div>
+								</div>
+								<div class="inner-grid__item inner-item">
+									<h3 class="inner-item__title">Мои агенсткие:</h3>
+									<div class="inner-item__money-bar">
+										<div class="inner-item__valute">₸</div>
+										<div class="inner-item__value">50,550.00</div>
+									</div>
+									<div class="inner-item__money-changes">
+										<div class="inner-item__changes-value _graph-plus">-7,000 сегодня</div>
+									</div>
+								</div>
+							</div>
+							<div class="profile__inner inner-graph">
+								<div class="inner-graph__item inner-item">
+									<h3 class="inner-item__title">Мои доходы:</h3>
+									<canvas id="canvasGraph" class="inner-item__canvas"></canvas>
+									<div class="inner-item__money-bar">
+										<div class="inner-item__valute">₸</div>
+										<div class="inner-item__value">300,250.00</div>
+									</div>
+									<div class="inner-item__money-changes">
+										<div class="inner-item__changes-value _graph-plus">+7,000 сегодня</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="profile__content-footer">
+							<div class="profile__inner inner-footer">
+								<div class="inner-footer__item inner-item">
+									<div class="inner-item__block">
+										<h3 class="inner-item__title">Баланс АВ:</h3>
+										<div class="inner-item__money-bar">
+											<div class="inner-item__valute">₸</div>
+											<div class="inner-item__value">2,700.00</div>
+										</div>
+									</div>
+									<span></span>
+									<div class="inner-item__block">
+										<h3 class="inner-item__title _no-before">Вывод с АВ:</h3>
+										<div class="inner-item__money-bar">
+											<div class="inner-item__value">300,250.00</div>
+										</div>
+									</div>
+								</div>
+								<div class="inner-footer__item inner-item">
+									<div class="inner-item__block">
+										<h3 class="inner-item__title">Баланс ПВ:</h3>
+										<div class="inner-item__money-bar">
+											<div class="inner-item__valute">₸</div>
+											<div class="inner-item__value">2,700.00</div>
+										</div>
+									</div>
+									<span></span>
+									<div class="inner-item__block">
+										<h3 class="inner-item__title _no-before">Вывод с ПВ:</h3>
+										<div class="inner-item__money-bar">
+											<div class="inner-item__value">300,250.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</section>
-			<section class="pages-mobile">
-				<div class="pages-mobile__container">
-					<div class="pages-mobile__box"></div>
-				</div>
-			</section>
-			<section class="page__main-content main-content">
-				<div class="main-content__container">
-					<div class="main-content__info products-info">
-						<article class="products-info__product product-cart">
-							<div class="product-cart__img-ibg">
-								<img src="img/pages/products/01.jpg" alt="Card #1">
-								<span class="product-cart__type">Языки</span>
-							</div>
-							<div class="product-cart__title">Говорим по английски</div>
-							<div class="product-cart__text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-								sint. </div>
-							<div class="product-cart__some-info">
-								<div class="product-cart__info _icon-calendar">3 месяца</div>
-								<div class="product-cart__info _icon-book">12 занятий</div>
-							</div>
-							<a href="/Marqar/dist/english.html" class="product-cart__more _margin">Подробнее</a>
-						</article>
-						<article class="products-info__product product-cart">
-							<div class="product-cart__img-ibg">
-								<img src="img/pages/products/01.jpg" alt="Card #1">
-								<span class="product-cart__type">Языки</span>
-							</div>
-							<div class="product-cart__title">Говорим по английски</div>
-							<div class="product-cart__text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-								sint. </div>
-							<div class="product-cart__some-info">
-								<div class="product-cart__info _icon-calendar">3 месяца</div>
-								<div class="product-cart__info _icon-book">12 занятий</div>
-							</div>
-							<a href="/Marqar/dist/english.html" class="product-cart__more _margin">Подробнее</a>
-						</article>
-					</div>
-					<aside class="main-content__find-box main-find">
-						<form action="#" class="main-find__form">
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск" class="main-find__input">
-							<button type="submit" class="main-find__submit _icon-search"></button>
-						</form>
-						<div class="main-find__item main-aside-item">
-							<div class="main-aside-item__header">
-								<div class="main-aside-item__title _icon-program">Программы</div>
-								<a href="" class="main-aside-item__more">смотреть все</a>
-							</div>
-							<div class="main-aside-item__body">
-								<a href="" class="main-aside-item__link">Программа развития человеческого потенциала</a>
-								<a href="" class="main-aside-item__link">Партнерская программа</a>
-								<a href="" class="main-aside-item__link">Программа развития</a>
-							</div>
-						</div>
-						<div class="main-find__item main-aside-item">
-							<div class="main-aside-item__header">
-								<div class="main-aside-item__title _icon-doc">Документы</div>
-								<a href="/Marqar/dist/documents.html" class="main-aside-item__more">смотреть все</a>
-							</div>
-							<div class="main-aside-item__body">
-								<a href="" class="main-aside-item__link">Договор оферты по возмездному оказанию услуг</a>
-								<a href="" class="main-aside-item__link">Политика конфиденциальности</a>
-								<a href="" class="main-aside-item__link">Договор публичной оферты</a>
-								<a href="" class="main-aside-item__link">Условия отказа от заказа</a>
-								<a href="" class="main-aside-item__link">План вознаграждения</a>
-							</div>
-						</div>
-						<div class="main-find__item main-aside-item">
-							<div class="main-aside-item__header">
-								<div class="main-aside-item__title _icon-puzzle">Курсы</div>
-								<a href="/Marqar/dist/products.html" class="main-aside-item__more">смотреть все</a>
-							</div>
-							<div class="main-aside-item__body">
-								<a href="/Marqar/dist/english.html" class="main-aside-item__link">Курс: Английский язык</a>
-							</div>
-						</div>
-					</aside>
-				</div>
-			</section>
-			<section class="page__feedback feedback">
-				<div class="feedback__box">
-					<h2 class="feedback__title">Остались вопросы ?</h2>
-					<p class="feedback__text">
-						Заполните нашу заявку и мы свяжемся с вами в ближайшее время
-					</p>
-					<form action="" class="feedback__form form-feedback">
-						<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="form-feedback__input input">
-						<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="form-feedback__input input">
-						<button type="submit" class="form-feedback__submit">Отправить</button>
-					</form>
 				</div>
 			</section>
 
