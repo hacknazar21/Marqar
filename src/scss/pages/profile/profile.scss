@@ -1,5 +1,8 @@
 .page {
     &__profile {
+        @media (max-width: $mobile) {
+            margin-bottom: rem(20);
+        }
     }
 }
 .profile {
@@ -7,14 +10,17 @@
         padding-top: rem(20);
         display: flex;
         gap: rem(10);
-        align-items: center;
         justify-content: center;
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
     }
 
     &__content {
         flex: 1 1 auto;
         /*  margin-left: rem(308); */
-        margin-bottom: rem(315);
+        /* margin-bottom: rem(315); */
     }
 
     &__content-header {
@@ -53,22 +59,35 @@
 
     &__money-bar {
         display: flex;
+        align-items: center;
         gap: rem(10);
     }
 
     &__valute {
         font-weight: 400;
-        font-size: rem(16);
-        line-height: math.div(34, 16);
+        @include adaptiveValue("font-size", 16, 14);
+
+        line-height: math.div(1, 1);
         color: #a7a7a7;
     }
 
     &__value {
         font-weight: 600;
-        font-size: rem(26);
+        @include adaptiveValue("font-size", 26, 15);
         line-height: 130%;
 
         color: #464646;
+    }
+
+    &__under-graph {
+        margin-top: rem(23);
+        .inner-item__valute,
+        .inner-item__value {
+            font-weight: 600;
+            line-height: 130%;
+            @include adaptiveValue("font-size", 30, 15);
+            color: #464646;
+        }
     }
 
     &__money-changes {
@@ -101,7 +120,7 @@
 .inner-graph {
     min-height: 100%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
         width: 100%;
         height: 100%;
     }

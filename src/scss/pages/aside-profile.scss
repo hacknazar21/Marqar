@@ -1,0 +1,118 @@
+.profile {
+    &__aside {
+        max-width: rem(298);
+        align-self: flex-start;
+        background: #fbfafc;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        padding: rem(15);
+        margin-bottom: rem(34);
+        @media (min-width: em(1070)) {
+            flex: 1 1 auto;
+        }
+        @media (max-width: $mobile) {
+            align-self: stretch;
+            min-width: 100%;
+            margin-bottom: 0;
+        }
+    }
+}
+.aside-profile {
+    &__user {
+        position: relative;
+    }
+}
+.profile-user {
+    &__id {
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 130%;
+        color: #122a5f;
+        margin-bottom: rem(20);
+    }
+
+    &__block {
+        display: flex;
+        align-items: center;
+
+        gap: rem(16);
+    }
+
+    &__avatar-ibg {
+        padding-bottom: rem(80);
+        flex: 0 0 rem(80);
+        img {
+            max-width: 100%;
+        }
+        @media (max-width: $mobile) {
+            padding-bottom: rem(40);
+            flex: 0 0 rem(40);
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: rem(16);
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: 130%;
+        color: #0b2137;
+    }
+
+    &__menu {
+    }
+}
+.profile-menu {
+    &__icon {
+        display: none;
+        margin-left: auto;
+        transition: transform 0.3s ease 0s;
+        transform-origin: 50% 50%;
+        transform: rotate(90deg);
+        .submenu-open & {
+            transform: rotate(-90deg);
+        }
+        &::before {
+            @extend %ic;
+            content: "\e90c";
+            color: #daa520;
+            font-size: rem(20);
+        }
+        @media (max-width: $mobile) {
+            display: block;
+        }
+    }
+
+    &__body {
+        margin-top: rem(20);
+
+        .submenu-open & {
+            display: block;
+        }
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__link {
+        display: block;
+        padding: rem(11.5) rem(40);
+        font-weight: 600;
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: 130%;
+        color: #464646;
+        border-radius: 5px;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: #ffffff;
+                background: linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%);
+            }
+        }
+    }
+}

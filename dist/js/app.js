@@ -3999,84 +3999,169 @@
             this.view.height = param.h;
         }
     }
-    const canvasGrid = new Canvas({
-        canvasID: "canvasGraph",
-        w: 256 * 2,
-        h: 91 * 2
-    });
-    function chart(data) {
-        canvasGrid.context.clearRect(0, 0, canvasGrid.view.width, canvasGrid.view.height);
-        const ROWS_COUNT = 4;
-        const step = canvasGrid.view.height / ROWS_COUNT;
-        canvasGrid.context.beginPath();
-        canvasGrid.context.lineWidth = 1;
-        canvasGrid.context.setLineDash([ 5, 3 ]);
-        canvasGrid.context.strokeStyle = "#A7A7A7";
-        canvasGrid.context.lineDashOffset = 4;
-        for (let i = 1; i <= ROWS_COUNT; i++) {
-            const y = step * i;
-            canvasGrid.context.moveTo(0, y);
-            canvasGrid.context.lineTo(canvasGrid.view.width, y);
+    if (null != document.querySelector("#canvasGraph")) {
+        const canvasGrid = new Canvas({
+            canvasID: "canvasGraph",
+            w: 256 * 2,
+            h: 91 * 2
+        });
+        const {width: width, height: height} = canvasGrid.view.getBoundingClientRect();
+        canvasGrid.view.width = 2 * width;
+        canvasGrid.view.height = 2 * height;
+        const data = [];
+        for (let index = 0; index < 10; index++) data.push([ getRandomBetween(0, 100), getRandomBetween(0, 100) ]);
+        const chartObj = chart(data);
+        chartObj.init();
+        function chart(data) {
+            const ROWS_COUNT = 4;
+            const RADIUS_CIRCLE = 6;
+            let raf;
+            const step = (canvasGrid.view.height - 2) / ROWS_COUNT;
+            const proxy = new Proxy({}, {
+                set(...args) {
+                    const result = Reflect.set(...args);
+                    raf = requestAnimationFrame(paint);
+                    return result;
+                }
+            });
+            function clear() {
+                canvasGrid.context.clearRect(0, 0, canvasGrid.view.width, canvasGrid.view.height);
+            }
+            function paint() {
+                clear();
+                const [minY, maxY] = computeBoudaries(data);
+                const yRatio = (maxY - minY) / (canvasGrid.view.height - 60);
+                const xRatio = canvasGrid.view.width / data.length;
+                const coords = data.map(((y, i) => [ Math.floor(i * xRatio), Math.floor(canvasGrid.view.height - 20 - (y[1] - minY) / yRatio) ]));
+                let region = new Path2D;
+                let circle = new Path2D;
+                canvasGrid.context.beginPath();
+                canvasGrid.context.setLineDash([]);
+                canvasGrid.context.lineWidth = 4;
+                region.lineTo(0, canvasGrid.view.height);
+                let xCircle, yCircle;
+                for (const [x, y] of coords) {
+                    xCircle = x;
+                    yCircle = y;
+                    canvasGrid.context.lineTo(x, y);
+                    region.lineTo(x, y);
+                    if (isOver(proxy.mouse, x, data.length)) {
+                        canvasGrid.context.arc(x, y, RADIUS_CIRCLE, 0, 2 * Math.PI);
+                        canvasGrid.context.shadowBlur = 0;
+                        canvasGrid.context.strokeStyle = "#DAA520";
+                        canvasGrid.context.stroke(circle, "evenodd");
+                    }
+                }
+                canvasGrid.context.strokeStyle = "#DAA520";
+                canvasGrid.context.shadowBlur = 0;
+                canvasGrid.context.stroke();
+                circle.arc(xCircle, yCircle, RADIUS_CIRCLE, 0, 2 * Math.PI);
+                canvasGrid.context.shadowBlur = 20;
+                canvasGrid.context.shadowColor = "green";
+                canvasGrid.context.fillStyle = "#DAA520";
+                canvasGrid.context.fill(circle, "evenodd");
+                circle.closePath();
+                canvasGrid.context.beginPath();
+                canvasGrid.context.shadowBlur = 0;
+                canvasGrid.context.strokeStyle = "grey";
+                canvasGrid.context.lineWidth = .7;
+                for (let i = 1; i < data.length; i++) {
+                    const x = i * xRatio;
+                    if (isOver(proxy.mouse, x, data.length)) {
+                        canvasGrid.context.save();
+                        canvasGrid.context.moveTo(x, 0);
+                        canvasGrid.context.lineTo(x, canvasGrid.view.height);
+                        canvasGrid.context.restore();
+                    }
+                }
+                canvasGrid.context.stroke();
+                canvasGrid.context.closePath();
+                canvasGrid.context.shadowBlur = 0;
+                region.lineTo(canvasGrid.view.width - xRatio, canvasGrid.view.height);
+                region.closePath();
+                canvasGrid.context.fillStyle = "rgba(218, 196, 113, 0.2)";
+                canvasGrid.context.fill(region, "evenodd");
+                canvasGrid.context.closePath();
+                canvasGrid.context.beginPath();
+                console.log(step);
+                for (let i = 1; i <= ROWS_COUNT; i++) {
+                    const y = step * i;
+                    canvasGrid.context.moveTo(0, y);
+                    canvasGrid.context.lineTo(canvasGrid.view.width, y);
+                }
+                canvasGrid.context.lineWidth = 1;
+                canvasGrid.context.lineDashOffset = 4;
+                canvasGrid.context.setLineDash([ 4, 3 ]);
+                canvasGrid.context.strokeStyle = "#A7A7A7";
+                canvasGrid.context.stroke();
+                canvasGrid.context.closePath();
+            }
+            function isOver(mouse, x, length) {
+                if (!mouse) return false;
+                const width = canvasGrid.view.width / length;
+                console.log([ mouse.x, x ]);
+                return Math.abs(x - mouse.x) < width / 2;
+            }
+            canvasGrid.view.addEventListener("mousemove", mousemove);
+            canvasGrid.view.addEventListener("mouseleave", mouseleave);
+            function mousemove({clientX: clientX, clientY: clientY}) {
+                const {left: left} = canvasGrid.view.getBoundingClientRect();
+                proxy.mouse = {
+                    x: 2 * (clientX - left)
+                };
+            }
+            function mouseleave() {
+                proxy.mouse = {};
+            }
+            return {
+                update() {
+                    paint();
+                },
+                init() {
+                    paint();
+                },
+                destroy() {
+                    cancelAnimationFrame(raf);
+                    canvasGrid.view.removeEventListener("mousemove", mousemove);
+                }
+            };
         }
-        canvasGrid.context.stroke();
-        canvasGrid.context.closePath();
-        const [minY, maxY] = computeBoudaries(data);
-        const yRatio = (maxY - minY) / (canvasGrid.view.height - 60);
-        const xRatio = canvasGrid.view.width / data.length;
-        canvasGrid.context.beginPath();
-        canvasGrid.context.setLineDash([]);
-        canvasGrid.context.lineWidth = 4;
-        const coords = data.map(((y, i) => [ Math.floor(i * xRatio), Math.floor(canvasGrid.view.height - 20 - (y[1] - minY) / yRatio) ]));
-        let region = new Path2D;
-        region.lineTo(0, canvasGrid.view.height);
-        for (const [x, y] of coords) {
-            canvasGrid.context.lineTo(x, y);
-            region.lineTo(x, y);
+        function computeBoudaries(data) {
+            let max, min;
+            for (const [, y] of data) {
+                if ("number" !== typeof min) min = y;
+                if ("number" !== typeof max) max = y;
+                if (min > y) min = y;
+                if (max < y) max = y;
+            }
+            return [ min, max ];
         }
-        region.lineTo(canvasGrid.view.width - xRatio, canvasGrid.view.height);
-        region.closePath();
-        canvasGrid.context.strokeStyle = "#DAA520";
-        canvasGrid.context.fillStyle = "rgba(218, 196, 113, 0.2)";
-        canvasGrid.context.fill(region, "evenodd");
-        canvasGrid.context.stroke();
-        canvasGrid.context.closePath();
-    }
-    function computeBoudaries(data) {
-        let max, min;
-        for (const [, y] of data) {
-            if ("number" !== typeof min) min = y;
-            if ("number" !== typeof max) max = y;
-            if (min > y) min = y;
-            if (max < y) max = y;
-        }
-        return [ min, max ];
-    }
-    const script_data = [];
-    for (let x = 0; x < 50; x++) {
-        script_data.push(new Array);
-        for (let y = 0; y < 50; y++) ;
-    }
-    function dataSet() {
-        for (let x = 0; x < 50; x++) for (let y = 0; y < 50; y++) script_data[x][y] = getRandomBetween(10, 100);
-        chart(script_data);
-    }
-    start_animate(300);
-    function start_animate(duration) {
-        var requestID;
-        var startTime = null;
-        var animate = function(time) {
-            time = (new Date).getTime();
-            if (null === startTime) startTime = time;
-            var progress = time - startTime;
-            startTime++;
-            if (progress > duration) {
-                dataSet();
+        start_animate(8e3);
+        function start_animate(duration) {
+            var requestID;
+            var startTime = null;
+            var animate = function(time) {
+                time = (new Date).getTime();
+                if (null === startTime) startTime = time;
+                var progress = time - startTime;
+                startTime++;
+                if (progress > duration) {
+                    data.push([ getRandomBetween(0, 100), getRandomBetween(0, 100) ]);
+                    chartObj.update();
+                    requestID = requestAnimationFrame(animate);
+                    startTime = null;
+                } else cancelAnimationFrame(requestID);
                 requestID = requestAnimationFrame(animate);
-                startTime = null;
-            } else cancelAnimationFrame(requestID);
-            requestID = requestAnimationFrame(animate);
-        };
-        animate();
+            };
+            animate();
+        }
+    }
+    if (null != document.querySelector("[data-submenubtn]")) {
+        const submenubtn = document.querySelector("[data-submenubtn]");
+        submenubtn.addEventListener("click", (event => {
+            event.preventDefault();
+            document.documentElement.classList.toggle("submenu-open");
+        }));
     }
     document.addEventListener("DOMContentLoaded", (event => {
         reverseElements();

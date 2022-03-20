@@ -7,129 +7,223 @@ import { getRandomBetween } from "./functions.js";
 
 
 
-const canvasGrid = new Canvas({
-    canvasID: "canvasGraph",
-    w: 256 * 2,
-    h: 91 * 2
-});
+if (document.querySelector('#canvasGraph') != null) {
+    const canvasGrid = new Canvas({
+        canvasID: "canvasGraph",
+        w: 256 * 2,
+        h: 91 * 2
+    });
+    const { width, height } = canvasGrid.view.getBoundingClientRect();
+    canvasGrid.view.width = width * 2;
+    canvasGrid.view.height = height * 2;
 
-function chart(data) {
+    const data = [];
 
-    canvasGrid.context.clearRect(0, 0, canvasGrid.view.width, canvasGrid.view.height);
-    const ROWS_COUNT = 4;
-    const step = canvasGrid.view.height / ROWS_COUNT;
-
-
-    canvasGrid.context.beginPath();
-    canvasGrid.context.lineWidth = 1;
-    canvasGrid.context.setLineDash([5, 3]);
-    canvasGrid.context.strokeStyle = "#A7A7A7";
-
-    canvasGrid.context.lineDashOffset = 4;
-    for (let i = 1; i <= ROWS_COUNT; i++) {
-        const y = step * i;
-        canvasGrid.context.moveTo(0, y);
-        canvasGrid.context.lineTo(canvasGrid.view.width, y);
-    }
-    canvasGrid.context.stroke();
-    canvasGrid.context.closePath();
-
-    const [minY, maxY] = computeBoudaries(data);
-    const yRatio = (maxY - minY) / (canvasGrid.view.height - 60);
-    const xRatio = canvasGrid.view.width / data.length;
-
-    canvasGrid.context.beginPath();
-
-    canvasGrid.context.setLineDash([]);
-
-    canvasGrid.context.lineWidth = 4;
-
-    const coords = data.map((y, i) => [
-        Math.floor(i * xRatio),
-        Math.floor(canvasGrid.view.height - 20 - (y[1] - minY) / yRatio),
-    ])
-    let region = new Path2D();
-    region.lineTo(0, canvasGrid.view.height);
-
-    for (const [x, y] of coords) {
-        canvasGrid.context.lineTo(x, y);
-        region.lineTo(x, y);
+    for (let index = 0; index < 10; index++) {
+        data.push([getRandomBetween(0, 100), getRandomBetween(0, 100)]);
 
     }
-    region.lineTo(canvasGrid.view.width - xRatio, canvasGrid.view.height);
 
-    region.closePath();
-
-    canvasGrid.context.strokeStyle = "#DAA520";
-    canvasGrid.context.fillStyle = 'rgba(218, 196, 113, 0.2)';
-    canvasGrid.context.fill(region, 'evenodd')
-    canvasGrid.context.stroke();
-    canvasGrid.context.closePath();
-
-}
-
-function computeBoudaries(data) {
-    let max, min;
-
-    for (const [, y] of data) {
-        if (typeof min !== 'number') min = y;
-        if (typeof max !== 'number') max = y;
-
-        if (min > y) min = y;
-        if (max < y) max = y;
-    }
-
-    return [min, max];
-}
-const data = [];
-for (let x = 0; x < 50; x++) {
-    data.push(new Array());
-    for (let y = 0; y < 50; y++) {
-    }
-}
+    const chartObj = chart(data);
+    chartObj.init();
 
 
-function dataSet() {
-    for (let x = 0; x < 50; x++) {
-        for (let y = 0; y < 50; y++) {
-            data[x][y] = getRandomBetween(10, 100);
+    function chart(data) {
+
+        const ROWS_COUNT = 4;
+        const RADIUS_CIRCLE = 6;
+        let raf;
+        const step = (canvasGrid.view.height - 2) / ROWS_COUNT;
+
+        const proxy = new Proxy({}, {
+            set(...args) {
+                const result = Reflect.set(...args);
+                raf = requestAnimationFrame(paint);
+                return result;
+            }
+        });
+
+        function clear() {
+            canvasGrid.context.clearRect(0, 0, canvasGrid.view.width, canvasGrid.view.height);
+        }
+
+        function paint() {
+            clear();
+            const [minY, maxY] = computeBoudaries(data);
+            const yRatio = (maxY - minY) / (canvasGrid.view.height - 60);
+            const xRatio = canvasGrid.view.width / data.length;
+            const coords = data.map((y, i) => [
+                Math.floor(i * xRatio),
+                Math.floor(canvasGrid.view.height - 20 - (y[1] - minY) / yRatio),
+            ])
+            let region = new Path2D();
+            let circle = new Path2D();
+
+            /* Рисование линии графика */
+            canvasGrid.context.beginPath();
+            canvasGrid.context.setLineDash([]);
+            canvasGrid.context.lineWidth = 4;
+            region.lineTo(0, canvasGrid.view.height);
+            let xCircle, yCircle;
+            for (const [x, y] of coords) {
+                xCircle = x;
+                yCircle = y;
+                canvasGrid.context.lineTo(x, y);
+                region.lineTo(x, y);
+                if (isOver(proxy.mouse, x, data.length)) {
+                    canvasGrid.context.arc(x, y, RADIUS_CIRCLE, 0, Math.PI * 2);
+                    canvasGrid.context.shadowBlur = 0;
+                    canvasGrid.context.strokeStyle = "#DAA520";
+                    canvasGrid.context.stroke(circle, 'evenodd')
+                }
+            }
+            canvasGrid.context.strokeStyle = "#DAA520";
+            canvasGrid.context.shadowBlur = 0;
+            canvasGrid.context.stroke();
+            /* Рисование линии графика */
+
+            /* Рисование следящего кружка  */
+            circle.arc(xCircle, yCircle, RADIUS_CIRCLE, 0, Math.PI * 2);
+            canvasGrid.context.shadowBlur = 20;
+            canvasGrid.context.shadowColor = "green";
+            canvasGrid.context.fillStyle = "#DAA520";
+            canvasGrid.context.fill(circle, 'evenodd')
+            circle.closePath();
+            /* Рисование следящего кружка  */
+
+            /* Рисование линии при наведении  */
+            canvasGrid.context.beginPath();
+            canvasGrid.context.shadowBlur = 0;
+            canvasGrid.context.strokeStyle = "grey";
+            canvasGrid.context.lineWidth = 0.7;
+            for (let i = 1; i < data.length; i++) {
+                const x = i * xRatio;
+                if (isOver(proxy.mouse, x, data.length)) {
+                    canvasGrid.context.save()
+                    canvasGrid.context.moveTo(x, 0)
+                    canvasGrid.context.lineTo(x, canvasGrid.view.height)
+                    canvasGrid.context.restore()
+                }
+            }
+            canvasGrid.context.stroke();
+            canvasGrid.context.closePath();
+            /* Рисование линии при наведении  */
+
+            /* Рисование области под графиком  */
+            canvasGrid.context.shadowBlur = 0;
+            region.lineTo(canvasGrid.view.width - xRatio, canvasGrid.view.height);
+            region.closePath();
+            canvasGrid.context.fillStyle = 'rgba(218, 196, 113, 0.2)';
+            canvasGrid.context.fill(region, 'evenodd')
+            canvasGrid.context.closePath();
+            /* Рисование области под графиком  */
+
+            /* Рисование линий заднего фона графика */
+            canvasGrid.context.beginPath();
+            console.log(step);
+            for (let i = 1; i <= ROWS_COUNT; i++) {
+                const y = step * i;
+                canvasGrid.context.moveTo(0, y);
+                canvasGrid.context.lineTo(canvasGrid.view.width, y);
+            }
+            canvasGrid.context.lineWidth = 1;
+            canvasGrid.context.lineDashOffset = 4;
+            canvasGrid.context.setLineDash([4, 3]);
+            canvasGrid.context.strokeStyle = "#A7A7A7";
+            canvasGrid.context.stroke();
+            canvasGrid.context.closePath();
+            /* Рисование линий заднего фона графика */
+        }
+
+        function isOver(mouse, x, length) {
+
+            if (!mouse) return false;
+            const width = canvasGrid.view.width / length;
+            console.log([mouse.x, x])
+            return Math.abs(x - mouse.x) < (width / 2);
+        }
+        canvasGrid.view.addEventListener('mousemove', mousemove)
+        canvasGrid.view.addEventListener('mouseleave', mouseleave)
+
+        function mousemove({ clientX, clientY }) {
+            const { left } = canvasGrid.view.getBoundingClientRect();
+            proxy.mouse = {
+                x: (clientX - left) * 2,
+            }
+        }
+
+        function mouseleave() {
+            proxy.mouse = {}
+        }
+        return {
+            update() {
+                paint();
+            },
+            init() {
+
+                paint();
+            },
+            destroy() {
+                cancelAnimationFrame(raf);
+                canvasGrid.view.removeEventListener('mousemove', mousemove);
+            }
         }
     }
-    chart(data)
-}
+    function computeBoudaries(data) {
+        let max, min;
 
+        for (const [, y] of data) {
+            if (typeof min !== 'number') min = y;
+            if (typeof max !== 'number') max = y;
 
-start_animate(300);
-function start_animate(duration) {
-    var requestID;
-    var startTime = null;
-    var animate = function (time) {
-        time = new Date().getTime(); //millisecond-timstamp
-        if (startTime === null) {
-            startTime = time;
+            if (min > y) min = y;
+            if (max < y) max = y;
         }
-        var progress = time - startTime;
 
-        startTime++;
+        return [min, max];
+    }
 
-        if (progress > duration) {
-            dataSet();
 
+    start_animate(8000);
+    function start_animate(duration) {
+        var requestID;
+        var startTime = null;
+        var animate = function (time) {
+            time = new Date().getTime(); //millisecond-timstamp
+            if (startTime === null) {
+                startTime = time;
+            }
+            var progress = time - startTime;
+
+            startTime++;
+
+            if (progress > duration) {
+                data.push([getRandomBetween(0, 100), getRandomBetween(0, 100)]);
+                chartObj.update();
+
+                requestID = requestAnimationFrame(animate);
+                startTime = null;
+
+            }
+            else {
+                cancelAnimationFrame(requestID);
+            }
             requestID = requestAnimationFrame(animate);
-            startTime = null;
+        }
 
-        }
-        else {
-            cancelAnimationFrame(requestID);
-        }
-        requestID = requestAnimationFrame(animate);
+
+
+        animate();
     }
-
-
-
-    animate();
 }
 
+if (document.querySelector('[data-submenubtn]') != null) {
+    const submenubtn = document.querySelector('[data-submenubtn]');
+    submenubtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.documentElement.classList.toggle('submenu-open');
+    });
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
     reverseElements();
