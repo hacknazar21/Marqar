@@ -2008,6 +2008,13 @@ h6 {
   color: #0b2137;
 }
 
+.profile-user__menu {
+  -webkit-transition: height 0.3s ease 0s, margin-top 0.3s ease 0s;
+  -o-transition: height 0.3s ease 0s, margin-top 0.3s ease 0s;
+  transition: height 0.3s ease 0s, margin-top 0.3s ease 0s;
+  overflow: hidden;
+}
+
 .profile-menu__icon {
   display: none;
   margin-left: auto;
@@ -2022,6 +2029,8 @@ h6 {
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
+  width: 50px;
+  height: 40px;
 }
 
 .submenu-open .profile-menu__icon {
@@ -2034,14 +2043,6 @@ h6 {
   content: "\e90c";
   color: #daa520;
   font-size: 1.25rem;
-}
-
-.profile-menu__body {
-  margin-top: 1.25rem;
-}
-
-.submenu-open .profile-menu__body {
-  display: block;
 }
 
 .profile-menu__link {
@@ -2809,12 +2810,16 @@ h6 {
             flex: 0 0 2.5rem;
   }
 
-  .profile-menu__icon {
-    display: block;
+  .profile-user__menu {
+    margin-top: 0;
   }
 
-  .profile-menu__body {
-    display: none;
+  .submenu-open .profile-user__menu {
+    margin-top: 1.25rem;
+  }
+
+  .profile-menu__icon {
+    display: block;
   }
 }
 

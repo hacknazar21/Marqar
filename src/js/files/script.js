@@ -145,7 +145,7 @@ if (document.querySelector('#canvasGraph') != null) {
         canvasGrid.view.addEventListener('mousemove', mousemove)
         canvasGrid.view.addEventListener('mouseleave', mouseleave)
 
-        function mousemove({ clientX, clientY }) {
+        function mousemove({ clientX }) {
             const { left } = canvasGrid.view.getBoundingClientRect();
             proxy.mouse = {
                 x: (clientX - left) * 2,
@@ -219,17 +219,32 @@ if (document.querySelector('#canvasGraph') != null) {
 
 if (document.querySelector('[data-submenubtn]') != null) {
     const submenubtn = document.querySelector('[data-submenubtn]');
+    let submenuParams = {};
+    if (document.querySelector('[data-submenu]') != null) {
+        const submenu = document.querySelector('[data-submenu]');
+        const { height } = submenu.getBoundingClientRect();
+        submenuParams = {
+            el: submenu,
+            h: height
+        }
+        submenuParams.el.style.height = '0px';
+    }
     submenubtn.addEventListener('click', (event) => {
         event.preventDefault();
         document.documentElement.classList.toggle('submenu-open');
+        if (document.documentElement.classList.contains('submenu-open') && submenuParams.el != '') submenuParams.el.style.height = `${submenuParams.h}px`;
+        else submenuParams.el.style.height = '0px';
     });
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     reverseElements();
     cutLongText();
 
-    paintTable();
+    const el = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"]');
+    const elCell = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"] [class*="__table-item"]');
+
+    if (el.length != 0 && elCell.length) paintTable(el, elCell);
 });
 
 document.addEventListener('click', (event) => {
@@ -298,9 +313,8 @@ function reverseElements() {
         }
     }
 }
-function paintTable() {
-    const el = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"]');
-    const elCell = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"] [class*="__table-item"]');
+function paintTable(el, elCell) {
+
 
     let mass2 = new Array();
     let mass3 = new Array();

@@ -4104,7 +4104,7 @@
             }
             canvasGrid.view.addEventListener("mousemove", mousemove);
             canvasGrid.view.addEventListener("mouseleave", mouseleave);
-            function mousemove({clientX: clientX, clientY: clientY}) {
+            function mousemove({clientX: clientX}) {
                 const {left: left} = canvasGrid.view.getBoundingClientRect();
                 proxy.mouse = {
                     x: 2 * (clientX - left)
@@ -4158,15 +4158,28 @@
     }
     if (null != document.querySelector("[data-submenubtn]")) {
         const submenubtn = document.querySelector("[data-submenubtn]");
+        let submenuParams = {};
+        if (null != document.querySelector("[data-submenu]")) {
+            const submenu = document.querySelector("[data-submenu]");
+            const {height: height} = submenu.getBoundingClientRect();
+            submenuParams = {
+                el: submenu,
+                h: height
+            };
+            submenuParams.el.style.height = "0px";
+        }
         submenubtn.addEventListener("click", (event => {
             event.preventDefault();
             document.documentElement.classList.toggle("submenu-open");
+            if (document.documentElement.classList.contains("submenu-open") && "" != submenuParams.el) submenuParams.el.style.height = `${submenuParams.h}px`; else submenuParams.el.style.height = "0px";
         }));
     }
-    document.addEventListener("DOMContentLoaded", (event => {
+    document.addEventListener("DOMContentLoaded", (() => {
         reverseElements();
         cutLongText();
-        paintTable();
+        const el = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"]');
+        const elCell = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"] [class*="__table-item"]');
+        if (0 != el.length && elCell.length) paintTable(el, elCell);
     }));
     document.addEventListener("click", (event => {
         console.log(event.target);
@@ -4207,9 +4220,7 @@
         const el = document.querySelectorAll(".about__item");
         if (0 != el.length) for (let elIndex in el) if ((parseInt(elIndex) + 1) % 2 == 0) el[elIndex].classList.add("odd");
     }
-    function paintTable() {
-        const el = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"]');
-        const elCell = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"] [class*="__table-item"]');
+    function paintTable(el, elCell) {
         let mass2 = new Array;
         let mass3 = new Array;
         let sum1 = 0, sum2 = 0;

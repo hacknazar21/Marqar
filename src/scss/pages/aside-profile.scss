@@ -59,6 +59,14 @@
     }
 
     &__menu {
+        transition: height 0.3s ease 0s, margin-top 0.3s ease 0s;
+        overflow: hidden;
+        @media (max-width: $mobile) {
+            margin-top: 0;
+            .submenu-open & {
+                margin-top: rem(20);
+            }
+        }
     }
 }
 .profile-menu {
@@ -68,6 +76,8 @@
         transition: transform 0.3s ease 0s;
         transform-origin: 50% 50%;
         transform: rotate(90deg);
+        width: 50px;
+        height: 40px;
         .submenu-open & {
             transform: rotate(-90deg);
         }
@@ -83,14 +93,6 @@
     }
 
     &__body {
-        margin-top: rem(20);
-
-        .submenu-open & {
-            display: block;
-        }
-        @media (max-width: $mobile) {
-            display: none;
-        }
     }
 
     &__list {
