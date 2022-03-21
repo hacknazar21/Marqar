@@ -808,16 +808,21 @@ h6 {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  position: relative;
+  width: 100%;
+  height: 10px;
 }
 
 .case-card__more::after {
+  position: absolute;
+  top: calc(50% - 4.0625rem);
+  right: 0;
   content: "\e900";
   background: -o-linear-gradient(180.65deg, #daa520 0%, #dac471 42.71%, #dac471 61.98%, #daa520 100%);
   background: linear-gradient(269.35deg, #daa520 0%, #dac471 42.71%, #dac471 61.98%, #daa520 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #dac471;
-  padding-right: 0.3125rem;
   font-size: 8.125rem;
 }
 
@@ -1178,6 +1183,10 @@ h6 {
   color: #a0aec9;
 }
 
+.item-about__text a {
+  color: red;
+}
+
 .item-about__text > p:not(:last-child) {
   margin-bottom: 0.9375rem;
 }
@@ -1213,7 +1222,7 @@ h6 {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 36.9458128079%;
           flex: 0 0 36.9458128079%;
-  max-height: 17.8125rem;
+  height: 17.8125rem;
 }
 
 .item-about__img-ibg img {

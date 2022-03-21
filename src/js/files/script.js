@@ -286,7 +286,7 @@ document.addEventListener('click', (event) => {
 function cutLongText() {
     var elem, size, text;
     elem = document.getElementsByClassName('case-card__text');
-    size = 220; // Количество отображаемых символов
+    size = 225; // Количество отображаемых символов
     for (let element of elem) {
         text = element.innerHTML;
         if (text.length > size) {
@@ -299,8 +299,9 @@ function cutLongText() {
                     size++;
                 }
             }
+            element.innerHTML = text + '...';
         }
-        element.innerHTML = text + '...';
+
     }
 }
 function reverseElements() {

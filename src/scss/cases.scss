@@ -118,14 +118,19 @@ $hoverTitleSize: rem(15);
     &__more {
         align-self: end;
         display: inline-flex;
+        position: relative;
+        width: 100%;
+        height: 10px;
         &::after {
+            position: absolute;
+            top: calc(50% - rem(65));
+            right: 0;
             @extend %ic;
             content: "\e900";
             background: $goldColor;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: #dac471;
-            padding-right: rem(5);
             font-size: rem(130);
         }
     }

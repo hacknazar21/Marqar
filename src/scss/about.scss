@@ -66,6 +66,9 @@
         text-indent: rem(20);
         margin-top: rem(15);
         margin-bottom: rem(20);
+        a {
+            color: red;
+        }
         & > p:not(:last-child) {
             margin-bottom: rem(15);
         }
@@ -94,7 +97,8 @@
 
     &__img-ibg {
         flex: 0 0 percent(450, 1218);
-        max-height: rem(285);
+        height: rem(285);
+
         @media (max-width: $tablet) {
             padding-bottom: rem(285);
         }

@@ -4206,14 +4206,16 @@
     function cutLongText() {
         var elem, size, text;
         elem = document.getElementsByClassName("case-card__text");
-        size = 220;
+        size = 225;
         for (let element of elem) {
             text = element.innerHTML;
-            if (text.length > size) while (true) if (" " == text.slice(0, size)[size - 1] && "." != text.slice(0, size)[size - 2]) {
-                text = text.slice(0, size);
-                break;
-            } else size++;
-            element.innerHTML = text + "...";
+            if (text.length > size) {
+                while (true) if (" " == text.slice(0, size)[size - 1] && "." != text.slice(0, size)[size - 2]) {
+                    text = text.slice(0, size);
+                    break;
+                } else size++;
+                element.innerHTML = text + "...";
+            }
         }
     }
     function reverseElements() {
