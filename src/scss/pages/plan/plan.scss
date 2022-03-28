@@ -6,24 +6,6 @@
     &_warning {
     }
 
-    &__text-block {
-        &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 40, 16);
-        }
-    }
-
-    &__title {
-        @include adaptiveValue("margin-bottom", 20, 8);
-    }
-
-    &__paragraph-block {
-        p {
-            &:not(:last-child) {
-                @include adaptiveValue("margin-bottom", 20, 8);
-            }
-        }
-    }
-
     &__table-box {
     }
 

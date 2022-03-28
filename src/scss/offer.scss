@@ -78,12 +78,25 @@ $offerMarginTopBtn: rem(0);
     &__text {
         font-family: Gilroy;
         font-weight: 500;
-        @include adaptiveValue("font-size", 22, 16);
-
+        @include adaptiveValue("font-size", 60, 20);
+        &:not(:last-child) {
+            margin-bottom: rem(33);
+        }
         line-height: 150%;
         /* or 33px */
-
-        color: #b5cdf2;
+        font-weight: 650;
+        /* color: #b5cdf2; */
+        color: #fff;
+        &.right {
+            font-weight: normal;
+            @include adaptiveValue("font-size", 22, 16);
+        }
+        span {
+            font-weight: 500;
+            font-size: rem(12);
+            line-height: 150%;
+            color: #b5cdf2;
+        }
     }
 }
 

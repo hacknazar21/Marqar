@@ -61,6 +61,7 @@
     &__menu {
         transition: height 0.3s ease 0s, margin-top 0.3s ease 0s;
         overflow: hidden;
+        margin-top: rem(20);
         @media (max-width: $mobile) {
             margin-top: 0;
             .submenu-open & {

@@ -4156,7 +4156,7 @@
             animate();
         }
     }
-    if (null != document.querySelector("[data-submenubtn]")) {
+    if (null != document.querySelector("[data-submenubtn]") && window.innerWidth <= 767) {
         const submenubtn = document.querySelector("[data-submenubtn]");
         let submenuParams = {};
         if (null != document.querySelector("[data-submenu]")) {
@@ -4206,7 +4206,7 @@
     function cutLongText() {
         var elem, size, text;
         elem = document.getElementsByClassName("case-card__text");
-        size = 225;
+        size = 240;
         for (let element of elem) {
             text = element.innerHTML;
             if (text.length > size) {

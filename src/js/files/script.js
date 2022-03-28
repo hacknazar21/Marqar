@@ -216,8 +216,7 @@ if (document.querySelector('#canvasGraph') != null) {
         animate();
     }
 }
-
-if (document.querySelector('[data-submenubtn]') != null) {
+if (document.querySelector('[data-submenubtn]') != null && window.innerWidth <= 767) {
     const submenubtn = document.querySelector('[data-submenubtn]');
     let submenuParams = {};
     if (document.querySelector('[data-submenu]') != null) {
@@ -286,7 +285,7 @@ document.addEventListener('click', (event) => {
 function cutLongText() {
     var elem, size, text;
     elem = document.getElementsByClassName('case-card__text');
-    size = 225; // Количество отображаемых символов
+    size = 240; // Количество отображаемых символов
     for (let element of elem) {
         text = element.innerHTML;
         if (text.length > size) {

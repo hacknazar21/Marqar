@@ -11,7 +11,32 @@
         margin-top: rem(22);
         margin-bottom: rem(111);
     }
+    [class*="__text-block"] {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 16);
+        }
+    }
 
+    [class*="__title"] {
+        @include adaptiveValue("margin-bottom", 20, 8);
+    }
+
+    [class*="__paragraph-block"] {
+        p {
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom", 20, 8);
+            }
+            span.bold {
+                display: inline-block;
+                margin: 0;
+                text-indent: 0;
+                font-weight: bold;
+            }
+            span.italic {
+                font-style: italic;
+            }
+        }
+    }
     &__info {
         padding: rem(15);
         background-color: #ffffff;
