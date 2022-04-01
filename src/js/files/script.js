@@ -235,7 +235,54 @@ if (document.querySelector('[data-submenubtn]') != null && window.innerWidth <= 
         else submenuParams.el.style.height = '0px';
     });
 }
+if (document.querySelector('.inner-rates') != null) {
+    const buttons = document.querySelectorAll('.inner-rates .inner-item__button');
+    const baseValute = "KZT";
+    let valute = "USD";
+    const date = new Date();
+    const month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'нояб', 'дек'];
+    const response = fetch(`https://api.fastforex.io/fetch-one?from=${valute}&to=${baseValute}&api_key=240c18310d-0a514f6b0a-r9nl1f`);
+    response.then((response) => {
+        return response.json();
+    })
+        .then((data) => {
+            if (data.error == null) {
+                document.querySelector('.currency-item__value span').innerHTML = valute;
+                document.querySelector('._get-value').innerHTML = `${data.result[baseValute]}<span>${baseValute}</span>`;
+                const date = new String(data.updated).split(' ');
+                document.querySelector('.lastupdate__value').innerHTML = `${date[0].split('-')[2]} ${month[parseInt(date[0].split('-')[1]) - 1]}., ${date[1].split(':')[0]}:${date[1].split(':')[1]} UTC`;
+            }
+            else alert(data.error)
+        }).catch((error) => {
+            alert(error)
+        });
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('active')) {
+                document.querySelector('.inner-rates .inner-item__button.active').classList.remove('active');
+                e.target.classList.add('active');
+                valute = e.target.querySelector('span').innerHTML;
+                const response = fetch(`https://api.fastforex.io/fetch-one?from=${valute}&to=${baseValute}&api_key=240c18310d-0a514f6b0a-r9nl1f`);
+                response.then((response) => {
+                    return response.json();
+                })
+                    .then((data) => {
+                        if (data.error == null) {
+                            document.querySelector('.currency-item__value span').innerHTML = valute;
+                            document.querySelector('._get-value').innerHTML = `${data.result[baseValute]}<span>${baseValute}</span>`;
+                            const date = new String(data.updated).split(' ');
+                            document.querySelector('.lastupdate__value').innerHTML = `${date[0].split('-')[2]} ${month[parseInt(date[0].split('-')[1]) - 1]}., ${date[1].split(':')[0]}:${date[1].split(':')[1]} UTC`;
+                        }
+                        else alert(data.error)
 
+                    }).catch((error) => {
+                        alert(error)
+                    });
+            }
+        })
+    });
+
+}
 document.addEventListener('DOMContentLoaded', () => {
     reverseElements();
     cutLongText();
@@ -247,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('click', (event) => {
-    console.log(event.target);
 
     (document.querySelector('.taped-card') != null) ? document.querySelector('.taped-card').classList.remove('taped-card') : null;
     if (event.target.classList.contains('face-case-card')) {
