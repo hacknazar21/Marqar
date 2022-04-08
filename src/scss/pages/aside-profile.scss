@@ -1,6 +1,5 @@
 .profile {
     &__aside {
-        max-width: rem(298);
         align-self: flex-start;
         background: #fbfafc;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
@@ -8,7 +7,7 @@
         padding: rem(15);
         margin-bottom: rem(34);
         @media (min-width: em(1070)) {
-            flex: 1 1 auto;
+            flex: 0 0 rem(280);
         }
         @media (max-width: $mobile) {
             align-self: stretch;
