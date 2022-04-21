@@ -99,6 +99,12 @@
     }
 
     &__item {
+        &.active {
+            a {
+                color: #ffffff;
+                background: linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%);
+            }
+        }
     }
 
     &__link {
@@ -109,9 +115,11 @@
         line-height: 130%;
         color: #464646;
         border-radius: 5px;
-        transition: color 0.3s ease 0s;
+        transition: color 0.8s ease 0s;
+
         @media (any-hover: hover) {
             &:hover {
+                transition: 0s;
                 color: #ffffff;
                 background: linear-gradient(271.04deg, #daa520 -17.69%, #dac471 98.22%);
             }

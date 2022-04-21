@@ -1,0 +1,121 @@
+.profile {
+    &__right {
+        flex: 1 1 auto;
+    }
+
+    &__links {
+        display: flex;
+        gap: rem(5);
+        margin-bottom: rem(12);
+    }
+
+    &__link {
+        font-size: rem(14);
+        line-height: 130%;
+        &.prev {
+            font-weight: 400;
+            color: #99a7bb;
+        }
+        &.current {
+            font-weight: 600;
+            color: #4f5864;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rem(28);
+        line-height: 130%;
+        color: #4f5864;
+        margin-bottom: rem(8);
+    }
+
+    &__account-info {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: rem(12);
+        overflow: hidden;
+    }
+}
+
+.account-info {
+    &__header {
+        padding-bottom: rem(22);
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 100%;
+            top: 0;
+            left: -10%;
+            border-bottom: 1px solid #dce4ef;
+            pointer-events: none;
+        }
+        margin-bottom: rem(20);
+    }
+
+    &__avatar {
+        display: flex;
+        gap: rem(12);
+        align-items: flex-end;
+        button.action {
+            padding: rem(7) rem(15);
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    }
+
+    &__img {
+    }
+
+    &__change {
+        background: rgba(198, 171, 116, 0.2);
+        color: #c6ab74;
+    }
+
+    &__delete {
+        color: #cccccc;
+        border: 1px solid #dce4ef;
+    }
+
+    &__main {
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rem(18);
+        line-height: 130%;
+        color: #4f5864;
+        margin-bottom: rem(30);
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(270), auto));
+        column-gap: rem(30);
+        row-gap: rem(30);
+    }
+
+    &__input-box {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8);
+    }
+
+    &__label {
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 130%;
+        color: #adbbcd;
+    }
+
+    &__input {
+        font-weight: 600;
+        font-size: rem(18);
+        border: 1px solid #dce4ef;
+        border-radius: 5px;
+        padding: rem(9) rem(12);
+        color: #4f5864;
+    }
+}

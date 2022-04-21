@@ -17,11 +17,12 @@ if (document.querySelector('#canvasGraph') != null) {
     canvasGrid.view.width = width * 2;
     canvasGrid.view.height = height * 2;
 
+    /* data - массив данных отображаемых на графике */
     const data = [];
 
+    /* заполнение массива data случайными данными, заменить на реальные данные */
     for (let index = 0; index < 10; index++) {
         data.push([getRandomBetween(0, 100), getRandomBetween(0, 100)]);
-
     }
 
     const chartObj = chart(data);
@@ -198,9 +199,10 @@ if (document.querySelector('#canvasGraph') != null) {
             startTime++;
 
             if (progress > duration) {
+                /* динамическое добавление данных в график */
                 data.push([getRandomBetween(0, 100), getRandomBetween(0, 100)]);
-                chartObj.update();
 
+                chartObj.update();
                 requestID = requestAnimationFrame(animate);
                 startTime = null;
 
@@ -216,9 +218,11 @@ if (document.querySelector('#canvasGraph') != null) {
         animate();
     }
 }
-if (document.querySelector('[data-submenubtn]') != null && window.innerWidth <= 767) {
+if (document.querySelector('[data-submenubtn]') != null) {
+
     const submenubtn = document.querySelector('[data-submenubtn]');
     let submenuParams = {};
+
     if (document.querySelector('[data-submenu]') != null) {
         const submenu = document.querySelector('[data-submenu]');
         const { height } = submenu.getBoundingClientRect();
@@ -226,7 +230,18 @@ if (document.querySelector('[data-submenubtn]') != null && window.innerWidth <= 
             el: submenu,
             h: height
         }
-        submenuParams.el.style.height = '0px';
+        if (window.innerWidth <= 767)
+            submenuParams.el.style.height = '0px';
+        else
+            submenuParams.el.style.height = submenuParams.height;
+        window.onresize = () => {
+            if (window.innerWidth <= 767)
+                submenuParams.el.style.height = '0px';
+            else
+                submenuParams.el.style.height = `${submenuParams.h}px`;
+        }
+
+
     }
     submenubtn.addEventListener('click', (event) => {
         event.preventDefault();
@@ -282,6 +297,13 @@ if (document.querySelector('.inner-rates') != null) {
         })
     });
 
+}
+if (document.querySelectorAll('.inner-item__changes-value').length != 0) {
+    for (const changesLabel of document.querySelectorAll('.inner-item__changes-value')) {
+        const change = parseInt(changesLabel.innerHTML.replace(',', '').replace('+', ''))
+        if (change < 0) changesLabel.classList.add('_graph-minus')
+        else changesLabel.classList.add('_graph-plus')
+    }
 }
 document.addEventListener('DOMContentLoaded', () => {
     reverseElements();

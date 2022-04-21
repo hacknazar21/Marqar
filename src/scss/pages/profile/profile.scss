@@ -19,7 +19,6 @@
 
     &__content {
         flex: 1 1 auto;
-        
     }
 
     &__content-header {
@@ -40,8 +39,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: rem(10);
     &__item {
-        &.inner-rates{
-          
+        &.inner-rates {
         }
     }
 }
@@ -120,7 +118,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        @media (max-width:$mobile){
+        @media (max-width: $mobile) {
             flex-direction: column;
         }
     }
@@ -129,8 +127,8 @@
         display: block;
         width: 100%;
         padding: rem(4) rem(32);
-        background-color: #E5E8ED;
-        color: #8FA6B0;
+        background-color: #e5e8ed;
+        color: #8fa6b0;
         text-align: center;
         font-weight: 600;
         font-size: rem(12);
@@ -139,18 +137,18 @@
         @media (any-hover: hover) {
             &:hover {
                 cursor: pointer;
-                background-color: #DAC471;
-                color: #FFFFFF;
+                background-color: #dac471;
+                color: #ffffff;
                 transition: 0s;
             }
         }
-        span{
+        span {
             display: block;
             pointer-events: none;
         }
-        &.active{
-            background-color: #DAC471;
-            color: #FFFFFF;
+        &.active {
+            background-color: #dac471;
+            color: #ffffff;
         }
     }
 
@@ -159,7 +157,7 @@
         justify-content: space-between;
         align-items: flex-end;
         padding: rem(12) rem(20);
-        @media (max-width:$mobile){
+        @media (max-width: $mobile) {
             flex-direction: column;
             align-items: flex-start;
         }
@@ -179,7 +177,6 @@
         height: 100%;
     }
     &__item {
-       
     }
 }
 .inner-footer {
@@ -212,34 +209,37 @@
         font-weight: 600;
         font-size: 30px;
         color: #464646;
-        span{
+        span {
             font-size: rem(12);
-            color: #A7A7A7;
+            color: #a7a7a7;
             margin-left: rem(8);
         }
         &._get-value {
-            color: #A6894E;
+            color: #a6894e;
         }
     }
 }
 .lastupdate {
     line-height: 130%;
     &__header {
-        color: #A7A7A7;
+        color: #a7a7a7;
         font-size: rem(8);
         font-weight: 600;
     }
 
     &__value {
-        font-weight:800;
+        font-weight: 800;
         color: #464646;
-        font-size: rem(12)
+        font-size: rem(12);
     }
 }
 .inner-rates {
     flex: 1 1 auto;
-    &__item{
+    &__item {
         padding: 0;
         margin-bottom: rem(10);
     }
 }
+
+@import "myprofile.scss";
+@import "income";

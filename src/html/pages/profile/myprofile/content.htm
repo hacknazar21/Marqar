@@ -1,0 +1,69 @@
+<section class="page__profile profile">
+    <div class="profile__container">
+        @@include('aside-profile.htm',{ })
+        <div class="profile__right">
+            <div class="profile__links">
+                <a href="/" class="profile__link prev">Главная</a>
+                <span>/</span>
+                <a href="" class="profile__link current">Профиль</a>
+            </div>
+            <div class="profile__title">Мой профиль</div>
+            <div class="profile__account-info account-info">
+                <div class="account-info__header">
+                    <div class="account-info__avatar">
+                        <div class="account-info__img">
+                            <img src="@img/pages/profile/avatar.png" alt="avatar">
+                        </div>
+                        <button class="account-info__change action">Изменить фото</button>
+                        <button class="account-info__delete action">Удалить</button>
+                    </div>
+                </div>
+                <div class="account-info__main">
+                    <div class="account-info__title">Информация о аккаунте</div>
+                    <form action="" class="account-info__form">
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Фамилия</label>
+                            <input type="text" name="secondname" class="account-info__input" value="Юлдашев">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Имя</label>
+                            <input type="text" name="firstname" class="account-info__input" value="Марат">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Паспорт / Удост. Личности</label>
+                            <input data-inputmask="'mask': '№999999999999999'" type="text" name="passportnum"
+                                class="account-info__input" value="№132435353113123">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Выдано кем / когда</label>
+                            <input type="text" name="passportwho" class="account-info__input" value="МВД РК">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Срок действия</label>
+                            <input type="text" name="passportterm" class="account-info__input" value="20.07.2024">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">ИИН (для резидентов РК)</label>
+                            <input data-inputmask="'mask': '9999 - 9999 - 9999 - 9999'" type="text" name="iin"
+                                class="account-info__input" value="0000 - 4444 - 2222 - 3333">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Моб. телефон</label>
+                            <input data-inputmask="'mask': '+9 - (999) - 999 - 99 - 99'" type="text" name="tel"
+                                class="account-info__input" value="+7 - (778) - 556 - 43 -12">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Соц. Статус</label>
+                            <input type="text" name="status" class="account-info__input" value="Пенсионер">
+                        </div>
+                        <div class="account-info__input-box">
+                            <label for="secondname" class="account-info__label">Гражданство</label>
+                            <input type="text" name="status" class="account-info__input"
+                                value="🇰🇿 Республика Казахстан">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

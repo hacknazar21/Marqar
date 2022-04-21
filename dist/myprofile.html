@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Продукты</title>
+	<title>Личный кабинет</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -47,105 +47,103 @@
 			</div>
 		</header>
 		<main class="page">
-			<section class="page__page-header page-header">
-				<div class="page-header__container">
-					<h1 class="page-header__title">Продукты</h1>
-					<div data-da=".pages-mobile__box, 768" class="page-header__pages">
-						<a href="/Marqar/dist/" class="page-header__main">Главная</a>
-						<span>/</span>
-						<div class="page-header__current">Продукты</div>
-					</div>
-				</div>
-			</section>
-			<section class="pages-mobile">
-				<div class="pages-mobile__container">
-					<div class="pages-mobile__box"></div>
-				</div>
-			</section>
-			<section class="page__main-content main-content">
-				<div class="main-content__container">
-					<div class="main-content__info products-info">
-						<article class="products-info__product product-cart">
-							<div class="product-cart__img-ibg">
-								<picture><source srcset="img/pages/products/01.webp" type="image/webp"><img src="img/pages/products/01.jpg" alt="Card #1"></picture>
-								<span class="product-cart__type">Языки</span>
+
+			<section class="page__profile profile">
+				<div class="profile__container">
+					<aside class="profile__aside aside-profile">
+						<div class="aside-profile__user profile-user">
+							<div data-da=".profile-user__id-mobile, 768" class="profile-user__id">№:1212343535453</div>
+							<div class="profile-user__block">
+								<div class="profile-user__avatar-ibg">
+									<picture><source srcset="img/pages/profile/avatar.webp" type="image/webp"><img src="img/pages/profile/avatar.png" alt="avatar"></picture>
+								</div>
+								<div class="profile-user__name">Марат Юсупов</div>
+								<button type="button" data-submenubtn class="profile-menu__icon"></button>
+
 							</div>
-							<div class="product-cart__title">Говорим по английски</div>
-							<div class="product-cart__text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-								sint. </div>
-							<div class="product-cart__some-info">
-								<div class="product-cart__info _icon-calendar">3 месяца</div>
-								<div class="product-cart__info _icon-book">12 занятий</div>
-							</div>
-							<a href="/Marqar/dist/english.html" class="product-cart__more _margin">Подробнее</a>
-						</article>
-						<article class="products-info__product product-cart">
-							<div class="product-cart__img-ibg">
-								<picture><source srcset="img/pages/products/01.webp" type="image/webp"><img src="img/pages/products/01.jpg" alt="Card #1"></picture>
-								<span class="product-cart__type">Языки</span>
-							</div>
-							<div class="product-cart__title">Говорим по английски</div>
-							<div class="product-cart__text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-								sint. </div>
-							<div class="product-cart__some-info">
-								<div class="product-cart__info _icon-calendar">3 месяца</div>
-								<div class="product-cart__info _icon-book">12 занятий</div>
-							</div>
-							<a href="/Marqar/dist/english.html" class="product-cart__more _margin">Подробнее</a>
-						</article>
-					</div>
-					<aside class="main-content__find-box main-find">
-						<form action="#" class="main-find__form">
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск" class="main-find__input">
-							<button type="submit" class="main-find__submit _icon-search"></button>
-						</form>
-						<div class="main-find__item main-aside-item">
-							<div class="main-aside-item__header">
-								<div class="main-aside-item__title _icon-program">Программы</div>
-								<a href="" class="main-aside-item__more">смотреть все</a>
-							</div>
-							<div class="main-aside-item__body">
-								<a href="" class="main-aside-item__link">Программа развития человеческого потенциала</a>
-								<a href="" class="main-aside-item__link">Партнерская программа</a>
-								<a href="" class="main-aside-item__link">Программа развития</a>
-							</div>
-						</div>
-						<div class="main-find__item main-aside-item">
-							<div class="main-aside-item__header">
-								<div class="main-aside-item__title _icon-doc">Документы</div>
-								<a href="/Marqar/dist/documents.html" class="main-aside-item__more">смотреть все</a>
-							</div>
-							<div class="main-aside-item__body">
-								<a href="" class="main-aside-item__link">Договор оферты по возмездному оказанию услуг</a>
-								<a href="" class="main-aside-item__link">Политика конфиденциальности</a>
-								<a href="/Marqar/dist/public.html" class="main-aside-item__link">Договор публичной оферты</a>
-								<a href="" class="main-aside-item__link">Условия отказа от заказа</a>
-								<a href="/Marqar/dist/plan.html" class="main-aside-item__link">План вознаграждения</a>
-							</div>
-						</div>
-						<div class="main-find__item main-aside-item">
-							<div class="main-aside-item__header">
-								<div class="main-aside-item__title _icon-puzzle">Курсы</div>
-								<a href="/Marqar/dist/products.html" class="main-aside-item__more">смотреть все</a>
-							</div>
-							<div class="main-aside-item__body">
-								<a href="/Marqar/dist/english.html" class="main-aside-item__link">Курс: Английский язык</a>
+							<div data-submenu class="profile-user__menu profile-menu">
+								<nav class="profile-menu__body">
+									<div class="profile-user__id-mobile"></div>
+									<ul class="profile-menu__list">
+										<li class="profile-menu__item active"><a href="/Marqar/dist/profile.html" class="profile-menu__link"><span>Мой
+													профиль</span></a>
+										</li>
+										<li class="profile-menu__item"><a href="/Marqar/dist/income.html" class="profile-menu__link"><span>Доходы</span></a></li>
+										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Продажи</span></a></li>
+										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>График
+													вебинаров</span></a></li>
+										<li class="profile-menu__item"><a href="/Marqar/dist/plan.html" class="profile-menu__link"><span>План
+													вознаграждения</span></a>
+										</li>
+										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Документация</span></a>
+										</li>
+										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Новости</span></a></li>
+										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Помощь</span></a></li>
+									</ul>
+								</nav>
 							</div>
 						</div>
 					</aside>
-				</div>
-			</section>
-			<section class="page__feedback feedback">
-				<div class="feedback__box">
-					<h2 class="feedback__title">Остались вопросы ?</h2>
-					<p class="feedback__text">
-						Заполните нашу заявку и мы свяжемся с вами в ближайшее время
-					</p>
-					<form action="" class="feedback__form form-feedback">
-						<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="form-feedback__input input">
-						<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="form-feedback__input input">
-						<button type="submit" class="form-feedback__submit">Отправить</button>
-					</form>
+					<div class="profile__right">
+						<div class="profile__links">
+							<a href="/" class="profile__link prev">Главная</a>
+							<span>/</span>
+							<a href="" class="profile__link current">Профиль</a>
+						</div>
+						<div class="profile__title">Мой профиль</div>
+						<div class="profile__account-info account-info">
+							<div class="account-info__header">
+								<div class="account-info__avatar">
+									<div class="account-info__img">
+										<picture><source srcset="img/pages/profile/avatar.webp" type="image/webp"><img src="img/pages/profile/avatar.png" alt="avatar"></picture>
+									</div>
+									<button class="account-info__change action">Изменить фото</button>
+									<button class="account-info__delete action">Удалить</button>
+								</div>
+							</div>
+							<div class="account-info__main">
+								<div class="account-info__title">Информация о аккаунте</div>
+								<form action="" class="account-info__form">
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Фамилия</label>
+										<input type="text" name="secondname" class="account-info__input" value="Юлдашев">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Имя</label>
+										<input type="text" name="firstname" class="account-info__input" value="Марат">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Паспорт / Удост. Личности</label>
+										<input data-inputmask="'mask': '№999999999999999'" type="text" name="passportnum" class="account-info__input" value="№132435353113123">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Выдано кем / когда</label>
+										<input type="text" name="passportwho" class="account-info__input" value="МВД РК">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Срок действия</label>
+										<input type="text" name="passportterm" class="account-info__input" value="20.07.2024">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">ИИН (для резидентов РК)</label>
+										<input data-inputmask="'mask': '9999 - 9999 - 9999 - 9999'" type="text" name="iin" class="account-info__input" value="0000 - 4444 - 2222 - 3333">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Моб. телефон</label>
+										<input data-inputmask="'mask': '+9 - (999) - 999 - 99 - 99'" type="text" name="tel" class="account-info__input" value="+7 - (778) - 556 - 43 -12">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Соц. Статус</label>
+										<input type="text" name="status" class="account-info__input" value="Пенсионер">
+									</div>
+									<div class="account-info__input-box">
+										<label for="secondname" class="account-info__label">Гражданство</label>
+										<input type="text" name="status" class="account-info__input" value="🇰🇿 Республика Казахстан">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 

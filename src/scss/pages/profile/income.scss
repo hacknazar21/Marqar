@@ -1,0 +1,22 @@
+.inner-item {
+    &__changes-value {
+        display: flex;
+        &::before {
+            content: "";
+            display: block;
+            width: rem(21);
+            height: rem(21);
+            margin-right: rem(10);
+        }
+        &._graph-plus {
+            &::before {
+                background: url(@img/pages/profile/arrowplus.svg) center/contain no-repeat;
+            }
+        }
+        &._graph-minus {
+            &::before {
+                background: url(@img/pages/profile/arrowminus.svg) center/contain no-repeat;
+            }
+        }
+    }
+}
