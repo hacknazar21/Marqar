@@ -24,7 +24,7 @@ if (!pugPages.length) {
 		},
 		replace: [
 			{ regex: '../img', to: 'img' },
-			{ regex: '@url', to: '/Marqar/dist' },
+			{ regex: '@url', to: '' },
 			{ regex: '@img', to: 'img', },
 			{ regex: 'NEW_PROJECT_NAME', to: rootFolder }
 		],

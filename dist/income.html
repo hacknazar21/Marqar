@@ -6,135 +6,209 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220421170924">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220718181453">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body class="account">
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<a href="/Marqar/dist/" class="header__logo">
-					MARQAR
-				</a>
+				<a href="/" class="header__logo"></a>
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="/Marqar/dist/about.html" class="menu__link">О компании</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/about.html" class="menu__link">Новости</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/products.html" class="menu__link">Продукты</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/documents.html" class="menu__link">Документы</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/contacts.html" class="menu__link">Контакты</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/" class="menu__link">Мы на карте мира</a></li>
-							<li class="header__menu-footer menu-footer-header">
-								<div class="menu-footer-header__item menu-footer-header-item-tel"></div>
-								<div class="menu-footer-header__item menu-footer-header-item-map "></div>
-								<div class="menu-footer-header__item menu-footer-header-item-mail"></div>
-							</li>
+							<li class="menu__item"><a href="/income.html" class="menu__link">Стартовая страница</a></li>
+							<li class="menu__item"><a href="/myprofile.html" class="menu__link">Мой профиль</a></li>
+							<li class="menu__item"><a href="/sales.html" class="menu__link">Мои продажи</a></li>
+							<li class="menu__item"><a href="/finances.html" class="menu__link">Мои финансы</a></li>
+							<li class="menu__item"><a href="/myproducts.html" class="menu__link">Мои продукты</a></li>
+							<li class="menu__item"><a href="/documentaton.html" class="menu__link">Документация</a></li>
+							<li class="menu__item"><a href="/webinars.html" class="menu__link">График вебинаров</a></li>
+							<li class="menu__item"><a href="/chat.html" class="menu__link">Чат</a></li>
+							<li class="menu__item"><a href="/news.html" class="menu__link">Новости</a></li>
 						</ul>
-
 					</nav>
-
 				</div>
 				<button type="button" class="header-menu__icon icon-menu"><span></span></button>
-				<div class="header__account account-box">
-					<a href="" class="account-box__enter">Вход</a>
-					<span></span>
-					<a href="" class="account-box__reg">Регистрация</a>
+				<div class="header__actions actions-header">
+					<div data-da=".menu__list, 768" class="header__account account-box">
+						<div class="_icon-telegram"></div>
+						<a href="" class="account-box__enter">Чат</a>
+						<span></span>
+						<a href="" class="account-box__reg">Канал</a>
+					</div>
+					<a data-da=".menu__list, 768" href="" class="actions-header__leave">Выход</a>
+					<select name="language" class="form">
+						<option value="RU" selected>RU</option>
+						<option value="EN">EN</option>
+					</select>
 				</div>
 			</div>
 		</header>
-		<main class="page">
+		<main class="page ">
 
 			<section class="page__profile profile">
 				<div class="profile__container">
 					<aside class="profile__aside aside-profile">
 						<div class="aside-profile__user profile-user">
-							<div data-da=".profile-user__id-mobile, 768" class="profile-user__id">№:1212343535453</div>
-							<div class="profile-user__block">
-								<div class="profile-user__avatar-ibg">
-									<picture><source srcset="img/pages/profile/avatar.webp" type="image/webp"><img src="img/pages/profile/avatar.png" alt="avatar"></picture>
+							<div class="profile-user__head">
+								<div class="profile-user__flag">
+									<picture><source srcset="img/account/flag.webp" type="image/webp"><img src="img/account/flag.png" alt=""></picture>
 								</div>
-								<div class="profile-user__name">Марат Юсупов</div>
-								<button type="button" data-submenubtn class="profile-menu__icon"></button>
-
+								<div class="profile-user__name">
+									Юсупов Марат
+								</div>
 							</div>
-							<div data-submenu class="profile-user__menu profile-menu">
-								<nav class="profile-menu__body">
-									<div class="profile-user__id-mobile"></div>
-									<ul class="profile-menu__list">
-										<li class="profile-menu__item"><a href="/Marqar/dist/myprofile.html" class="profile-menu__link"><span>Мой
-													профиль</span></a>
-										</li>
-										<li class="profile-menu__item active"><a href="/Marqar/dist/income.html" class="profile-menu__link"><span>Доходы</span></a>
-										</li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Продажи</span></a></li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>График
-													вебинаров</span></a></li>
-										<li class="profile-menu__item"><a href="/Marqar/dist/plan.html" class="profile-menu__link"><span>План
-													вознаграждения</span></a>
-										</li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Документация</span></a>
-										</li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Новости</span></a></li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Помощь</span></a></li>
-									</ul>
-								</nav>
+							<div class="profile-user__avatar">
+								<div class="profile-user__avatar-bg">
+									<picture><source srcset="img/account/mecenat_bg.webp" type="image/webp"><img src="img/account/mecenat_bg.png" alt=""></picture>
+								</div>
+								<div class="profile-user__avatar-frame">
+									<picture><source srcset="img/pages/profile/avatar.webp" type="image/webp"><img src="img/pages/profile/avatar.png" alt=""></picture>
+								</div>
+							</div>
+							<div class="profile-user__title">Благотворитель</div>
+							<div class="profile-user__info profile-info">
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Email:</div>
+									<div class="profile-info__item-value">marat_u2@gmail.com</div>
+								</div>
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Дата регистрации:</div>
+									<div class="profile-info__item-value">02.12.21</div>
+								</div>
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Дата активации:</div>
+									<div class="profile-info__item-value">03.12.21</div>
+								</div>
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Агентский номер (АН):</div>
+									<div class="profile-info__item-value">1234</div>
+								</div>
+								<div copy class="profile-info__item">
+									<div class="profile-info__item-name">Агенсткая ссылка:</div>
+									<div ref class="profile-info__item-value">/ssilka1232</div>
+									<div button class="profile-info__item-value__copy">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M10 10H13.3333C13.7015 10 14 9.70152 14 9.33333V2.66667C14 2.29848 13.7015 2 13.3333 2L6.66667 2C6.29848 2 6 2.29848 6 2.66667L6 6" stroke="#0B2137" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M2.66667 14L9.33333 14C9.70152 14 10 13.7015 10 13.3333L10 6.66667C10 6.29848 9.70153 6 9.33334 6L2.66667 6C2.29848 6 2 6.29848 2 6.66667L2 13.3333C2 13.7015 2.29848 14 2.66667 14Z" stroke="#0B2137" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</div>
+								</div>
+							</div>
+							<div class="profile-user__btn">
+								<a href="" class="profile-user__btn-link">Перейти в другой аккаунт</a>
 							</div>
 						</div>
 					</aside>
 					<div class="profile__content">
 						<div class="profile__content-header">
 							<div class="inner-grid__item inner-rates">
-								<div class="inner-rates__item inner-item">
-									<div class="inner-item__header">
-										<div class="inner-item__button active">$ <span>USD</span></div>
-										<div class="inner-item__button">〒 <span>KZT</span></div>
-										<div class="inner-item__button">R <span>RUB</span></div>
-										<div class="inner-item__button">€ <span>EUR</span></div>
-										<div class="inner-item__button">円 <span>JPY</span></div>
-										<div class="inner-item__button">¥ <span>CNY</span></div>
-										<div class="inner-item__button">£ <span>GBP</span></div>
-									</div>
-									<div class="inner-item__body">
-										<div class="inner-item__currency-block currency-block">
-											<div class="currency-block__item currency-item">
-												<div class="currency-item__header">Отдаете</div>
-												<div class="currency-item__value">1.00<span>USD</span></div>
+								<div class="inner-rates__header">
+									<div class="inner-rates__item inner-item">
+										<div class="inner-item__header">
+											<div class="inner-item__button active">$ <span>USD</span></div>
+											<div class="inner-item__button">〒 <span>KZT</span></div>
+											<div class="inner-item__button">R <span>RUB</span></div>
+											<div class="inner-item__button">€ <span>EUR</span></div>
+											<div class="inner-item__button">円 <span>JPY</span></div>
+											<div class="inner-item__button">¥ <span>CNY</span></div>
+											<div class="inner-item__button">£ <span>GBP</span></div>
+										</div>
+										<div class="inner-item__body">
+											<div class="inner-item__currency-block currency-block">
+												<div class="currency-block__item currency-item">
+													<div class="currency-item__header">Отдаете</div>
+													<div class="currency-item__value">1.00<span>USD</span></div>
+												</div>
+												<span></span>
+												<div class="currency-block__item currency-item">
+													<div class="currency-item__header">Получаете</div>
+													<div class="currency-item__value _get-value">468.00<span>KZT</span></div>
+												</div>
 											</div>
-											<span></span>
-											<div class="currency-block__item currency-item">
-												<div class="currency-item__header">Получаете</div>
-												<div class="currency-item__value _get-value">468.00<span>KZT</span></div>
+											<div class="inner-item__lastupdate lastupdate">
+												<div class="lastupdate__header">Последнее обновление</div>
+												<div class="lastupdate__value">30 мар., 01:01 UTC </div>
 											</div>
 										</div>
-										<div class="inner-item__lastupdate lastupdate">
-											<div class="lastupdate__header">Последнее обновление</div>
-											<div class="lastupdate__value">30 мар., 01:01 UTC </div>
-										</div>
+
 									</div>
-								</div>
-								<div class="profile__inner inner-grid">
 									<div class="inner-grid__item inner-item">
 										<h3 class="inner-item__title">Мои начисления:</h3>
 										<div class="inner-item__money-bar">
 											<div class="inner-item__valute">₸</div>
 											<div class="inner-item__value">2,700.00</div>
 										</div>
+
+									</div>
+								</div>
+								<div class="inner-grid__block">
+									<div class="inner-grid__item inner-item">
+										<h3 class="inner-item__title">Премии:</h3>
+										<div class="inner-item__money-bar">
+											<div class="inner-item__valute">₸</div>
+											<div class="inner-item__value">12,150.00</div>
+										</div>
 										<div class="inner-item__money-changes">
 											<div class="inner-item__changes-value">+7,000 сегодня</div>
 										</div>
 									</div>
+									<div class="inner-footer__item inner-item">
+										<div class="inner-item__footer-head">
+											<div class="inner-item__block">
+												<h3 class="inner-item__title">Баланс премии</h3>
+												<div class="inner-item__money-bar">
+													<div class="inner-item__valute">₸</div>
+													<div class="inner-item__value">300,250.00</div>
+												</div>
+											</div>
+											<span></span>
+											<div class="inner-item__block">
+												<h3 class="inner-item__title _no-before">Вывод премии</h3>
+												<div class="inner-item__money-bar">
+													<div class="inner-item__value">300,250.00</div>
+												</div>
+											</div>
+										</div>
+										<div class="inner-item__footer-bottom">
+											<a href="" class="inner-item__footer-link">Вывести премии</a>
+										</div>
+									</div>
+								</div>
+								<div class="profile__inner inner-footer">
+									<a href="" class="inner-footer__item inner-item">
+										<picture><source srcset="img/account/1.webp" type="image/webp"><img src="img/account/1.png" alt=""></picture>
+										<p>Автомобиль</p>
+									</a>
+									<a href="" class="inner-footer__item inner-item">
+										<picture><source srcset="img/account/2.webp" type="image/webp"><img src="img/account/2.png" alt=""></picture>
+										<p>Путешествие</p>
+
+									</a>
+								</div>
+								<div class="profile__inner inner-grid">
 									<div class="inner-grid__item inner-item">
-										<h3 class="inner-item__title">I-MARKET:</h3>
+										<h3 class="inner-item__title">I-Bank:</h3>
 										<div class="inner-item__money-bar">
 											<div class="inner-item__valute">₸</div>
 											<div class="inner-item__value">12,150.00</div>
 										</div>
 										<div class="inner-item__money-changes">
 											<div class="inner-item__changes-value">-7,000 сегодня</div>
+										</div>
+									</div>
+									<div class="inner-grid__item inner-item">
+										<h3 class="inner-item__title">Мои доходы АВ:</h3>
+										<div class="inner-item__money-bar">
+											<div class="inner-item__valute">₸</div>
+											<div class="inner-item__value">12,150.00</div>
+										</div>
+										<div class="inner-item__money-changes">
+											<div class="inner-item__changes-value">+7,000 сегодня</div>
 										</div>
 									</div>
 									<div class="inner-grid__item inner-item">
@@ -148,66 +222,75 @@
 										</div>
 									</div>
 									<div class="inner-grid__item inner-item">
-										<h3 class="inner-item__title">Мои агенсткие:</h3>
+										<h3 class="inner-item__title">Мои доходы ПВ:</h3>
 										<div class="inner-item__money-bar">
 											<div class="inner-item__valute">₸</div>
 											<div class="inner-item__value">50,550.00</div>
 										</div>
 										<div class="inner-item__money-changes">
-											<div class="inner-item__changes-value">-7,000 сегодня</div>
+											<div class="inner-item__changes-value">+ 7,000 сегодня</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
-							<div class="profile__inner inner-graph">
-								<div class="inner-graph__item inner-item">
-									<h3 class="inner-item__title">Мои доходы:</h3>
-									<canvas id="canvasGraph" class="inner-item__canvas"></canvas>
-									<div class="inner-item__under-graph">
-										<div class="inner-item__money-bar">
-											<div class="inner-item__valute">₸</div>
-											<div class="inner-item__value">300,250.00</div>
-										</div>
-										<div class="inner-item__money-changes">
-											<div class="inner-item__changes-value">+7,000 сегодня</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							<!--  <div class="profile__inner inner-graph">
+                    <div class="inner-graph__item inner-item">
+                        <h3 class="inner-item__title">Мои доходы:</h3>
+                        <canvas id="canvasGraph" class="inner-item__canvas"></canvas>
+                        <div class="inner-item__under-graph">
+                            <div class="inner-item__money-bar">
+                                <div class="inner-item__valute">₸</div>
+                                <div class="inner-item__value">300,250.00</div>
+                            </div>
+                            <div class="inner-item__money-changes">
+                                <div class="inner-item__changes-value">+7,000 сегодня</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
 						</div>
 						<div class="profile__content-footer">
 							<div class="profile__inner inner-footer">
 								<div class="inner-footer__item inner-item">
-									<div class="inner-item__block">
-										<h3 class="inner-item__title">Баланс АВ:</h3>
-										<div class="inner-item__money-bar">
-											<div class="inner-item__valute">₸</div>
-											<div class="inner-item__value">2,700.00</div>
+									<div class="inner-item__footer-head">
+										<div class="inner-item__block">
+											<h3 class="inner-item__title">Баланс АВ:</h3>
+											<div class="inner-item__money-bar">
+												<div class="inner-item__valute">₸</div>
+												<div class="inner-item__value">2,700.00</div>
+											</div>
+										</div>
+										<span></span>
+										<div class="inner-item__block">
+											<h3 class="inner-item__title _no-before">Вывод с АВ:</h3>
+											<div class="inner-item__money-bar">
+												<div class="inner-item__value">300,250.00</div>
+											</div>
 										</div>
 									</div>
-									<span></span>
-									<div class="inner-item__block">
-										<h3 class="inner-item__title _no-before">Вывод с АВ:</h3>
-										<div class="inner-item__money-bar">
-											<div class="inner-item__value">300,250.00</div>
-										</div>
+									<div class="inner-item__footer-bottom">
+										<a href="" class="inner-item__footer-link">Вывести с АВ</a>
 									</div>
 								</div>
 								<div class="inner-footer__item inner-item">
-									<div class="inner-item__block">
-										<h3 class="inner-item__title">Баланс ПВ:</h3>
-										<div class="inner-item__money-bar">
-											<div class="inner-item__valute">₸</div>
-											<div class="inner-item__value">2,700.00</div>
+									<div class="inner-item__footer-head">
+										<div class="inner-item__block">
+											<h3 class="inner-item__title">Баланс ПВ:</h3>
+											<div class="inner-item__money-bar">
+												<div class="inner-item__valute">₸</div>
+												<div class="inner-item__value">2,700.00</div>
+											</div>
+										</div>
+										<span></span>
+										<div class="inner-item__block">
+											<h3 class="inner-item__title _no-before">Вывод с ПВ:</h3>
+											<div class="inner-item__money-bar">
+												<div class="inner-item__value">300,250.00</div>
+											</div>
 										</div>
 									</div>
-									<span></span>
-									<div class="inner-item__block">
-										<h3 class="inner-item__title _no-before">Вывод с ПВ:</h3>
-										<div class="inner-item__money-bar">
-											<div class="inner-item__value">300,250.00</div>
-										</div>
+									<div class="inner-item__footer-bottom">
+										<a href="" class="inner-item__footer-link">Вывести с ПВ</a>
 									</div>
 								</div>
 							</div>
@@ -219,65 +302,32 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
-				<div class="footer__logo">MARQAR</div>
-				<div class="footer__menu menu-footer">
-					<div class="menu-footer__header">
-						<p class="menu-footer__text">
-							Компания MARQAR LLP ожидает от всех участников проекта поддержания принципов справедливости,
-							честности и
-							конфиденциальности при заключении сделок и иной деловой активноcти.
-						</p>
-					</div>
-					<nav data-spollers="767.98" class="menu-footer__body">
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Меню</button>
-							<div class="menu-footer__list-body">
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">О компании</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Продукты</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">План вознаграждения</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Информация</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Контакты</a></li>
-							</div>
-						</ul>
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Документы</button>
-							<div class="menu-footer__list-body">
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">План вознаграждения</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Условия отказа от заказа</a>
-								</li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Политика
-										конфиденциальности</a>
-								</li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Договор публичной оферты</a>
-								</li>
-							</div>
-						</ul>
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Контакты</button>
-							<div class="menu-footer__list-body">
-								<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item _icon-Map">
-									<div class="menu-footer__item-box">
-										Казахстан, г. Алматы, 050062
-										Микрорайон-1, ул. Жубанова 68, оф. 22
-									</div>
-								</li>
-								<li data-da=".menu-footer-header-item-mail, 992" class="menu-footer__item  _icon-Mail">
-									<div class="menu-footer__item-box">
-										<span>Почта:</span>
-										<a href="mailto:info@markhar.com" class="menu-footer__link">info@markhar.com</a>
-									</div>
-								</li>
-								<li data-da=".menu-footer-header-item-tel, 992" class="menu-footer__item _icon-Phone">
-									<div class="menu-footer__item-box">
-										<span>Телефон:</span>
-										<a href="tel:+77019545007" class="menu-footer__link">+7 701 954 50 07</a>
-										<a href="tel:+77772396323" class="menu-footer__link">+7 777 239 63 23</a>
-									</div>
-								</li>
-							</div>
-						</ul>
-					</nav>
-				</div>
+				<nav class="menu-footer__body">
+					<ul class="menu-footer__list">
+						<div class="menu-footer__list-body">
+							<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item"><a href="/" class="header__logo"></a></li>
+
+							<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item _icon-Map">
+								<div class="menu-footer__item-box">
+									Казахстан, 050021, г. Алматы, Бульвар Бухар Жырау 2
+								</div>
+							</li>
+							<li data-da=".menu-footer-header-item-mail, 992" class="menu-footer__item  _icon-Mail">
+								<div class="menu-footer__item-box">
+									<span>Почта:</span>
+									<a href="mailto:info@marqar.kz" class="menu-footer__link">info@marqar.kz</a>
+								</div>
+							</li>
+							<li data-da=".menu-footer-header-item-tel, 992" class="menu-footer__item _icon-Phone">
+								<div class="menu-footer__item-box">
+									<span>Телефон:</span>
+									<a href="tel:+77770821922" class="menu-footer__link">+7 777 082 19 22</a>
+									<a href="tel:+77783261525" class="menu-footer__link">+7 778 326 15 25</a>
+								</div>
+							</li>
+						</div>
+					</ul>
+				</nav>
 			</div>
 		</footer>
 	</div>
@@ -293,7 +343,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220421170924"></script>
+	<script src="js/app.min.js?_v=20220718181453"></script>
 </body>
 
 </html>

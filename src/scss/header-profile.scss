@@ -1,0 +1,78 @@
+//====================================================================================================
+.header {
+    &__container {
+    }
+    &__logo {
+    }
+
+    &__menu {
+    }
+
+    &__account {
+        .account & {
+            display: flex;
+            align-items: center;
+        }
+        ._icon-telegram {
+            display: inline-block;
+            width: rem(21);
+            height: rem(21);
+            background: url(@img/pages/profile/telegram.svg) center/contain no-repeat;
+            margin-right: rem(12);
+        }
+    }
+}
+
+.menu {
+    &__body {
+    }
+
+    &__list {
+        font-size: rem(14);
+        row-gap: rem(8);
+        column-gap: rem(40);
+    }
+
+    &__item {
+    }
+    &__link {
+    }
+}
+.header {
+    &__actions {
+    }
+
+    &__account {
+    }
+}
+.actions-header {
+    flex: 0 0 percent(330, 1218);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .account-box {
+        color: #5dabf3;
+        border-color: #5dabf3;
+        span::after {
+            color: #5dabf3;
+        }
+        &__enter {
+        }
+        &__reg {
+        }
+    }
+
+    &__leave {
+        color: #dac471;
+        padding: 0 rem(15);
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        border: 1px solid #dac471;
+        border-radius: rem(10);
+    }
+}
+
+//====================================================================================================
+
+//Burger

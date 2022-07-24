@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="header__container">
 		<a href="@url/" class="header__logo">
-			MARQAR
+
 		</a>
 		<div class="header__menu menu">
 			<nav class="menu__body">
@@ -20,13 +20,20 @@
 				</ul>
 
 			</nav>
-
 		</div>
+		<div class="mobile-lang" style=""></div>
 		<button type="button" class="header-menu__icon icon-menu"><span></span></button>
 		<div class="header__account account-box">
 			<a href="" class="account-box__enter">Вход</a>
 			<span></span>
 			<a href="" class="account-box__reg">Регистрация</a>
+
+		</div>
+		<div data-da=".mobile-lang, 768">
+			<select name="language" class="form">
+				<option value="RU" selected>RU</option>
+				<option value="EN">EN</option>
+			</select>
 		</div>
 	</div>
 </header>

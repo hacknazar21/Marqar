@@ -1,0 +1,51 @@
+<section class="page__profile profile">
+    <div class="profile__container">
+        @@include('../../aside-profile.htm',{ })
+        <div class="profile__right">
+            <div class="profile__title">Мой профиль</div>
+            <div class="profile__top-menu">
+                <a href="/myprofile.html" class="top-menu__link">Личные данные</a>
+                <a href="/paydata.html" class="top-menu__link">Платежные данные и налоговый режим</a>
+                <a href="/inheritance.html" class="top-menu__link active">Наследство</a>
+            </div>
+            <form action="#" class="profile__account-info account-info">
+
+                <div class="account-info__main">
+                    <div class="account-info__title">Данные Наследника/цы</div>
+                    <div class="account-info__form">
+                        <div class="account-info__input-box">
+                            <input type="text" name="secondname" class="account-info__input" value="Юлдашев">
+                            <label class="account-info__label">Фамилия</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input type="text" name="firstname" class="account-info__input" value="Марат">
+                            <label class="account-info__label">Имя</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input type="text" name="firstname" class="account-info__input" value="Маратович">
+                            <label class="account-info__label">Отчество</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input data-inputmask="'mask': '9999 - 9999 - 9999 - 9999'" type="text" name="iin"
+                                class="account-info__input" value="0000 - 4444 - 2222 - 3333">
+                            <label class="account-info__label">ИИН (для резидентов РК)</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input data-inputmask="'mask': '+9 - (999) - 999 - 99 - 99'" type="text" name="tel"
+                                class="account-info__input" value="+7 - (778) - 556 - 43 -12">
+                            <label class="account-info__label">Моб. телефон</label>
+                        </div>
+                        <div class="account-info__input-box upload">
+                            <label for="upload-doc" class="account-info__label">Загрузка справки [eGov] (pdf)</label>
+                            <input type="file" id="upload-doc" name="doc" class="account-info__input">
+                            <label class="account-info__label">Свидетельство рождения</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-info__submit">
+                    <button type="submit" class="account-info__btn">Добавить наследника</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

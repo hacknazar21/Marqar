@@ -1,69 +1,109 @@
 <section class="page__profile profile">
     <div class="profile__container">
-        @@include('aside-profile.htm',{ })
+        @@include('../../aside-profile.htm',{ })
         <div class="profile__right">
-            <div class="profile__links">
-                <a href="/" class="profile__link prev">Главная</a>
-                <span>/</span>
-                <a href="" class="profile__link current">Профиль</a>
-            </div>
             <div class="profile__title">Мой профиль</div>
-            <div class="profile__account-info account-info">
-                <div class="account-info__header">
-                    <div class="account-info__avatar">
-                        <div class="account-info__img">
-                            <img src="@img/pages/profile/avatar.png" alt="avatar">
+            <div class="profile__top-menu">
+                <a href="/myprofile.html" class="top-menu__link active">Личные данные</a>
+                <a href="/paydata.html" class="top-menu__link">Платежные данные и налоговый режим</a>
+                <a href="/inheritance.html" class="top-menu__link">Наследство</a>
+            </div>
+            <form action="#" class="profile__account-info account-info">
+                <div class="account-info__dang">
+                    <span>Внимание</span>: Заполняя свои данные, Вы несете ответственность за их достоверность в
+                    соответствии с
+                    казахстанским и международным законодательством. [* обязательные для заполнения поля]
+                </div>
+                <div class="account-info__main">
+                    <div class="account-info__title">Личные данные</div>
+                    <div class="account-info__form">
+                        <div class="account-info__input-box">
+                            <input required type="text" name="secondname" class="account-info__input" value="Юлдашев">
+                            <label for="secondname" class="account-info__label">Фамилия</label>
+
                         </div>
-                        <button class="account-info__change action">Изменить фото</button>
-                        <button class="account-info__delete action">Удалить</button>
+                        <div class="account-info__input-box">
+                            <input required type="text" name="firstname" class="account-info__input" value="Марат">
+                            <label for="secondname" class="account-info__label">Имя</label>
+
+                        </div>
+                        <div class="account-info__input-box">
+                            <input type="text" name="firstname" class="account-info__input" value="Маратович">
+                            <label for="secondname" class="account-info__label">Отчество</label>
+
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required data-inputmask="'mask': '№999999999999999'" type="text" name="passportnum"
+                                class="account-info__input" value="№132435353113123">
+                            <label for="secondname" class="account-info__label">Паспорт / Удост. Личности</label>
+
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required type="text" name="passportwho" class="account-info__input" value="МВД РК">
+                            <label for="secondname" class="account-info__label">Выдано кем / когда</label>
+
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required type="text" name="passportterm" class="account-info__input"
+                                value="20.07.2024">
+                            <label for="secondname" class="account-info__label">Срок действия</label>
+
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required data-inputmask="'mask': '9999 - 9999 - 9999 - 9999'" type="text" name="iin"
+                                class="account-info__input" value="0000 - 4444 - 2222 - 3333">
+                            <label for="secondname" class="account-info__label">ИИН (для резидентов РК)</label>
+
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required data-inputmask="'mask': '+9 - (999) - 999 - 99 - 99'" type="text" name="tel"
+                                class="account-info__input" value="+7 - (778) - 556 - 43 -12">
+                            <label for="secondname" class="account-info__label">Моб. телефон</label>
+
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required type="text" name="status" class="account-info__input"
+                                value="🇰🇿 Республика Казахстан">
+                            <label for="secondname" class="account-info__label">Гражданство</label>
+
+                        </div>
                     </div>
                 </div>
                 <div class="account-info__main">
-                    <div class="account-info__title">Информация о аккаунте</div>
-                    <form action="" class="account-info__form">
+                    <div class="account-info__title">Адрес проживания</div>
+                    <div action="" class="account-info__form">
                         <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Фамилия</label>
-                            <input type="text" name="secondname" class="account-info__input" value="Юлдашев">
+                            <input type="text" name="address[country]" class="account-info__input" value="Информация">
+                            <label for="secondname" class="account-info__label">Страна [проживания]</label>
                         </div>
                         <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Имя</label>
-                            <input type="text" name="firstname" class="account-info__input" value="Марат">
+                            <input type="text" name="address[city]" class="account-info__input" value="Информация">
+                            <label for="secondname" class="account-info__label">Город [проживания]</label>
                         </div>
                         <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Паспорт / Удост. Личности</label>
-                            <input data-inputmask="'mask': '№999999999999999'" type="text" name="passportnum"
-                                class="account-info__input" value="№132435353113123">
+                            <input type="text" name="address[flat]" class="account-info__input" value="Информация">
+                            <label for="secondname" class="account-info__label">Дом, квартира</label>
+
                         </div>
                         <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Выдано кем / когда</label>
-                            <input type="text" name="passportwho" class="account-info__input" value="МВД РК">
+                            <input value="Информация" type="text" name="address[state]" class="account-info__input">
+                            <label for="secondname" class="account-info__label">Район</label>
                         </div>
                         <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Срок действия</label>
-                            <input type="text" name="passportterm" class="account-info__input" value="20.07.2024">
+                            <input type="text" name="address[street]" class="account-info__input" value="Информация">
+                            <label for="secondname" class="account-info__label">Улица</label>
                         </div>
                         <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">ИИН (для резидентов РК)</label>
-                            <input data-inputmask="'mask': '9999 - 9999 - 9999 - 9999'" type="text" name="iin"
-                                class="account-info__input" value="0000 - 4444 - 2222 - 3333">
+                            <input type="text" name="address[post_index]" class="account-info__input"
+                                value="Информация">
+                            <label for="secondname" class="account-info__label">Почтовый индекс</label>
                         </div>
-                        <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Моб. телефон</label>
-                            <input data-inputmask="'mask': '+9 - (999) - 999 - 99 - 99'" type="text" name="tel"
-                                class="account-info__input" value="+7 - (778) - 556 - 43 -12">
-                        </div>
-                        <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Соц. Статус</label>
-                            <input type="text" name="status" class="account-info__input" value="Пенсионер">
-                        </div>
-                        <div class="account-info__input-box">
-                            <label for="secondname" class="account-info__label">Гражданство</label>
-                            <input type="text" name="status" class="account-info__input"
-                                value="🇰🇿 Республика Казахстан">
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+                <div class="account-info__submit">
+                    <button type="submit" class="account-info__btn">Сохранить изменения </button>
+                </div>
+            </form>
         </div>
     </div>
 </section>

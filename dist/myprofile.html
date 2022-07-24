@@ -2,47 +2,49 @@
 <html lang="ru">
 
 <head>
-	<title>Личный кабинет</title>
+	<title>Мой профиль</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220421170924">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220718181453">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body class="account">
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<a href="/Marqar/dist/" class="header__logo">
-					MARQAR
-				</a>
+				<a href="/" class="header__logo"></a>
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="/Marqar/dist/about.html" class="menu__link">О компании</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/about.html" class="menu__link">Новости</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/products.html" class="menu__link">Продукты</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/documents.html" class="menu__link">Документы</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/contacts.html" class="menu__link">Контакты</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/" class="menu__link">Мы на карте мира</a></li>
-							<li class="header__menu-footer menu-footer-header">
-								<div class="menu-footer-header__item menu-footer-header-item-tel"></div>
-								<div class="menu-footer-header__item menu-footer-header-item-map "></div>
-								<div class="menu-footer-header__item menu-footer-header-item-mail"></div>
-							</li>
+							<li class="menu__item"><a href="/income.html" class="menu__link">Стартовая страница</a></li>
+							<li class="menu__item"><a href="/myprofile.html" class="menu__link">Мой профиль</a></li>
+							<li class="menu__item"><a href="/sales.html" class="menu__link">Мои продажи</a></li>
+							<li class="menu__item"><a href="/finances.html" class="menu__link">Мои финансы</a></li>
+							<li class="menu__item"><a href="/myproducts.html" class="menu__link">Мои продукты</a></li>
+							<li class="menu__item"><a href="/documentaton.html" class="menu__link">Документация</a></li>
+							<li class="menu__item"><a href="/webinars.html" class="menu__link">График вебинаров</a></li>
+							<li class="menu__item"><a href="/chat.html" class="menu__link">Чат</a></li>
+							<li class="menu__item"><a href="/news.html" class="menu__link">Новости</a></li>
 						</ul>
-
 					</nav>
-
 				</div>
 				<button type="button" class="header-menu__icon icon-menu"><span></span></button>
-				<div class="header__account account-box">
-					<a href="" class="account-box__enter">Вход</a>
-					<span></span>
-					<a href="" class="account-box__reg">Регистрация</a>
+				<div class="header__actions actions-header">
+					<div data-da=".menu__list, 768" class="header__account account-box">
+						<div class="_icon-telegram"></div>
+						<a href="" class="account-box__enter">Чат</a>
+						<span></span>
+						<a href="" class="account-box__reg">Канал</a>
+					</div>
+					<a data-da=".menu__list, 768" href="" class="actions-header__leave">Выход</a>
+					<select name="language" class="form">
+						<option value="RU" selected>RU</option>
+						<option value="EN">EN</option>
+					</select>
 				</div>
 			</div>
 		</header>
@@ -52,97 +54,153 @@
 				<div class="profile__container">
 					<aside class="profile__aside aside-profile">
 						<div class="aside-profile__user profile-user">
-							<div data-da=".profile-user__id-mobile, 768" class="profile-user__id">№:1212343535453</div>
-							<div class="profile-user__block">
-								<div class="profile-user__avatar-ibg">
-									<picture><source srcset="img/pages/profile/avatar.webp" type="image/webp"><img src="img/pages/profile/avatar.png" alt="avatar"></picture>
+							<div class="profile-user__head">
+								<div class="profile-user__flag">
+									<picture><source srcset="img/account/flag.webp" type="image/webp"><img src="img/account/flag.png" alt=""></picture>
 								</div>
-								<div class="profile-user__name">Марат Юсупов</div>
-								<button type="button" data-submenubtn class="profile-menu__icon"></button>
-
+								<div class="profile-user__name">
+									Юсупов Марат
+								</div>
 							</div>
-							<div data-submenu class="profile-user__menu profile-menu">
-								<nav class="profile-menu__body">
-									<div class="profile-user__id-mobile"></div>
-									<ul class="profile-menu__list">
-										<li class="profile-menu__item active"><a href="/Marqar/dist/profile.html" class="profile-menu__link"><span>Мой
-													профиль</span></a>
-										</li>
-										<li class="profile-menu__item"><a href="/Marqar/dist/income.html" class="profile-menu__link"><span>Доходы</span></a></li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Продажи</span></a></li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>График
-													вебинаров</span></a></li>
-										<li class="profile-menu__item"><a href="/Marqar/dist/plan.html" class="profile-menu__link"><span>План
-													вознаграждения</span></a>
-										</li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Документация</span></a>
-										</li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Новости</span></a></li>
-										<li class="profile-menu__item"><a href="" class="profile-menu__link"><span>Помощь</span></a></li>
-									</ul>
-								</nav>
+							<div class="profile-user__avatar">
+								<div class="profile-user__avatar-bg">
+									<picture><source srcset="img/account/mecenat_bg.webp" type="image/webp"><img src="img/account/mecenat_bg.png" alt=""></picture>
+								</div>
+								<div class="profile-user__avatar-frame">
+									<picture><source srcset="img/pages/profile/avatar.webp" type="image/webp"><img src="img/pages/profile/avatar.png" alt=""></picture>
+								</div>
+							</div>
+							<div class="profile-user__title">Благотворитель</div>
+							<div class="profile-user__info profile-info">
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Email:</div>
+									<div class="profile-info__item-value">marat_u2@gmail.com</div>
+								</div>
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Дата регистрации:</div>
+									<div class="profile-info__item-value">02.12.21</div>
+								</div>
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Дата активации:</div>
+									<div class="profile-info__item-value">03.12.21</div>
+								</div>
+								<div class="profile-info__item">
+									<div class="profile-info__item-name">Агентский номер (АН):</div>
+									<div class="profile-info__item-value">1234</div>
+								</div>
+								<div copy class="profile-info__item">
+									<div class="profile-info__item-name">Агенсткая ссылка:</div>
+									<div ref class="profile-info__item-value">/ssilka1232</div>
+									<div button class="profile-info__item-value__copy">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M10 10H13.3333C13.7015 10 14 9.70152 14 9.33333V2.66667C14 2.29848 13.7015 2 13.3333 2L6.66667 2C6.29848 2 6 2.29848 6 2.66667L6 6" stroke="#0B2137" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M2.66667 14L9.33333 14C9.70152 14 10 13.7015 10 13.3333L10 6.66667C10 6.29848 9.70153 6 9.33334 6L2.66667 6C2.29848 6 2 6.29848 2 6.66667L2 13.3333C2 13.7015 2.29848 14 2.66667 14Z" stroke="#0B2137" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</div>
+								</div>
+							</div>
+							<div class="profile-user__btn">
+								<a href="" class="profile-user__btn-link">Перейти в другой аккаунт</a>
 							</div>
 						</div>
 					</aside>
 					<div class="profile__right">
-						<div class="profile__links">
-							<a href="/" class="profile__link prev">Главная</a>
-							<span>/</span>
-							<a href="" class="profile__link current">Профиль</a>
-						</div>
 						<div class="profile__title">Мой профиль</div>
-						<div class="profile__account-info account-info">
-							<div class="account-info__header">
-								<div class="account-info__avatar">
-									<div class="account-info__img">
-										<picture><source srcset="img/pages/profile/avatar.webp" type="image/webp"><img src="img/pages/profile/avatar.png" alt="avatar"></picture>
+						<div class="profile__top-menu">
+							<a href="/myprofile.html" class="top-menu__link active">Личные данные</a>
+							<a href="/paydata.html" class="top-menu__link">Платежные данные и налоговый режим</a>
+							<a href="/inheritance.html" class="top-menu__link">Наследство</a>
+						</div>
+						<form action="#" class="profile__account-info account-info">
+							<div class="account-info__dang">
+								<span>Внимание</span>: Заполняя свои данные, Вы несете ответственность за их достоверность в
+								соответствии с
+								казахстанским и международным законодательством. [* обязательные для заполнения поля]
+							</div>
+							<div class="account-info__main">
+								<div class="account-info__title">Личные данные</div>
+								<div class="account-info__form">
+									<div class="account-info__input-box">
+										<input required type="text" name="secondname" class="account-info__input" value="Юлдашев">
+										<label for="secondname" class="account-info__label">Фамилия</label>
+
 									</div>
-									<button class="account-info__change action">Изменить фото</button>
-									<button class="account-info__delete action">Удалить</button>
+									<div class="account-info__input-box">
+										<input required type="text" name="firstname" class="account-info__input" value="Марат">
+										<label for="secondname" class="account-info__label">Имя</label>
+
+									</div>
+									<div class="account-info__input-box">
+										<input type="text" name="firstname" class="account-info__input" value="Маратович">
+										<label for="secondname" class="account-info__label">Отчество</label>
+
+									</div>
+									<div class="account-info__input-box">
+										<input required data-inputmask="'mask': '№999999999999999'" type="text" name="passportnum" class="account-info__input" value="№132435353113123">
+										<label for="secondname" class="account-info__label">Паспорт / Удост. Личности</label>
+
+									</div>
+									<div class="account-info__input-box">
+										<input required type="text" name="passportwho" class="account-info__input" value="МВД РК">
+										<label for="secondname" class="account-info__label">Выдано кем / когда</label>
+
+									</div>
+									<div class="account-info__input-box">
+										<input required type="text" name="passportterm" class="account-info__input" value="20.07.2024">
+										<label for="secondname" class="account-info__label">Срок действия</label>
+
+									</div>
+									<div class="account-info__input-box">
+										<input required data-inputmask="'mask': '9999 - 9999 - 9999 - 9999'" type="text" name="iin" class="account-info__input" value="0000 - 4444 - 2222 - 3333">
+										<label for="secondname" class="account-info__label">ИИН (для резидентов РК)</label>
+
+									</div>
+									<div class="account-info__input-box">
+										<input required data-inputmask="'mask': '+9 - (999) - 999 - 99 - 99'" type="text" name="tel" class="account-info__input" value="+7 - (778) - 556 - 43 -12">
+										<label for="secondname" class="account-info__label">Моб. телефон</label>
+
+									</div>
+									<div class="account-info__input-box">
+										<input required type="text" name="status" class="account-info__input" value="🇰🇿 Республика Казахстан">
+										<label for="secondname" class="account-info__label">Гражданство</label>
+
+									</div>
 								</div>
 							</div>
 							<div class="account-info__main">
-								<div class="account-info__title">Информация о аккаунте</div>
-								<form action="" class="account-info__form">
+								<div class="account-info__title">Адрес проживания</div>
+								<div action="" class="account-info__form">
 									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Фамилия</label>
-										<input type="text" name="secondname" class="account-info__input" value="Юлдашев">
+										<input type="text" name="address[country]" class="account-info__input" value="Информация">
+										<label for="secondname" class="account-info__label">Страна [проживания]</label>
 									</div>
 									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Имя</label>
-										<input type="text" name="firstname" class="account-info__input" value="Марат">
+										<input type="text" name="address[city]" class="account-info__input" value="Информация">
+										<label for="secondname" class="account-info__label">Город [проживания]</label>
 									</div>
 									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Паспорт / Удост. Личности</label>
-										<input data-inputmask="'mask': '№999999999999999'" type="text" name="passportnum" class="account-info__input" value="№132435353113123">
+										<input type="text" name="address[flat]" class="account-info__input" value="Информация">
+										<label for="secondname" class="account-info__label">Дом, квартира</label>
+
 									</div>
 									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Выдано кем / когда</label>
-										<input type="text" name="passportwho" class="account-info__input" value="МВД РК">
+										<input value="Информация" type="text" name="address[state]" class="account-info__input">
+										<label for="secondname" class="account-info__label">Район</label>
 									</div>
 									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Срок действия</label>
-										<input type="text" name="passportterm" class="account-info__input" value="20.07.2024">
+										<input type="text" name="address[street]" class="account-info__input" value="Информация">
+										<label for="secondname" class="account-info__label">Улица</label>
 									</div>
 									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">ИИН (для резидентов РК)</label>
-										<input data-inputmask="'mask': '9999 - 9999 - 9999 - 9999'" type="text" name="iin" class="account-info__input" value="0000 - 4444 - 2222 - 3333">
+										<input type="text" name="address[post_index]" class="account-info__input" value="Информация">
+										<label for="secondname" class="account-info__label">Почтовый индекс</label>
 									</div>
-									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Моб. телефон</label>
-										<input data-inputmask="'mask': '+9 - (999) - 999 - 99 - 99'" type="text" name="tel" class="account-info__input" value="+7 - (778) - 556 - 43 -12">
-									</div>
-									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Соц. Статус</label>
-										<input type="text" name="status" class="account-info__input" value="Пенсионер">
-									</div>
-									<div class="account-info__input-box">
-										<label for="secondname" class="account-info__label">Гражданство</label>
-										<input type="text" name="status" class="account-info__input" value="🇰🇿 Республика Казахстан">
-									</div>
-								</form>
+								</div>
 							</div>
-						</div>
+							<div class="account-info__submit">
+								<button type="submit" class="account-info__btn">Сохранить изменения </button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</section>
@@ -150,65 +208,32 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
-				<div class="footer__logo">MARQAR</div>
-				<div class="footer__menu menu-footer">
-					<div class="menu-footer__header">
-						<p class="menu-footer__text">
-							Компания MARQAR LLP ожидает от всех участников проекта поддержания принципов справедливости,
-							честности и
-							конфиденциальности при заключении сделок и иной деловой активноcти.
-						</p>
-					</div>
-					<nav data-spollers="767.98" class="menu-footer__body">
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Меню</button>
-							<div class="menu-footer__list-body">
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">О компании</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Продукты</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">План вознаграждения</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Информация</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Контакты</a></li>
-							</div>
-						</ul>
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Документы</button>
-							<div class="menu-footer__list-body">
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">План вознаграждения</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Условия отказа от заказа</a>
-								</li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Политика
-										конфиденциальности</a>
-								</li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Договор публичной оферты</a>
-								</li>
-							</div>
-						</ul>
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Контакты</button>
-							<div class="menu-footer__list-body">
-								<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item _icon-Map">
-									<div class="menu-footer__item-box">
-										Казахстан, г. Алматы, 050062
-										Микрорайон-1, ул. Жубанова 68, оф. 22
-									</div>
-								</li>
-								<li data-da=".menu-footer-header-item-mail, 992" class="menu-footer__item  _icon-Mail">
-									<div class="menu-footer__item-box">
-										<span>Почта:</span>
-										<a href="mailto:info@markhar.com" class="menu-footer__link">info@markhar.com</a>
-									</div>
-								</li>
-								<li data-da=".menu-footer-header-item-tel, 992" class="menu-footer__item _icon-Phone">
-									<div class="menu-footer__item-box">
-										<span>Телефон:</span>
-										<a href="tel:+77019545007" class="menu-footer__link">+7 701 954 50 07</a>
-										<a href="tel:+77772396323" class="menu-footer__link">+7 777 239 63 23</a>
-									</div>
-								</li>
-							</div>
-						</ul>
-					</nav>
-				</div>
+				<nav class="menu-footer__body">
+					<ul class="menu-footer__list">
+						<div class="menu-footer__list-body">
+							<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item"><a href="/" class="header__logo"></a></li>
+
+							<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item _icon-Map">
+								<div class="menu-footer__item-box">
+									Казахстан, 050021, г. Алматы, Бульвар Бухар Жырау 2
+								</div>
+							</li>
+							<li data-da=".menu-footer-header-item-mail, 992" class="menu-footer__item  _icon-Mail">
+								<div class="menu-footer__item-box">
+									<span>Почта:</span>
+									<a href="mailto:info@marqar.kz" class="menu-footer__link">info@marqar.kz</a>
+								</div>
+							</li>
+							<li data-da=".menu-footer-header-item-tel, 992" class="menu-footer__item _icon-Phone">
+								<div class="menu-footer__item-box">
+									<span>Телефон:</span>
+									<a href="tel:+77770821922" class="menu-footer__link">+7 777 082 19 22</a>
+									<a href="tel:+77783261525" class="menu-footer__link">+7 778 326 15 25</a>
+								</div>
+							</li>
+						</div>
+					</ul>
+				</nav>
 			</div>
 		</footer>
 	</div>
@@ -224,7 +249,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220421170924"></script>
+	<script src="js/app.min.js?_v=20220718181453"></script>
 </body>
 
 </html>

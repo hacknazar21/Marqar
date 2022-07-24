@@ -7,24 +7,30 @@
     position: relative;
     z-index: 1;
     &__container {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        @include adaptiveValue("gap", 63, 20);
-        @media (max-width: $tablet) {
-            grid-template-columns: 1fr;
-        }
         padding-top: rem(40);
+        .account & {
+            padding-top: 0;
+        }
         padding-bottom: rem(42);
     }
-
+    &__head {
+        display: flex;
+        @include adaptiveValue("gap", 60, 20);
+        .account & {
+            justify-content: center;
+            align-items: center;
+            padding: rem(30) 0;
+            box-shadow: 0px 2px 2px rgba(105, 105, 105, 0.15);
+        }
+    }
     &__logo {
         display: flex;
         gap: rem(8);
         &::before {
             content: "";
-            width: rem(46);
-            height: rem(32);
-            background: url("@img/logo.png") 100% 100% no-repeat;
+            width: rem(65);
+            height: rem(65);
+            background: url("@img/logo.png") center/contain no-repeat;
             background-position: center;
         }
         font-family: Montserrat;
@@ -54,15 +60,12 @@
     }
 
     &__body {
-        display: flex;
-        @include adaptiveValue("gap", 55, 0);
-        @media (max-width: $mobile) {
-            flex-direction: column;
-            gap: rem(15);
-        }
     }
 
-    &__list {
+    &__list-body {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 50, 20);
     }
 
     &__item-title {
@@ -80,7 +83,12 @@
         font-size: rem(18);
         line-height: 130%;
         /* or 23px */
-
+        .account & {
+            &::before {
+                font-size: rem(21);
+                color: #daa520;
+            }
+        }
         color: #ffffff;
         margin-top: rem(30);
         display: flex;
@@ -88,10 +96,39 @@
         &::before {
             font-size: rem(24);
         }
-    }
 
+        svg {
+            max-width: rem(40);
+            path {
+                transition: fill 0.3s ease 0s;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    cursor: pointer;
+                    path {
+                        fill: #daa520;
+                    }
+                }
+            }
+        }
+    }
+    &__item-box {
+        span {
+            display: block;
+            width: 100%;
+        }
+        .account & {
+            display: flex;
+            gap: rem(15);
+            span {
+                width: auto;
+            }
+        }
+    }
     &__link {
-        display: block;
+        &:not(:last-child) {
+            margin-right: rem(10);
+        }
     }
 }
 

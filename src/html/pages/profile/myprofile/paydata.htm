@@ -1,0 +1,156 @@
+<section class="page__profile profile">
+    <div class="profile__container">
+        @@include('../../aside-profile.htm',{ })
+        <div class="profile__right">
+            <div class="profile__title">Мой профиль</div>
+            <div class="profile__top-menu">
+                <a href="/myprofile.html" class="top-menu__link">Личные данные</a>
+                <a href="/paydata.html" class="top-menu__link active">Платежные данные и налоговый режим</a>
+                <a href="/inheritance.html" class="top-menu__link">Наследство</a>
+            </div>
+            <form action="#" class="profile__account-info account-info">
+                <div class="account-info__dang mb-0">
+                    <span>Внимание</span>: Вознаграждения переводятся на ваш карт-счет при условии заполнения ваших
+                    данных.
+                    <span>[* обязательные для заполнения поля - ** один из двух вариантов]</span>
+                </div>
+                <div class="account-info__main">
+                    <div class="account-info__title"></div>
+                    <div class="account-info__form">
+                        <div class="account-info__input-box">
+                            <input req-twice type="text" name="IBAN" class="account-info__input" value="1324 2344 2312">
+                            <label class="account-info__label">Мой IBAN-счет</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input req-twice type="text" name="BIK" class="account-info__input" value="1324 2344 2312">
+                            <label class="account-info__label">БИК моего банка</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required type="text" name="bank" class="account-info__input" value="KASPI">
+                            <label class="account-info__label">Мой банк</label>
+                        </div>
+                    </div>
+                    <div class="account-info__title"></div>
+                    <div class="account-info__form">
+                        <div class="account-info__input-box">
+                            <input req-twice type="text" name="IBAN" class="account-info__input" value="1324 2344 2312">
+                            <label class="account-info__label">Мой IBAN-счет</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input req-twice type="text" name="BIK" class="account-info__input" value="1324 2344 2312">
+                            <label class="account-info__label">БИК моего банка</label>
+                        </div>
+                        <div class="account-info__input-box">
+                            <input required type="text" name="bank" class="account-info__input" value="KASPI">
+                            <label class="account-info__label">Мой банк</label>
+                        </div>
+                    </div>
+                    <div class="account-info__title"></div>
+                    <div class="account-info__form with-checkbox">
+                        <div class="account-info__checkboxes">
+                            <div class="account-info__input-box">
+                                <input req-twice id="IBAN" type="checkbox" name="IBAN" class="account-info__input"
+                                    value="1324 2344 2312">
+                                <label class="account-info__label">
+                                    Индивидуальный предприниматель (специальный налоговый режим):
+                                </label>
+                            </div>
+                        </div>
+                        <div class="account-info__upload-box">
+                            <div class="account-info__input-box upload">
+                                <label for="upload-doc" class="account-info__label">
+                                    Загрузка талона ИП (pdf)
+                                </label>
+                                <input type="file" id="upload-doc" name="doc" class="account-info__input">
+                            </div>
+                            <div class="account-info__input-box upload">
+                                <label for="upload-doc" class="account-info__label">
+                                    Загрузка “Семейного пакета”
+                                </label>
+                                <input type="file" id="upload-doc" name="doc" class="account-info__input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-info__title"></div>
+                    <div class="account-info__form with-checkbox">
+                        <div class="account-info__checkboxes">
+                            <div class="account-info__input-box">
+                                <input req-twice id="IBAN" type="checkbox" name="IBAN" class="account-info__input"
+                                    value="1324 2344 2312">
+                                <label class="account-info__label">
+                                    Пенсионер:
+                                </label>
+                                <div class="account-info__input-char">А</div>
+                            </div>
+                            <div class="account-info__input-box">
+                                <input req-twice id="IBAN" type="checkbox" name="IBAN" class="account-info__input"
+                                    value="1324 2344 2312">
+                                <label class="account-info__label">
+                                    Студент (магистрант, докторант, вечерник, заочник):
+                                </label>
+                                <div class="account-info__input-char">В</div>
+
+                            </div>
+                            <div class="account-info__input-box">
+                                <input req-twice id="IBAN" type="checkbox" name="IBAN" class="account-info__input"
+                                    value="1324 2344 2312">
+                                <label class="account-info__label">
+                                    Инвалиды I и II группы бессрочно
+                                </label>
+                                <div class="account-info__input-char">1</div>
+                            </div>
+                            <div class="account-info__input-box">
+                                <input req-twice id="IBAN" type="checkbox" name="IBAN" class="account-info__input"
+                                    value="1324 2344 2312">
+                                <label class="account-info__label">
+                                    Инвалиды I, II, III группы со справкой, выданной на определенный срок
+                                </label>
+                                <div class="account-info__input-char">2</div>
+                            </div>
+                            <div class="account-info__input-box">
+                                <input req-twice id="IBAN" type="checkbox" name="IBAN" class="account-info__input"
+                                    value="1324 2344 2312">
+                                <label class="account-info__label">
+                                    Родители (приемные родители, попечители) ребенка с инвалидностью, лица, признанного
+                                    «инвалидом с детства».
+                                </label>
+                                <div class="account-info__input-char">3</div>
+                            </div>
+                            <div class="account-info__input-box">
+                                <input req-twice id="IBAN" type="checkbox" name="IBAN" class="account-info__input"
+                                    value="1324 2344 2312">
+                                <label class="account-info__label">
+                                    Ветеран боевых действий (лицо, приравненное к участникам ВОВ)
+                                </label>
+                                <div class="account-info__input-char">4</div>
+                            </div>
+                        </div>
+                        <div class="account-info__upload-box">
+                            <a href="" class="account-info__upload-link">
+                                <img src="@img/account/egov.png" alt="">
+                            </a>
+                            <div class="account-info__input-box upload">
+                                <label for="upload-doc" class="account-info__label">
+                                    Строка загрузки справки [eGov] (pdf)
+                                </label>
+                                <input type="file" id="upload-doc" name="doc" class="account-info__input">
+                            </div>
+                            <div class="account-info__input-box upload">
+                                <label for="upload-doc" class="account-info__label">
+                                    Строка загрузки: Заявление о применении налогового вычета в соответствии с льготой
+                                    (pdf)
+                                </label>
+                                <input type="file" id="upload-doc" name="doc" class="account-info__input">
+                                <a href="" class="upload__link">Скачать образец бланка Заявления по налоговому вычету
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-info__submit">
+                    <button type="submit" class="account-info__btn">Сохранить изменения </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

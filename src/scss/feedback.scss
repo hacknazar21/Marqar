@@ -10,15 +10,15 @@
 
     &::before {
         content: "";
-        background: url("@img/feedback/01.png") 100% 100% no-repeat;
-        width: rem(288);
+        background: url("@img/feedback/logo.png") center/contain no-repeat;
+        width: rem(168);
         height: 100%;
         position: absolute;
-        left: rem(-114);
+        left: rem(0);
     }
     &::after {
         content: "";
-        background: url("@img/feedback/02.png") 100% 100% no-repeat;
+        background: url("@img/feedback/tel.png") center/contain no-repeat;
         width: rem(168);
         height: 100%;
         position: absolute;

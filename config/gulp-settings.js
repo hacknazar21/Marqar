@@ -31,13 +31,13 @@ export const path = {
 	buildFolder: buildFolder,
 	rootFolder: rootFolder,
 	srcFolder: srcFolder,
-	ftp: `` // Путь к нужной папке на удаленном сервере. gulp добавит имя папки проекта автоматически
+	ftp: `marqar.onedevelop.kz` // Путь к нужной папке на удаленном сервере. gulp добавит имя папки проекта автоматически
 };
 
 // Настройка FTP соединения
 export const configFTP = {
-	host: "", // Адрес FTP сервера
-	user: "", // Имя пользователя
-	password: "", // Пароль
+	host: "onedevelop.kz", // Адрес FTP сервера
+	user: "onedevel", // Имя пользователя
+	password: "n750@5OWy&bm", // Пароль
 	parallel: 5 // Кол-во одновременных потоков
 }

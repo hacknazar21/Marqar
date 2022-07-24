@@ -37,18 +37,15 @@ $offerMarginTopBtn: rem(0);
         }
     }
     &__box {
-        text-align: left;
+        text-align: center;
         position: relative;
         z-index: 2;
-        max-width: percent(918, 1218);
-        margin: auto 0;
-
-        @media (max-width: $tablet) {
-            @include adaptiveValue("padding", 35, 15);
-            padding-top: 0;
-            padding-bottom: 0;
-            max-width: 100%;
-        }
+        max-width: percent(900, 1218);
+        margin: auto;
+        font-family: OrchideaPro;
+        font-weight: 400;
+        @include adaptiveValue("font-size", 48, 20);
+        line-height: math.div(61, 60);
     }
 
     &__background-img {
@@ -69,33 +66,44 @@ $offerMarginTopBtn: rem(0);
     }
 
     &__title {
-        font-weight: bold;
-        @include adaptiveValue("font-size", 70, 40);
-        line-height: 120%;
-        @include adaptiveValue("margin-bottom", 21, 11);
     }
 
     &__text {
-        font-family: Gilroy;
-        font-weight: 500;
-        @include adaptiveValue("font-size", 60, 20);
-        &:not(:last-child) {
-            margin-bottom: rem(33);
+        &:not(.quote) {
+            @include adaptiveValue("margin-bottom", 100, 10);
         }
-        line-height: 150%;
-        /* or 33px */
-        font-weight: 650;
-        /* color: #b5cdf2; */
-        color: #fff;
-        &.right {
-            font-weight: normal;
-            @include adaptiveValue("font-size", 22, 16);
-        }
-        span {
-            font-weight: 500;
-            font-size: rem(12);
-            line-height: 150%;
-            color: #b5cdf2;
+        &.quote {
+            img {
+                margin-bottom: rem(20);
+                width: percent(80, 400);
+                max-width: rem(80);
+            }
+            span {
+                display: block;
+
+                font-family: "Orchidea Pro";
+                font-weight: 400;
+                @include adaptiveValue("font-size", 22, 12);
+                line-height: math.div(33, 22);
+                color: #b5cdf2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include adaptiveValue("gap", 33, 20);
+                &::before,
+                &::after {
+                    content: "";
+                    display: block;
+                    width: rem(215);
+                    height: rem(1);
+                }
+                &::before {
+                    background: linear-gradient(90deg, rgba(181, 205, 242, 0) 0%, rgba(181, 205, 242, 0.6) 100%);
+                }
+                &::after {
+                    background: linear-gradient(-90deg, rgba(181, 205, 242, 0) 0%, rgba(181, 205, 242, 0.6) 100%);
+                }
+            }
         }
     }
 }

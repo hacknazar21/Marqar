@@ -1,0 +1,35 @@
+<section class="page__profile profile">
+    <div class="profile__container">
+        @@include('../../aside-profile.htm',{ })
+        <div class="profile__right">
+            <div class="profile__title">Мои финансы</div>
+            <div class="profile__top-menu">
+                <a href="/finances.html" class="top-menu__link">Финансы</a>
+                <a href="/taxes.html" class="top-menu__link active">Налоги</a>
+                <a href="/charity.html" class="top-menu__link">Благотворительность</a>
+            </div>
+            <div class="profile__finances finances grid-1">
+                <div class="finances__item">
+                    <div class="finances__name">Мои пенсионные взносы:</div>
+                    <div class="finances__value">₸ 137 088</div>
+                </div>
+                <div class="finances__item">
+                    <div class="finances__name">Мои взносы на Обязательное Социальное Медицинское Страхование:</div>
+                    <div class="finances__value">₸ 27 417,60</div>
+                </div>
+                <div class="finances__item">
+                    <div class="finances__name">Мой Индивидуальный Подоходный Налог: </div>
+                    <div class="finances__value">₸ 109 670,40 </div>
+                </div>
+            </div>
+            <form action="" class="profile__finances-period">
+                <select name="period" class="form">
+                    <option value="1" selected>Выбрать период</option>
+                    <option value="2">Апрель</option>
+                    <option value="3">Май</option>
+                    <option value="4">Июнь</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</section>

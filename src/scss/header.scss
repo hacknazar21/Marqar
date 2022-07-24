@@ -58,15 +58,14 @@ $subListHoverColor: #fff;
 		@include adaptiveValue("font-size", 16, 18);
 	}
 	&__logo {
-		font-family: Montserrat;
-		font-weight: 600;
-		font-size: rem(30);
-		line-height: 120%;
-
-		background: $goldColor;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		color: #dac471;
+		display: block;
+		font-family: "ProximaNova";
+		background: url(@img/logo.png) center/contain no-repeat;
+		height: rem(65);
+		max-height: 100%;
+		flex: 0 0 percent(65, 1218);
+		margin: rem(10) 0;
+		min-width: 80px;
 	}
 
 	&__menu {
@@ -129,8 +128,11 @@ $subListHoverColor: #fff;
 	}
 
 	&__item {
+		font-family: "ProximaNova";
 		display: inline-flex;
 		justify-content: center;
+		color: #d5e2f3;
+		font-weight: 400;
 	}
 	&__link {
 		@media (max-width: $tablet) {

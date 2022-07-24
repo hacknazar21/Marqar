@@ -4,6 +4,8 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 import { Canvas } from "./Canvas.js";
 import { getRandomBetween } from "./functions.js";
+import { Chat } from "./Chat.js";
+import { Copy } from "./Copy.js";
 
 
 
@@ -256,7 +258,7 @@ if (document.querySelector('.inner-rates') != null) {
     let valute = "USD";
     const date = new Date();
     const month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'нояб', 'дек'];
-    const response = fetch(`https://api.fastforex.io/fetch-one?from=${valute}&to=${baseValute}&api_key=240c18310d-0a514f6b0a-r9nl1f`);
+    /* const response = fetch(`https://api.fastforex.io/fetch-one?from=${valute}&to=${baseValute}&api_key=240c18310d-0a514f6b0a-r9nl1f`);
     response.then((response) => {
         return response.json();
     })
@@ -270,7 +272,7 @@ if (document.querySelector('.inner-rates') != null) {
             else alert(data.error)
         }).catch((error) => {
             alert(error)
-        });
+        }); */
     buttons.forEach(button => {
         button.addEventListener('click', (e) => {
             if (!e.target.classList.contains('active')) {
@@ -308,7 +310,10 @@ if (document.querySelectorAll('.inner-item__changes-value').length != 0) {
 document.addEventListener('DOMContentLoaded', () => {
     reverseElements();
     cutLongText();
-
+    if(document.querySelector('form[name="chat"]'))
+    new Chat(document.querySelector('form[name="chat"]'))
+    if(document.querySelector('[copy]'))
+    new Copy(document.querySelector('[copy]'))
     const el = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"]');
     const elCell = document.querySelectorAll('[class*="__table-box"] [class*="__table-row"] [class*="__table-item"]');
 

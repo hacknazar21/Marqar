@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Личный кабинет"
+"title":"Мой профиль"
 })
 
-<body>
+<body class="account">
     <div class="wrapper">
-        @@include('html/_header.htm',{})
+        @@include('html/_header-profile.htm',{})
         <main class="page">
 
             @@include('html/pages/profile/myprofile/content.htm',{})
 
         </main>
-        @@include('html/_footer.htm',{})
+        @@include('html/_footer-profile.htm',{})
     </div>
     @@include('html/_popup.htm',{})
     @@include('html/_js.htm',{})

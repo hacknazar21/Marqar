@@ -17,10 +17,6 @@
         }
     }
 
-    [class*="__title"] {
-        @include adaptiveValue("margin-bottom", 20, 8);
-    }
-
     [class*="__paragraph-block"] {
         p {
             &:not(:last-child) {

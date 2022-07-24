@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220421170924">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220718181453">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,18 +16,18 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<a href="/Marqar/dist/" class="header__logo">
-					MARQAR
+				<a href="/" class="header__logo">
+
 				</a>
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="/Marqar/dist/about.html" class="menu__link">О компании</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/about.html" class="menu__link">Новости</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/products.html" class="menu__link">Продукты</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/documents.html" class="menu__link">Документы</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/contacts.html" class="menu__link">Контакты</a></li>
-							<li class="menu__item"><a href="/Marqar/dist/" class="menu__link">Мы на карте мира</a></li>
+							<li class="menu__item"><a href="/about.html" class="menu__link">О компании</a></li>
+							<li class="menu__item"><a href="/about.html" class="menu__link">Новости</a></li>
+							<li class="menu__item"><a href="/products.html" class="menu__link">Продукты</a></li>
+							<li class="menu__item"><a href="/documents.html" class="menu__link">Документы</a></li>
+							<li class="menu__item"><a href="/contacts.html" class="menu__link">Контакты</a></li>
+							<li class="menu__item"><a href="/" class="menu__link">Мы на карте мира</a></li>
 							<li class="header__menu-footer menu-footer-header">
 								<div class="menu-footer-header__item menu-footer-header-item-tel"></div>
 								<div class="menu-footer-header__item menu-footer-header-item-map "></div>
@@ -36,13 +36,20 @@
 						</ul>
 
 					</nav>
-
 				</div>
+				<div class="mobile-lang" style=""></div>
 				<button type="button" class="header-menu__icon icon-menu"><span></span></button>
 				<div class="header__account account-box">
 					<a href="" class="account-box__enter">Вход</a>
 					<span></span>
 					<a href="" class="account-box__reg">Регистрация</a>
+
+				</div>
+				<div data-da=".mobile-lang, 768">
+					<select name="language" class="form">
+						<option value="RU" selected>RU</option>
+						<option value="EN">EN</option>
+					</select>
 				</div>
 			</div>
 		</header>
@@ -55,9 +62,13 @@
 					<div class="offer__box">
 						<h1 class="offer__title"></h1>
 						<p class="offer__text">
-							Образование, просвещение <br> — это единственный путь для развития родного народа
+							“Образование, просвещение
+							— это единственный путь для развития родного народа”
 						</p>
-						<p class="offer__text right"><span>( С )</span> Ыбырай Алтынсарин</p>
+						<p class="offer__text quote">
+							<picture><source srcset="img/offer/1.webp" type="image/webp"><img src="img/offer/1.png" alt="Ыбырай Алтынсарин"></picture>
+							<span>Ыбырай Алтынсарин</span>
+						</p>
 					</div>
 					<div class="info-company info-company_position">
 						<div class="info-company__number-box">
@@ -93,12 +104,11 @@
 							<div class="product-cart__img-ibg">
 								<picture><source srcset="img/info-block/01.webp" type="image/webp"><img src="img/info-block/01.jpg" alt="Card #1"></picture>
 							</div>
-							<div class="product-cart__title">Говорим по английски</div>
+							<div class="product-cart__title">Говорим по английски (русскоязычная группа)</div>
 							<div class="product-cart__text">
-								Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-								sint.
+								Языковые онлайн курсы «MARQAR» - эффективная школа языков с уклоном на speaking.
 							</div>
-							<a href="" class="product-cart__more">Подробнее</a>
+							<a href="/english.html" class="product-cart__more">Подробнее</a>
 						</article>
 						<!-- Если нужна пагинация -->
 						<div class="swiper-pagination"></div>
@@ -111,13 +121,19 @@
 									<div class="swiper-slide__header swiper-slide-strategy"></div>
 									<div data-tab="1" class="tab-info-block__text-box active-tab">
 										<h3 class="tab-info-block__title">
-											"Параллельно-перекрестное изучение языков" – это освоение английского языка одновременно
-											на родном и другом по выбору языке, базового уровня, находящихся в Кейсе.
+											Трехъязычие прочно стало одним из приоритетов современного образования.
 										</h3>
 
 										<p class="tab-info-block__text">
-											Это возможность освоить английский на русском, казахский на русском, английский на
-											казахском, казахский на английском.
+											Знание нескольких языков открывает для каждого новые горизонты в глобальном мире.
+											<br>
+											В параллельно-перекрестном преподавании языков компания «MARQAR» видит будущее
+											образования.
+											<br>
+											На наших курсах изучают казахский, английский и русский языки с тем, чтобы на их основе
+											осваивать мировые языки. Уже в
+											ближайшем будущем компания «MARQAR» представит курсы по изучению европейских и азиатских
+											языков.
 										</p>
 									</div>
 								</div>
@@ -125,12 +141,21 @@
 									<div class="swiper-slide__header swiper-slide-info"></div>
 									<div data-tab="2" class="tab-info-block__text-box">
 										<h3 class="tab-info-block__title">
-											Шесть курсов по цене одного.
+											Количество языковых курсов компании «MARQAR» будет постоянно увеличиваться с каждой
+											новой страной, в которых компания
+											будет открывать свой офис.
 										</h3>
 
 										<p class="tab-info-block__text">
-											Изучение языка той страны, где работает компания, на базе английского языка или на языке
-											вашего повседневного общения.
+											Каждый участник проекта будет иметь возможность изучать любой из языков на базе
+											английского.
+											<br>
+											Этот мультинациональный подход не только поможет вам при желании стать полиглотом, но и,
+											безусловно, даст возможность
+											знакомиться с новой культурой и интересными людьми со всего мира, налаживать связи и
+											находить новых друзей.
+											<br>
+											Такая уникальная возможность есть только в компании «MARQAR»!
 										</p>
 									</div>
 								</div>
@@ -138,23 +163,19 @@
 									<div class="swiper-slide__header swiper-slide-another"></div>
 									<div data-tab="3" class="tab-info-block__text-box">
 										<h3 class="tab-info-block__title">
-											В случае неудовлетворенности полученным результатом, по завершению курса возможность
-											забрать 100% оплату за курс. Ваши результаты и обратная связь – наша возможность
-											совершенствовать наш продукт.
+											Мы непрерывно работаем над улучшением и привлекательностью наших языковых курсов.
 										</h3>
 
 										<p class="tab-info-block__text">
+											И настолько уверены в своем продукте, его эффективности и качестве, что готовы в любой
+											момент полностью вернуть оплату
+											за обучение в случае, если вас не устроит полученный на курсе результат.
 										</p>
 									</div>
 								</div>
 							</div>
-
 						</div>
-
-
-
 					</div>
-
 				</div>
 			</section>
 			<section class="page__about about">
@@ -165,10 +186,10 @@
 							<div class="item-about__title">1. Что означает название компании</div>
 							<div class="item-about__text">
 								<p>
-									MARQА́R – достойный, растущий, развивающийся. </p>
+									MARQAR - достойный, растущий, развивающийся. </p>
 								<p>
-									Название компании берет начало от казахского слова «марқаю», что означает – расти, развиваться,
-									возвышаться.
+									Название компании берет начало от казахского слова «Марқá – ранний, старший, достойный, и
+									«Марқаю», что означает - расти, развиваться, возвышаться.
 								</p>
 							</div>
 							<a href="" class="item-about__more">Читать далее</a>
@@ -182,8 +203,7 @@
 							<div class="item-about__title">2. Чем занимается компания</div>
 							<div class="item-about__text">
 								<p>
-									Реализация новых идей и знаний с целью их практического применения для удовлетворения
-									определенных запросов потребителей.
+									Продажа товаров и услуг на собственной платформе с инновационным системным подходом.
 								</p>
 							</div>
 							<a href="" class="item-about__more">Читать далее</a>
@@ -326,13 +346,13 @@
 									<picture><source srcset="img/cases/07.webp" type="image/webp"><img src="img/cases/07.jpg" alt="Развитие" class="face-case-card__img"></picture>
 									<h3 class="face-case-card__title">Развитие</h3>
 								</div>
-								<div class="case-card__hover-box">
-									<div class="case-card__title">Развитие - кейс</div>
-									<div class="case-card__text">
-										Ключом решения многих насущных задач является развитие человеческого потенциала.
-									</div>
-									<a href="" class="case-card__more"></a>
-								</div>
+								<!-- <div class="case-card__hover-box">
+                        <div class="case-card__title">Развитие - кейс</div>
+                        <div class="case-card__text">
+                            Ключом решения многих насущных задач является развитие человеческого потенциала.
+                        </div>
+                        <a href="" class="case-card__more"></a>
+                    </div> -->
 							</div>
 						</article>
 					</div>
@@ -340,10 +360,7 @@
 			</section>
 			<section class="page__feedback feedback">
 				<div class="feedback__box">
-					<h2 class="feedback__title">Остались вопросы ?</h2>
-					<p class="feedback__text">
-						Заполните нашу заявку и мы свяжемся с вами в ближайшее время
-					</p>
+					<h2 class="feedback__title">Свяжитесь с нами</h2>
 					<form action="" class="feedback__form form-feedback">
 						<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="form-feedback__input input">
 						<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="form-feedback__input input">
@@ -355,65 +372,49 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
-				<div class="footer__logo">MARQAR</div>
-				<div class="footer__menu menu-footer">
-					<div class="menu-footer__header">
-						<p class="menu-footer__text">
-							Компания MARQAR LLP ожидает от всех участников проекта поддержания принципов справедливости,
-							честности и
-							конфиденциальности при заключении сделок и иной деловой активноcти.
-						</p>
+				<div class="footer__head">
+					<div class="footer__logo"></div>
+					<div class="footer__menu menu-footer">
+						<div class="menu-footer__header">
+							<p class="menu-footer__text">
+								Компания MARQAR LLP ожидает от всех участников проекта поддержания принципов справедливости,
+								честности и
+								конфиденциальности при заключении сделок и иной деловой активноcти.
+							</p>
+						</div>
 					</div>
-					<nav data-spollers="767.98" class="menu-footer__body">
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Меню</button>
-							<div class="menu-footer__list-body">
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">О компании</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Продукты</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">План вознаграждения</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Информация</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Контакты</a></li>
-							</div>
-						</ul>
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Документы</button>
-							<div class="menu-footer__list-body">
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">План вознаграждения</a></li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Условия отказа от заказа</a>
-								</li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Политика
-										конфиденциальности</a>
-								</li>
-								<li class="menu-footer__item"><a href="" class="menu-footer__link">Договор публичной оферты</a>
-								</li>
-							</div>
-						</ul>
-						<ul class="menu-footer__list">
-							<button type="button" data-spoller class="menu-footer__item-title">Контакты</button>
-							<div class="menu-footer__list-body">
-								<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item _icon-Map">
-									<div class="menu-footer__item-box">
-										Казахстан, г. Алматы, 050062
-										Микрорайон-1, ул. Жубанова 68, оф. 22
-									</div>
-								</li>
-								<li data-da=".menu-footer-header-item-mail, 992" class="menu-footer__item  _icon-Mail">
-									<div class="menu-footer__item-box">
-										<span>Почта:</span>
-										<a href="mailto:info@markhar.com" class="menu-footer__link">info@markhar.com</a>
-									</div>
-								</li>
-								<li data-da=".menu-footer-header-item-tel, 992" class="menu-footer__item _icon-Phone">
-									<div class="menu-footer__item-box">
-										<span>Телефон:</span>
-										<a href="tel:+77019545007" class="menu-footer__link">+7 701 954 50 07</a>
-										<a href="tel:+77772396323" class="menu-footer__link">+7 777 239 63 23</a>
-									</div>
-								</li>
-							</div>
-						</ul>
-					</nav>
 				</div>
+				<nav class="menu-footer__body">
+					<ul class="menu-footer__list">
+						<div class="menu-footer__list-body">
+							<li data-da=".menu-footer-header-item-map, 992" class="menu-footer__item _icon-Map">
+								<div class="menu-footer__item-box">
+									Казахстан, 050021, г. Алматы, Бульвар Бухар Жырау 2
+								</div>
+							</li>
+							<li data-da=".menu-footer-header-item-mail, 992" class="menu-footer__item  _icon-Mail">
+								<div class="menu-footer__item-box">
+									<span>Почта:</span>
+									<a href="mailto:info@marqar.kz" class="menu-footer__link">info@marqar.kz</a>
+								</div>
+							</li>
+							<li data-da=".menu-footer-header-item-tel, 992" class="menu-footer__item _icon-Phone">
+								<div class="menu-footer__item-box">
+									<span>Телефон:</span>
+									<a href="tel:+77770821922" class="menu-footer__link">+7 777 082 19 22</a>
+									<a href="tel:+77783261525" class="menu-footer__link">+7 778 326 15 25</a>
+								</div>
+							</li>
+							<li class="menu-footer__item">
+								<a href="#" class="menu-footer__link">
+									<svg style="height: auto; width: 100%;" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M40 20C40 31.045 31.045 40 20 40C8.955 40 0 31.045 0 20C0 8.955 8.955 0 20 0C31.045 0 40 8.955 40 20ZM20.7167 14.765C18.7717 15.5733 14.8833 17.2483 9.05333 19.7883C8.10667 20.165 7.61 20.5333 7.565 20.8933C7.48833 21.5033 8.25167 21.7433 9.28833 22.0683C9.43 22.1133 9.57667 22.1583 9.72667 22.2083C10.7483 22.54 12.1217 22.9283 12.835 22.9433C13.4833 22.9567 14.2067 22.69 15.005 22.1433C20.4517 18.465 23.2633 16.6067 23.44 16.5667C23.565 16.5383 23.7383 16.5017 23.855 16.6067C23.9717 16.71 23.96 16.9067 23.9483 16.96C23.8717 17.2817 20.8817 20.0633 19.3317 21.5033C18.8483 21.9517 18.5067 22.27 18.4367 22.3433C18.28 22.505 18.12 22.66 17.9667 22.8083C17.0167 23.7217 16.3067 24.4083 18.0067 25.5283C18.8233 26.0667 19.4767 26.5117 20.1283 26.955C20.84 27.44 21.55 27.9233 22.47 28.5267C22.7033 28.68 22.9267 28.8383 23.145 28.9933C23.9733 29.585 24.7183 30.115 25.6383 30.0317C26.1717 29.9817 26.725 29.48 27.005 27.9817C27.6667 24.4383 28.97 16.765 29.2717 13.6017C29.29 13.339 29.2788 13.0751 29.2383 12.815C29.2141 12.6049 29.1118 12.4116 28.9517 12.2733C28.7133 12.0783 28.3433 12.0367 28.1767 12.04C27.425 12.0533 26.2717 12.455 20.7167 14.765Z" fill="white" />
+									</svg>
+								</a>
+							</li>
+						</div>
+					</ul>
+				</nav>
 			</div>
 		</footer>
 	</div>
@@ -429,7 +430,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220421170924"></script>
+	<script src="js/app.min.js?_v=20220718181453"></script>
 </body>
 
 </html>
